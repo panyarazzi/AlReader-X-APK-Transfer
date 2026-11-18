@@ -128,7 +128,7 @@ AlEngineOptions defines feature bits:
 
 Format-specific option shifts include EPUB 0x2, FB2 0x1, HTML 0x3, CHM 0x4 and Office 0x5. EPUB initState passes the format's worked option mask into CSS initialization. If the low CSS support mask is zero, it sets disableExternal=true.
 
-When disableExternal is true, parseTemp clears selected groups from the parsed inline property pair before applying it. This is a concrete format-option gate, but the mapping from user-facing menu names to these bits still needs to be traced through preference/UI code.
+When disableExternal is true, the CSS engine filters selected property mask/value groups from parsed stylesheet selector entries before adding them to the Work Set; parseTemp applies a related filter to inline style pairs. It does not skip the link/@import parser entirely. This is a format-option gate, but it is not itself evidence of a single Publisher Style / Normal Mode switch.
 
 Sources: AlEngineOptions.smali static constants; AlFormatEPUB.smali, lines 8448–8665; AlCSSStyles.smali parseTemp([BILAlStyleStack;).
 
