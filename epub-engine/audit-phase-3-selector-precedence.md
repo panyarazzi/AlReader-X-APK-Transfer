@@ -21,7 +21,7 @@ In AlCSSHtml.applyOneSelector, the parser normalizes selector syntax into a smal
 | s.s .s / s.s>.s / s.s+.s | element.class then class | add_TAGCLASS_CLASS | g | WEIGHT_21 |
 | s.s s.s / s.s>s.s / s.s+s.s | two element.class selectors | add_TAGCLASS_TAGCLASS | h | WEIGHT_22 |
 
-The selector tokenizer explicitly recognizes descendant space, child >, adjacent sibling + and general sibling ~ while normalizing whitespace around combinators. The observed storage table above covers the selector forms for which the insertion methods and apply buckets were traced. It does not prove support for every CSS selector feature (IDs, attribute selectors, arbitrary pseudo-classes, more than two selector components, or all combinator combinations).
+The selector tokenizer explicitly handles descendant space, child > and adjacent sibling + in the mapped selector branches. It also checks the general-sibling character ~ while normalizing combinator whitespace, but no corresponding ~ selector storage branch was verified; do not assume general-sibling support. The observed storage table above covers the selector forms for which insertion methods and apply buckets were traced. It does not prove support for every CSS selector feature (IDs, attribute selectors, arbitrary pseudo-classes, more than two selector components, or all combinator combinations).
 
 Special selectors p:first-letter and p:notes are detected explicitly and handled through a dedicated path. They should not be treated as generic standards pseudo-classes.
 
