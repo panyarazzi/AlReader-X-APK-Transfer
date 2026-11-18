@@ -7,6 +7,7 @@ This repository contains a privately held copy of the AlReader X E-Ink APK, the 
 - Original APK: `AlReaderX E-Ink-1.33.apk`
 - Audit #1: `reports/private-epub-traces/comprehensive-audit-44201912720.md`
 - Corrected cross-reference: `reports/private-epub-traces/cross-reference-findings-44201912720.md`
+- Phase 2 CSS/cascade/font audit: `epub-engine/audit-phase-2-css-cascade-fonts.md`
 - Source workspace branch: `analysis/epub-source-workspace`
 - Successful preservation run: [44219859466](https://github.com/panyarazzi/AlReader-X-Sample-Pipeline/actions/runs/44219859466)
 
