@@ -172,19 +172,21 @@ Required trace: find the caller that populates AlEngineOptions.font_resource, de
 | Work Set ordering | Partly confirmed | imports recursively appended before importing set; apply order traced |
 | Work Set snapshot/reuse | Confirmed | fixWorkSet, enableWorkSet, disableWorkSet |
 | Inline style after class rules | Confirmed at callsite | AlAXML.prepareTAG |
-| CSS selector specificity equivalence | Unresolved | map selector shapes to eight buckets |
-| !important priority | Likely unsupported | token stripped; no visible importance flag |
+| CSS selector specificity model | Partly mapped | see audit-phase-3-selector-precedence.md; constrained proprietary buckets, not full CSS |
+| !important priority | Likely unsupported | phase 3 traces merge path; no importance tier found |
 | Publisher Style vs Normal Mode | Unresolved | trace preference/UI caller and option mapping |
 | TBookCSS semantic placeholders | Confirmed | generated CSS via setRealStyleCSS |
 | EPUB @font-face / embedded font | Unresolved; no bridge found | trace font_resource population to EPUB ZIP |
 | APK modified | No | static audit only |
 
-## G. Next exact trace targets
+## G. Phase 3 update
 
-1. Map every AlCSSHtml.applyOneSelector branch to AlSetCSS.add_* and its apply_WEIGHT_* bucket.
-2. Decode AlSetCSS.applyValue0, applyValue and AlStyleStack property masks to build a per-property winner/precedence table.
-3. Locate all reads/writes of TBookCSS, setRealStyleCSS, defaultEPUB0, formatOptions and formatOptionWorked; identify the exact UI control for Publisher Style / Normal Mode.
-4. Trace AlEngineOptions.font_resource construction and any EPUB archive extraction/copy path.
-5. Build controlled EPUB fixtures for linked CSS order, nested imports, inline declarations, competing selector shapes, !important and embedded fonts. Verify runtime behavior only after static trace is complete.
+The selector-shape mapping and winner merge are now traced in `audit-phase-3-selector-precedence.md`. The eight buckets map to tag-only, tag-pair, class-only, mixed tag/class, class-pair and more complex tag.class combinations. The merge routine proves later specificity buckets and later Work Set entries replace overlapping property bits; repeated identical selectors merge later declarations over earlier ones. Inline style is parsed after stylesheet matching and writes to the current style stack. `!important` has no observed priority tier.
+
+## H. Next exact trace targets
+
+1. Locate all reads/writes of TBookCSS, setRealStyleCSS, defaultEPUB0, formatOptions and formatOptionWorked; identify the exact UI control for Publisher Style / Normal Mode.
+2. Trace AlEngineOptions.font_resource construction and any EPUB archive extraction/copy path.
+3. Build controlled EPUB fixtures for linked CSS order, nested imports, inline declarations, competing selector shapes, !important and embedded fonts. Verify runtime behavior only after static trace is complete.
 
 No APK changes are proposed at this phase.
