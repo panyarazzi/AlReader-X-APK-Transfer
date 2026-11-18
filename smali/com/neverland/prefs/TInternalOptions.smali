@@ -93,6 +93,8 @@
 
 .field public preview_percent:Z
 
+.field public publisherMode:Z
+
 .field public proMode:Z
 
 .field public scanFileSearch1:Ljava/lang/String;
