@@ -65,7 +65,11 @@ Required next trace:
 
 **Evidence:** `css-precedence-font-44110555826.md`, font section; `stylesheet-font-external-44165797548.md`, section 3; `cross-reference-findings-44201912720.md`, section 6.
 
-## 7. Remaining audit questions
+## 7. Phase 2 update
+
+The follow-on static trace is now documented in `audit-phase-2-css-cascade-fonts.md`. It confirms recursive `@import` handling, Work Set snapshot/reuse semantics, the EPUB parser phase boundary, the exact eight-bucket cascade dispatch order, inline-style callsite order, CSS feature option bits, TBookCSS placeholder expansion, and the font registry setup. It also narrows the unresolved issues: exact selector-bucket mapping and property-level merge precedence, the UI mapping for Publisher Style / Normal Mode, and the end-to-end EPUB embedded-font path. The `!important` token is removed by the parser without an apparent importance flag; likely unsupported, but not yet an absolute conclusion.
+
+## 8. Remaining audit questions
 
 1. What exact source order does `AlFormatEPUB.externPrepareTAG` use when several CSS links and `@import` rules are present?
 2. How does `fixWorkSet()` finalize the stylesheet collection, and what does `disableWorkSet()` change?
