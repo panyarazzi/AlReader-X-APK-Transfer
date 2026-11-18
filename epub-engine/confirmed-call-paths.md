@@ -20,7 +20,7 @@ In `AlFormatEPUB.externPrepareTAG()`, the parser:
 
 **Evidence:** same private report, section 1, `AlCSSStyles.smali — lines 4483-5787`; relevant method `parseFile(Ljava/lang/String;Ljava/lang/String;II)Z`. The report also captures the Base64 `data:text/css` branch, which decodes the payload and sends it to `parseBuffer`.
 
-**Not yet concluded:** exact cascade precedence between multiple linked stylesheets, imported stylesheets, and user/book CSS. The set lookup/reuse and Work Set insertion must be followed through the full Work Set state transitions and final application order.
+**Cascade result:** see [audit-phase-3-selector-precedence.md](audit-phase-3-selector-precedence.md). Imports are recursively appended before the importing sheet; the default set is applied first; Work Set entries are applied in list order; later matching buckets and later sets replace overlapping property bits. Exact runtime behavior still requires fixture tests.
 
 ## 3. Inline style attribute
 
@@ -67,7 +67,7 @@ Required next trace:
 
 ## 7. Phase 2 update
 
-The follow-on static trace is documented in `audit-phase-2-css-cascade-fonts.md` and `audit-phase-3-selector-precedence.md`. It confirms recursive `@import` handling, Work Set snapshot/reuse semantics, the EPUB parser phase boundary, the exact eight-bucket cascade dispatch order, selector-shape mapping, later-wins merge semantics, inline-style callsite order, CSS feature option bits, TBookCSS placeholder expansion, and the font registry setup. It also narrows the unresolved issues: exact selector-bucket mapping and property-level merge precedence, whether a separate global Publisher Style / Normal Mode preset exists, and the end-to-end EPUB embedded-font path. Phase 4 confirms that TBook builds per-property EPUB support bits from TBookCSS, loads the app default stylesheet from _epub.css, expands semantic placeholders, and supplies three app-bundled font resources plus user/device font catalogs to the engine. The `!important` token is removed by the parser without an apparent importance flag; likely unsupported, but not yet an absolute conclusion.
+The follow-on static trace is documented in `audit-phase-2-css-cascade-fonts.md`, `audit-phase-3-selector-precedence.md` and `audit-phase-4-app-css-options-and-font-inputs.md`. It confirms recursive `@import` handling, Work Set snapshot/reuse semantics, the EPUB parser phase boundary, the exact eight-bucket cascade dispatch order, selector-shape mapping, later-wins merge semantics, inline-style callsite order, CSS feature option bits, TBookCSS placeholder expansion, and the font registry setup. It also narrows the unresolved issues: exact selector-bucket mapping and property-level merge precedence, whether a separate global Publisher Style / Normal Mode preset exists, and the end-to-end EPUB embedded-font path. Phase 4 confirms that TBook builds per-property EPUB support bits from TBookCSS, loads the app default stylesheet from _epub.css, expands semantic placeholders, and supplies three app-bundled font resources plus user/device font catalogs to the engine. The `!important` token is removed by the parser without an apparent importance flag; likely unsupported, but not yet an absolute conclusion.
 
 ## 8. Remaining audit questions
 
