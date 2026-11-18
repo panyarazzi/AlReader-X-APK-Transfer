@@ -941,11 +941,11 @@
     invoke-virtual {p4, p1}, Lcom/neverland/readbase/TBase;->readParametersForBook1(Lcom/neverland/book/TBook$TReaderBookOptions;)Z
 
     # Publisher Mode is app-global; apply after per-book options are restored.
-    iget-object p3, p3, Lcom/neverland/prefs/TPref;->intopt:Lcom/neverland/prefs/TInternalOptions;
+    iget-object v6, p3, Lcom/neverland/prefs/TPref;->intopt:Lcom/neverland/prefs/TInternalOptions;
 
-    iget-boolean p3, p3, Lcom/neverland/prefs/TInternalOptions;->publisherMode:Z
+    iget-boolean v6, v6, Lcom/neverland/prefs/TInternalOptions;->publisherMode:Z
 
-    iput-boolean p3, p1, Lcom/neverland/engbook/forpublic/AlBookOptions;->publisherMode:Z
+    iput-boolean v6, p1, Lcom/neverland/engbook/forpublic/AlBookOptions;->publisherMode:Z
 
     .line 31
     iget-object p1, p0, Lcom/neverland/book/TBook;->bookOptions:Lcom/neverland/book/TBook$TReaderBookOptions;
