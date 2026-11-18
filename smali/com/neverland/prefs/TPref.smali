@@ -1740,6 +1740,20 @@
 
     iput-boolean v3, v0, Lcom/neverland/prefs/TInternalOptions;->preview_percent:Z
 
+    iget-object v0, v1, Lcom/neverland/prefs/TPref;->intopt:Lcom/neverland/prefs/TInternalOptions;
+
+    iget-object v3, v1, Lcom/neverland/prefs/TPref;->internalTIF:Lcom/neverland/utils/TMemIniFile2;
+
+    const-string v8, "epubpublisher"
+
+    iget-boolean v12, v0, Lcom/neverland/prefs/TInternalOptions;->publisherMode:Z
+
+    invoke-virtual {v3, v13, v8, v12}, Lcom/neverland/utils/TMemIniFile2;->ReadBool(Ljava/lang/String;Ljava/lang/String;Z)Z
+
+    move-result v3
+
+    iput-boolean v3, v0, Lcom/neverland/prefs/TInternalOptions;->publisherMode:Z
+
     .line 42
     iget-object v0, v1, Lcom/neverland/prefs/TPref;->intopt:Lcom/neverland/prefs/TInternalOptions;
 
@@ -21767,6 +21781,14 @@
 
     .line 258
     .line 259
+    invoke-virtual {v8, v11, v2, v3}, Lcom/neverland/utils/TMemIniFile2;->WriteBool(Ljava/lang/String;Ljava/lang/String;Z)V
+
+    const-string v2, "epubpublisher"
+
+    iget-object v3, v1, Lcom/neverland/prefs/TPref;->intopt:Lcom/neverland/prefs/TInternalOptions;
+
+    iget-boolean v3, v3, Lcom/neverland/prefs/TInternalOptions;->publisherMode:Z
+
     invoke-virtual {v8, v11, v2, v3}, Lcom/neverland/utils/TMemIniFile2;->WriteBool(Ljava/lang/String;Ljava/lang/String;Z)V
 
     .line 260
