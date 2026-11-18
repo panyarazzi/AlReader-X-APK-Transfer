@@ -29,6 +29,7 @@
 .field public overrideCP:Z
 
 .field public pathForCache:Ljava/lang/String;
+.field public publisherMode:Z
 
 .field public readPosition:I
 
