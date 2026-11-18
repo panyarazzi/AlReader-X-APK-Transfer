@@ -174,7 +174,7 @@ Required trace: find the caller that populates AlEngineOptions.font_resource, de
 | Inline style after class rules | Confirmed at callsite | AlAXML.prepareTAG |
 | CSS selector specificity model | Partly mapped | see audit-phase-3-selector-precedence.md; constrained proprietary buckets, not full CSS |
 | !important priority | Likely unsupported | phase 3 traces merge path; no importance tier found |
-| Publisher Style vs Normal Mode | Unresolved | trace preference/UI caller and option mapping |
+| Publisher Style vs Normal Mode | No single TBookCSS mode field found | Phase 4 traces per-property flags and app default CSS; search for a separate preset remains |
 | TBookCSS semantic placeholders | Confirmed | generated CSS via setRealStyleCSS |
 | EPUB @font-face / embedded font | Unresolved; no bridge found | trace font_resource population to EPUB ZIP |
 | APK modified | No | static audit only |
