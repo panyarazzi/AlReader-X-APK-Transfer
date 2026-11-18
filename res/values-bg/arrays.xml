@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookmark_typesstr">
+        <item>Отметка</item>
+        <item>Цитат</item>
+        <item>Отметка + Цитат</item>
+    </string-array>
+    <string-array name="eink_adaptation_str">
+        <item>Няма</item>
+        <item>Монохромен EInk</item>
+        <item>Цветен EInk</item>
+    </string-array>
+    <string-array name="marker_typesstr">
+        <item>Без маркиране</item>
+        <item>Червен фон</item>
+        <item>Жълт фон</item>
+        <item>Зелен фон</item>
+        <item>Подчертаване</item>
+        <item>Подчертаване в червено</item>
+        <item>Подчертаване в жълто</item>
+        <item>Подчертаване в зелено</item>
+    </string-array>
+    <string-array name="marker_underlinestr">
+        <item>Права</item>
+        <item>Ръкописна</item>
+        <item>Вълнообразна</item>
+    </string-array>
+    <string-array name="setting_fonts_spacewidthstr">
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100% (По подразбиране)</item>
+        <item>110%</item>
+        <item>120%</item>
+        <item>130%</item>
+    </string-array>
+    <string-array name="setting_pages_firstletterstr">
+        <item>Никога</item>
+        <item>Всеки абзац</item>
+        <item>Първи абзац</item>
+        <item>Класика всеки абзац</item>
+        <item>Класика първи абзац</item>
+    </string-array>
+    <string-array name="settings_backup_type_arr">
+        <item>Настройки</item>
+        <item>Настройки + База от прочетени</item>
+        <item>Настройки + Ресурси</item>
+        <item>Всичко</item>
+    </string-array>
+    <string-array name="settings_books_dialogstr">
+        <item>Не</item>
+        <item>Премахване на интервали в началото</item>
+        <item>Премахване на интервали, замяна на тирета</item>
+    </string-array>
+    <string-array name="settings_color_usestatusback_str">
+        <item>Никога</item>
+        <item>Ако има скин</item>
+        <item>Винаги</item>
+    </string-array>
+    <string-array name="settings_common_animation_alwaysstr">
+        <item>Никога</item>
+        <item>Само при плъзгане</item>
+        <item>Винаги</item>
+    </string-array>
+    <string-array name="settings_common_animation_typestr">
+        <item>3D OpenGL тип 1</item>
+        <item>3D OpenGL тип 2</item>
+        <item>Изместване наляво</item>
+        <item>Изместване надясно</item>
+        <item>Вълна</item>
+        <item>Изместване на две страници</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typeeinkstr">
+        <item>Вълна</item>
+        <item>Прелистване</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typestr">
+        <item>Вълна</item>
+        <item>Свитък</item>
+        <item>Прелистване с анимация</item>
+        <item>Прелистване</item>
+    </string-array>
+    <string-array name="settings_common_backlighthardwaremin_str">
+        <item>1%</item>
+        <item>2% (По подразбиране)</item>
+        <item>3%</item>
+        <item>4%</item>
+        <item>5%</item>
+    </string-array>
+    <string-array name="settings_common_backlightkeep_str">
+        <item>Както в системата</item>
+        <item>2 мин</item>
+        <item>3 мин</item>
+        <item>5 мин</item>
+        <item>10 мин</item>
+        <item>30 мин</item>
+        <item>Постоянно</item>
+    </string-array>
+    <string-array name="settings_common_eink_refreshratestr">
+        <item>След 5 прелиствания</item>
+        <item>След 10 прелиствания</item>
+        <item>След 20 прелиствания</item>
+        <item>След 50 прелиствания</item>
+        <item>Да не се обновява</item>
+    </string-array>
+    <string-array name="settings_common_fontscalestr">
+        <item>Както в системата</item>
+        <item>Най-малък</item>
+        <item>Малък</item>
+        <item>Нормален</item>
+        <item>Голям</item>
+        <item>По-голям</item>
+        <item>Най-голям</item>
+    </string-array>
+    <string-array name="settings_common_gammamodestr">
+        <item>Не</item>
+        <item>За цялата страница</item>
+        <item>Само за изображения</item>
+    </string-array>
+    <string-array name="settings_common_gammavaluestr">
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.9</item>
+        <item>1.0 (По подразбиране)</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>1.4</item>
+        <item>1.5</item>
+        <item>1.6</item>
+        <item>1.7</item>
+        <item>1.8</item>
+        <item>1.9</item>
+        <item>2.0</item>
+        <item>2.1</item>
+        <item>2.2</item>
+        <item>2.3</item>
+    </string-array>
+    <string-array name="settings_common_libraryfirstletter_str">
+        <item>Винаги</item>
+        <item>По подразбиране</item>
+        <item>Само при големи списъци</item>
+        <item>За предпочитане да не се използва</item>
+    </string-array>
+    <string-array name="settings_common_onyxeink_refreshratestr">
+        <item>Винаги</item>
+        <item>След 1 прелистване</item>
+        <item>След 2 прелиствания</item>
+        <item>След 3 прелиствания</item>
+        <item>След 5 прелиствания</item>
+        <item>След 7 прелиствания</item>
+        <item>След 10 прелиствания</item>
+        <item>След 20 прелиствания</item>
+        <item>След 50 прелиствания</item>
+        <item>След 75 прелиствания</item>
+        <item>След 100 прелиствания</item>
+        <item>Да не се обновява</item>
+    </string-array>
+    <string-array name="settings_common_rotateonyxstr">
+        <item>Както в системата</item>
+        <item>Портретен изглед</item>
+        <item>Ландшафтен изглед</item>
+        <item>Обърнат портрет</item>
+        <item>Обърнат ландшафт</item>
+    </string-array>
+    <string-array name="settings_common_rotatestr">
+        <item>Както в системата</item>
+        <item>Сензор</item>
+        <item>Портрет + Сензор</item>
+        <item>Ландшафт + Сензор</item>
+        <item>Портретен изглед</item>
+        <item>Ландшафтен изглед</item>
+        <item>Обърнат портрет</item>
+        <item>Обърнат ландшафт</item>
+    </string-array>
+    <string-array name="settings_common_ttsalarm_str">
+        <item>Няма</item>
+        <item>Мелодичен сигнал</item>
+        <item>Гласово предупреждение</item>
+        <item>Без звук</item>
+    </string-array>
+    <string-array name="settings_common_ttspause_str">
+        <item>Няма</item>
+        <item>Кратка</item>
+        <item>Средна</item>
+        <item>Дълга</item>
+    </string-array>
+    <string-array name="settings_common_ttsreadnotes_str">
+        <item>Няма</item>
+        <item>На място</item>
+        <item>В края на изречението</item>
+    </string-array>
+    <string-array name="settings_common_ttsselectedtext_str">
+        <item>Прочети маркирания текст веднъж</item>
+        <item>Прочети маркирания текст в цикъл</item>
+        <item>Прочети до края на книгата</item>
+    </string-array>
+    <string-array name="settings_common_ttstimer_str">
+        <item>Няма</item>
+        <item>5 мин</item>
+        <item>10 мин</item>
+        <item>15 мин</item>
+        <item>20 мин</item>
+        <item>25 мин</item>
+        <item>30 мин</item>
+        <item>40 мин</item>
+        <item>50 мин</item>
+        <item>60 мин</item>
+        <item>90 мин</item>
+    </string-array>
+    <string-array name="settings_interface_statusinfo_str">
+        <item>Име на файл</item>
+        <item>Заглавие</item>
+        <item>Автор</item>
+        <item>Заглавие + Автор</item>
+        <item>Заглавие на глава</item>
+        <item>Страници в глава</item>
+        <item>Време за четене на книга</item>
+        <item>Оставащо време за глава</item>
+    </string-array>
+    <string-array name="settings_interface_theme21_str">
+        <item>Системна светла</item>
+        <item>Системна тъмна</item>
+        <item>E Ink</item>
+        <item>Потребителска</item>
+    </string-array>
+    <string-array name="settings_interface_theme28_str">
+        <item>Както в системата</item>
+        <item>Системна светла</item>
+        <item>Системна тъмна</item>
+        <item>E Ink</item>
+        <item>Потребителска</item>
+    </string-array>
+    <string-array name="settings_interface_themebutton_str">
+        <item>Вариант 1</item>
+        <item>Вариант 2</item>
+        <item>Вариант 3</item>
+        <item>Вариант 4</item>
+    </string-array>
+    <string-array name="settings_limit_height_inline_imagesstr">
+        <item>Никога</item>
+        <item>Автоматично</item>
+        <item>Винаги</item>
+    </string-array>
+    <string-array name="settings_manage_backstr">
+        <item>Системно действие</item>
+        <item>Меню</item>
+        <item>Скриване</item>
+        <item>Назад + Скриване</item>
+        <item>Назад + Меню</item>
+    </string-array>
+    <string-array name="settings_manage_backstr_onyx">
+        <item>Системно действие</item>
+        <item>Меню</item>
+        <item>Скриване</item>
+        <item>Назад + Скриване</item>
+        <item>Назад + Меню</item>
+        <item>Следваща страница</item>
+        <item>Без действие</item>
+    </string-array>
+    <string-array name="settings_manage_doubletapsstr">
+        <item>Няма</item>
+        <item>Речник</item>
+        <item>Копиране на текст</item>
+        <item>Бързо меню</item>
+        <item>Избиране на текст</item>
+    </string-array>
+    <string-array name="settings_manage_longtapstr">
+        <item>Избиране на текст</item>
+        <item>Речник</item>
+        <item>Избиране + Речник</item>
+        <item>Действия</item>
+    </string-array>
+    <string-array name="settings_manage_tts_swipes">
+        <item>Без действие</item>
+        <item>Предишно/Следващо изречение</item>
+        <item>Следващо/Предишно изречение</item>
+        <item>Тон</item>
+        <item>Сила на звука</item>
+        <item>Скорост</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr">
+        <item>Плавно прелистване по страници</item>
+        <item>Плавно прелистване по редове</item>
+        <item>Прелистване по редове</item>
+        <item>Действия</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr_eink">
+        <item>Плавно прелистване по страници</item>
+        <item>Прелистване по редове</item>
+        <item>Да не се използва</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightleftstr_onyx">
+        <item>Не</item>
+        <item>Студена светлина</item>
+        <item>Топла светлина</item>
+        <item>Двете нива</item>
+        <item>Температура Студена/Топла</item>
+        <item>Температура Топла/Студена</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightrightstr_onyx">
+        <item>Не</item>
+        <item>Топла светлина</item>
+        <item>Студена светлина</item>
+        <item>Двете нива</item>
+        <item>Температура Студена/Топла</item>
+        <item>Температура Топла/Студена</item>
+    </string-array>
+    <string-array name="settings_opendialogs_taps_str">
+        <item>Отвори</item>
+        <item>Свойства на книгата</item>
+    </string-array>
+    <string-array name="settings_pages_columncountstr">
+        <item>Авто</item>
+        <item>Една</item>
+        <item>Две</item>
+        <item>Две в ландшафт</item>
+    </string-array>
+    <string-array name="settings_pages_imagescalestr">
+        <item>Авто</item>
+        <item>Оригинал (100%)</item>
+        <item>150%</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_notesonpagestr">
+        <item>Не</item>
+        <item>1 ред на страница</item>
+        <item>2 реда на страница</item>
+        <item>3 реда на страница</item>
+        <item>5 реда на страница</item>
+        <item>Ако е възможно изцяло</item>
+        <item>Изскачащ прозорец</item>
+    </string-array>
+    <string-array name="settings_pages_pagesizestr">
+        <item>Авто</item>
+        <item>512</item>
+        <item>768</item>
+        <item>1024</item>
+        <item>1280</item>
+        <item>1536</item>
+        <item>1670</item>
+        <item>1860</item>
+        <item>2048</item>
+        <item>2340</item>
+        <item>3072</item>
+        <item>3420</item>
+        <item>4096</item>
+    </string-array>
+    <string-array name="settings_pages_progresswidthstr">
+        <item>По подразбиране</item>
+        <item>По-широка</item>
+    </string-array>
+    <string-array name="settings_pages_skincalestr">
+        <item>Авто</item>
+        <item>Оригинал (100%)</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_useheaderstr">
+        <item>Никога</item>
+        <item>Само в прозорец</item>
+        <item>Само на цял екран</item>
+        <item>Винаги</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightleftstr_onyx">
+        <item>Няма</item>
+        <item>Яркост</item>
+        <item>Температура</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightrightstr_onyx">
+        <item>Няма</item>
+        <item>Температура</item>
+        <item>Яркост</item>
+    </string-array>
+    <string-array name="ttsvoices_unavailablestr">
+        <item>Смяна на гласове не е налична</item>
+    </string-array>
+</resources>

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookmark_typesstr">
+        <item>বুকমার্ক</item>
+        <item>উদ্ধৃতি</item>
+        <item>বুকমার্ক + উদ্ধৃতি</item>
+    </string-array>
+    <string-array name="eink_adaptation_str">
+        <item>নেই</item>
+        <item>মনোক্রোম EInk</item>
+        <item>রঙিন EInk</item>
+    </string-array>
+    <string-array name="marker_typesstr">
+        <item>চিহ্নিত করবেন না</item>
+        <item>লাল পটভূমি</item>
+        <item>হলুদ পটভূমি</item>
+        <item>সবুজ পটভূমি</item>
+        <item>আন্ডারলাইন</item>
+        <item>লাল আন্ডারলাইন</item>
+        <item>হলুদ আন্ডারলাইন</item>
+        <item>সবুজ আন্ডারলাইন</item>
+    </string-array>
+    <string-array name="marker_underlinestr">
+        <item>সোজা</item>
+        <item>হাতে লেখা</item>
+        <item>ঢেউ খেলানো</item>
+    </string-array>
+    <string-array name="setting_fonts_spacewidthstr">
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100% (ডিফল্ট)</item>
+        <item>110%</item>
+        <item>120%</item>
+        <item>130%</item>
+    </string-array>
+    <string-array name="setting_pages_firstletterstr">
+        <item>কখনোই না</item>
+        <item>প্রতিটি অনুচ্ছেদ</item>
+        <item>প্রথম অনুচ্ছেদ</item>
+        <item>ক্লাসিক প্রতিটি অনুচ্ছেদ</item>
+        <item>ক্লাসিক প্রথম অনুচ্ছেদ</item>
+    </string-array>
+    <string-array name="settings_backup_type_arr">
+        <item>সেটিংস</item>
+        <item>সেটিংস + পঠিত বইয়ের ডেটাবেস</item>
+        <item>সেটিংস + রিসোর্স</item>
+        <item>সব</item>
+    </string-array>
+    <string-array name="settings_books_dialogstr">
+        <item>নেই</item>
+        <item>শুরুতে স্পেস সরান</item>
+        <item>স্পেস সরান, ড্যাশ প্রতিস্থাপন করুন</item>
+    </string-array>
+    <string-array name="settings_color_usestatusback_str">
+        <item>কখনোই না</item>
+        <item>যদি স্কিন থাকে</item>
+        <item>সবসময়</item>
+    </string-array>
+    <string-array name="settings_common_animation_alwaysstr">
+        <item>কখনোই না</item>
+        <item>শুধুমাত্র সোয়াইপের সময়</item>
+        <item>সবসময়</item>
+    </string-array>
+    <string-array name="settings_common_animation_typestr">
+        <item>3D OpenGL টাইপ ১</item>
+        <item>3D OpenGL টাইপ ২</item>
+        <item>বামে স্লাইড</item>
+        <item>ডানে স্লাইড</item>
+        <item>তরঙ্গ</item>
+        <item>দুই পৃষ্ঠা স্লাইড</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typeeinkstr">
+        <item>তরঙ্গ</item>
+        <item>পৃষ্ঠা উল্টানো</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typestr">
+        <item>তরঙ্গ</item>
+        <item>স্ক্রল</item>
+        <item>অ্যানিমেশন সহ পৃষ্ঠা উল্টানো</item>
+        <item>পৃষ্ঠা উল্টানো</item>
+    </string-array>
+    <string-array name="settings_common_backlighthardwaremin_str">
+        <item>1%</item>
+        <item>2% (ডিফল্ট)</item>
+        <item>3%</item>
+        <item>4%</item>
+        <item>5%</item>
+    </string-array>
+    <string-array name="settings_common_backlightkeep_str">
+        <item>সিস্টেমের মতো</item>
+        <item>২ মিনিট</item>
+        <item>৩ মিনিট</item>
+        <item>৫ মিনিট</item>
+        <item>১০ মিনিট</item>
+        <item>৩০ মিনিট</item>
+        <item>অবিরত</item>
+    </string-array>
+    <string-array name="settings_common_eink_refreshratestr">
+        <item>৫ বার স্ক্রল করার পর</item>
+        <item>১০ বার স্ক্রল করার পর</item>
+        <item>২০ বার স্ক্রল করার পর</item>
+        <item>৫০ বার স্ক্রল করার পর</item>
+        <item>রিফ্রেশ করবেন না</item>
+    </string-array>
+    <string-array name="settings_common_fontscalestr">
+        <item>সিস্টেমের মতো</item>
+        <item>সবচেয়ে ছোট</item>
+        <item>ছোট</item>
+        <item>সাধারণ</item>
+        <item>বড়</item>
+        <item>আরও বড়</item>
+        <item>সবচেয়ে বড়</item>
+    </string-array>
+    <string-array name="settings_common_gammamodestr">
+        <item>নেই</item>
+        <item>সম্পূর্ণ পৃষ্ঠার জন্য</item>
+        <item>শুধুমাত্র ছবির জন্য</item>
+    </string-array>
+    <string-array name="settings_common_gammavaluestr">
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.9</item>
+        <item>1.0 (ডিফল্ট)</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>1.4</item>
+        <item>1.5</item>
+        <item>1.6</item>
+        <item>1.7</item>
+        <item>1.8</item>
+        <item>1.9</item>
+        <item>2.0</item>
+        <item>2.1</item>
+        <item>2.2</item>
+        <item>2.3</item>
+    </string-array>
+    <string-array name="settings_common_libraryfirstletter_str">
+        <item>সবসময়</item>
+        <item>ডিফল্ট</item>
+        <item>শুধুমাত্র বড় তালিকায়</item>
+        <item>ব্যবহার না করাই ভালো</item>
+    </string-array>
+    <string-array name="settings_common_onyxeink_refreshratestr">
+        <item>সবসময়</item>
+        <item>১ বার স্ক্রল করার পর</item>
+        <item>২ বার স্ক্রল করার পর</item>
+        <item>৩ বার স্ক্রল করার পর</item>
+        <item>৫ বার স্ক্রল করার পর</item>
+        <item>৭ বার স্ক্রল করার পর</item>
+        <item>১০ বার স্ক্রল করার পর</item>
+        <item>২০ বার স্ক্রল করার পর</item>
+        <item>৫০ বার স্ক্রল করার পর</item>
+        <item>৭৫ বার স্ক্রল করার পর</item>
+        <item>১০০ বার স্ক্রল করার পর</item>
+        <item>রিফ্রেশ করবেন না</item>
+    </string-array>
+    <string-array name="settings_common_rotateonyxstr">
+        <item>সিস্টেমের মতো</item>
+        <item>পোর্ট্রেট ভিউ</item>
+        <item>ল্যান্ডস্কেপ ভিউ</item>
+        <item>উল্টানো পোর্ট্রেট</item>
+        <item>উল্টানো ল্যান্ডস্কেপ</item>
+    </string-array>
+    <string-array name="settings_common_rotatestr">
+        <item>সিস্টেমের মতো</item>
+        <item>সেন্সর</item>
+        <item>পোর্ট্রেট + সেন্সর</item>
+        <item>ল্যান্ডস্কেপ + সেন্সর</item>
+        <item>পোর্ট্রেট ভিউ</item>
+        <item>ল্যান্ডস্কেপ ভিউ</item>
+        <item>উল্টানো পোর্ট্রেট</item>
+        <item>উল্টানো ল্যান্ডস্কেপ</item>
+    </string-array>
+    <string-array name="settings_common_ttsalarm_str">
+        <item>নেই</item>
+        <item>সুরেলা হুইসেল</item>
+        <item>কণ্ঠস্বর সতর্কতা</item>
+        <item>Mute</item>
+    </string-array>
+    <string-array name="settings_common_ttspause_str">
+        <item>নেই</item>
+        <item>সংক্ষিপ্ত</item>
+        <item>মাঝারি</item>
+        <item>দীর্ঘ</item>
+    </string-array>
+    <string-array name="settings_common_ttsreadnotes_str">
+        <item>নেই</item>
+        <item>স্থানে</item>
+        <item>বাক্যের শেষে</item>
+    </string-array>
+    <string-array name="settings_common_ttsselectedtext_str">
+        <item>নির্বাচিতটি একবার পড়ুন</item>
+        <item>নির্বাচিতটি বারবার পড়ুন</item>
+        <item>বইয়ের শেষ পর্যন্ত পড়ুন</item>
+    </string-array>
+    <string-array name="settings_common_ttstimer_str">
+        <item>নেই</item>
+        <item>৫ মিনিট</item>
+        <item>১০ মিনিট</item>
+        <item>১৫ মিনিট</item>
+        <item>২০ মিনিট</item>
+        <item>২৫ মিনিট</item>
+        <item>৩০ মিনিট</item>
+        <item>৪০ মিনিট</item>
+        <item>৫০ মিনিট</item>
+        <item>৬০ মিনিট</item>
+        <item>৯০ মিনিট</item>
+    </string-array>
+    <string-array name="settings_interface_statusinfo_str">
+        <item>ফাইলের নাম</item>
+        <item>শিরোনাম</item>
+        <item>লেখক</item>
+        <item>শিরোনাম + লেখক</item>
+        <item>অধ্যায়ের শিরোনাম</item>
+        <item>অধ্যায়ের পৃষ্ঠা</item>
+        <item>বই পড়ার সময়</item>
+        <item>অধ্যায় পড়ার অবশিষ্ট সময়</item>
+    </string-array>
+    <string-array name="settings_interface_theme21_str">
+        <item>সিস্টেম লাইট</item>
+        <item>সিস্টেম ডার্ক</item>
+        <item>E-Ink</item>
+        <item>কাস্টম</item>
+    </string-array>
+    <string-array name="settings_interface_theme28_str">
+        <item>সিস্টেমের মতো</item>
+        <item>সিস্টেম লাইট</item>
+        <item>সিস্টেম ডার্ক</item>
+        <item>E-Ink</item>
+        <item>কাস্টম</item>
+    </string-array>
+    <string-array name="settings_interface_themebutton_str">
+        <item>অপশন ১</item>
+        <item>অপশন ২</item>
+        <item>অপশন ৩</item>
+        <item>অপশন ৪</item>
+    </string-array>
+    <string-array name="settings_limit_height_inline_imagesstr">
+        <item>কখনোই না</item>
+        <item>অটো</item>
+        <item>সবসময়</item>
+    </string-array>
+    <string-array name="settings_manage_backstr">
+        <item>সিস্টেম অ্যাকশন</item>
+        <item>মেনু</item>
+        <item>লুকান</item>
+        <item>পিছনে + লুকান</item>
+        <item>পিছনে + মেনু</item>
+    </string-array>
+    <string-array name="settings_manage_backstr_onyx">
+        <item>সিস্টেম অ্যাকশন</item>
+        <item>মেনু</item>
+        <item>লুকান</item>
+        <item>পিছনে + লুকান</item>
+        <item>পিছনে + মেনু</item>
+        <item>পরবর্তী পৃষ্ঠা</item>
+        <item>কোনো অ্যাকশন নেই</item>
+    </string-array>
+    <string-array name="settings_manage_doubletapsstr">
+        <item>নেই</item>
+        <item>অভিধান</item>
+        <item>পাঠ্য অনুলিপি</item>
+        <item>দ্রুত মেনু</item>
+        <item>পাঠ্য নির্বাচন</item>
+    </string-array>
+    <string-array name="settings_manage_longtapstr">
+        <item>পাঠ্য নির্বাচন</item>
+        <item>অভিধান</item>
+        <item>নির্বাচন + অভিধান</item>
+        <item>ক্রিয়াকলাপ</item>
+    </string-array>
+    <string-array name="settings_manage_tts_swipes">
+        <item>কোনো অ্যাকশন নেই</item>
+        <item>পূর্ববর্তী/পরবর্তী বাক্য</item>
+        <item>পরবর্তী/পূর্ববর্তী বাক্য</item>
+        <item>টোন</item>
+        <item>ভলিউম</item>
+        <item>গতি</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr">
+        <item>মসৃণ পৃষ্ঠা স্ক্রলিং</item>
+        <item>মসৃণ লাইন স্ক্রলিং</item>
+        <item>লাইন স্ক্রলিং</item>
+        <item>ক্রিয়াকলাপ</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr_eink">
+        <item>মসৃণ পৃষ্ঠা স্ক্রলিং</item>
+        <item>লাইন স্ক্রলিং</item>
+        <item>ব্যবহার করবেন না</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightleftstr_onyx">
+        <item>নেই</item>
+        <item>ঠান্ডা আলো</item>
+        <item>উষ্ণ আলো</item>
+        <item>উভয় স্তর</item>
+        <item>তাপমাত্রা ঠান্ডা/উষ্ণ</item>
+        <item>তাপমাত্রা উষ্ণ/ঠান্ডা</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightrightstr_onyx">
+        <item>নেই</item>
+        <item>উষ্ণ আলো</item>
+        <item>ঠান্ডা আলো</item>
+        <item>উভয় স্তর</item>
+        <item>তাপমাত্রা ঠান্ডা/উষ্ণ</item>
+        <item>তাপমাত্রা উষ্ণ/ঠান্ডা</item>
+    </string-array>
+    <string-array name="settings_opendialogs_taps_str">
+        <item>খুলুন</item>
+        <item>বইয়ের বৈশিষ্ট্য</item>
+    </string-array>
+    <string-array name="settings_pages_columncountstr">
+        <item>অটো</item>
+        <item>একটি</item>
+        <item>দুটি</item>
+        <item>ল্যান্ডস্কেপে দুটি</item>
+    </string-array>
+    <string-array name="settings_pages_imagescalestr">
+        <item>অটো</item>
+        <item>আসল (100%)</item>
+        <item>150%</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_notesonpagestr">
+        <item>নেই</item>
+        <item>প্রতি পৃষ্ঠায় ১ লাইন</item>
+        <item>প্রতি পৃষ্ঠায় ২ লাইন</item>
+        <item>প্রতি পৃষ্ঠায় ৩ লাইন</item>
+        <item>প্রতি পৃষ্ঠায় ৫ লাইন</item>
+        <item>সম্ভব হলে সম্পূর্ণ</item>
+        <item>পপ-আপ</item>
+    </string-array>
+    <string-array name="settings_pages_pagesizestr">
+        <item>অটো</item>
+        <item>512</item>
+        <item>768</item>
+        <item>1024</item>
+        <item>1280</item>
+        <item>1536</item>
+        <item>1670</item>
+        <item>1860</item>
+        <item>2048</item>
+        <item>2340</item>
+        <item>3072</item>
+        <item>3420</item>
+        <item>4096</item>
+    </string-array>
+    <string-array name="settings_pages_progresswidthstr">
+        <item>ডিফল্ট</item>
+        <item>মোটা</item>
+    </string-array>
+    <string-array name="settings_pages_skincalestr">
+        <item>অটো</item>
+        <item>আসল (100%)</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_useheaderstr">
+        <item>কখনোই না</item>
+        <item>শুধুমাত্র উইন্ডোতে</item>
+        <item>শুধুমাত্র পূর্ণ স্ক্রিনে</item>
+        <item>সবসময়</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightleftstr_onyx">
+        <item>নেই</item>
+        <item>উজ্জ্বলতা</item>
+        <item>তাপমাত্রা</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightrightstr_onyx">
+        <item>নেই</item>
+        <item>তাপমাত্রা</item>
+        <item>উজ্জ্বলতা</item>
+    </string-array>
+    <string-array name="ttsvoices_unavailablestr">
+        <item>কণ্ঠ পরিবর্তন উপলব্ধ নয়</item>
+    </string-array>
+</resources>

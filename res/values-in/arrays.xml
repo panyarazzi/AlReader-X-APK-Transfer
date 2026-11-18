@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookmark_typesstr">
+        <item>Penanda buku</item>
+        <item>Kutipan</item>
+        <item>Penanda buku + Kutipan</item>
+    </string-array>
+    <string-array name="eink_adaptation_str">
+        <item>Tidak ada</item>
+        <item>EInk Monokrom</item>
+        <item>EInk Warna</item>
+    </string-array>
+    <string-array name="marker_typesstr">
+        <item>Jangan tandai</item>
+        <item>Latar belakang merah</item>
+        <item>Latar belakang kuning</item>
+        <item>Latar belakang hijau</item>
+        <item>Garis bawah</item>
+        <item>Garis bawah merah</item>
+        <item>Garis bawah kuning</item>
+        <item>Garis bawah hijau</item>
+    </string-array>
+    <string-array name="marker_underlinestr">
+        <item>Lurus</item>
+        <item>Tulisan tangan</item>
+        <item>Bergelombang</item>
+    </string-array>
+    <string-array name="setting_fonts_spacewidthstr">
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100% (Default)</item>
+        <item>110%</item>
+        <item>120%</item>
+        <item>130%</item>
+    </string-array>
+    <string-array name="setting_pages_firstletterstr">
+        <item>Tidak pernah</item>
+        <item>Setiap paragraf</item>
+        <item>Paragraf pertama</item>
+        <item>Klasik setiap paragraf</item>
+        <item>Klasik paragraf pertama</item>
+    </string-array>
+    <string-array name="settings_backup_type_arr">
+        <item>Pengaturan</item>
+        <item>Pengaturan + Database yang dibaca</item>
+        <item>Pengaturan + Sumber Daya</item>
+        <item>Semua</item>
+    </string-array>
+    <string-array name="settings_books_dialogstr">
+        <item>Tidak ada</item>
+        <item>Hapus spasi di awal</item>
+        <item>Hapus spasi, ganti tanda hubung</item>
+    </string-array>
+    <string-array name="settings_color_usestatusback_str">
+        <item>Tidak pernah</item>
+        <item>Jika ada skin</item>
+        <item>Selalu</item>
+    </string-array>
+    <string-array name="settings_common_animation_alwaysstr">
+        <item>Tidak pernah</item>
+        <item>Hanya saat menggesek</item>
+        <item>Selalu</item>
+    </string-array>
+    <string-array name="settings_common_animation_typestr">
+        <item>3D OpenGL tipe 1</item>
+        <item>3D OpenGL tipe 2</item>
+        <item>Geser ke kiri</item>
+        <item>Geser ke kanan</item>
+        <item>Gelombang</item>
+        <item>Geser dua halaman</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typeeinkstr">
+        <item>Gelombang</item>
+        <item>Membalik halaman</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typestr">
+        <item>Gelombang</item>
+        <item>Gulir</item>
+        <item>Membalik halaman dengan animasi</item>
+        <item>Membalik halaman</item>
+    </string-array>
+    <string-array name="settings_common_backlighthardwaremin_str">
+        <item>1%</item>
+        <item>2% (Default)</item>
+        <item>3%</item>
+        <item>4%</item>
+        <item>5%</item>
+    </string-array>
+    <string-array name="settings_common_backlightkeep_str">
+        <item>Seperti di sistem</item>
+        <item>2 menit</item>
+        <item>3 menit</item>
+        <item>5 menit</item>
+        <item>10 menit</item>
+        <item>30 menit</item>
+        <item>Terus menerus</item>
+    </string-array>
+    <string-array name="settings_common_eink_refreshratestr">
+        <item>Setelah 5 guliran</item>
+        <item>Setelah 10 guliran</item>
+        <item>Setelah 20 guliran</item>
+        <item>Setelah 50 guliran</item>
+        <item>Jangan segarkan</item>
+    </string-array>
+    <string-array name="settings_common_fontscalestr">
+        <item>Seperti di sistem</item>
+        <item>Paling kecil</item>
+        <item>Kecil</item>
+        <item>Normal</item>
+        <item>Besar</item>
+        <item>Lebih besar lagi</item>
+        <item>Paling besar</item>
+    </string-array>
+    <string-array name="settings_common_gammamodestr">
+        <item>Tidak ada</item>
+        <item>Untuk seluruh halaman</item>
+        <item>Hanya untuk gambar</item>
+    </string-array>
+    <string-array name="settings_common_gammavaluestr">
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.9</item>
+        <item>1.0 (Default)</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>1.4</item>
+        <item>1.5</item>
+        <item>1.6</item>
+        <item>1.7</item>
+        <item>1.8</item>
+        <item>1.9</item>
+        <item>2.0</item>
+        <item>2.1</item>
+        <item>2.2</item>
+        <item>2.3</item>
+    </string-array>
+    <string-array name="settings_common_libraryfirstletter_str">
+        <item>Selalu</item>
+        <item>Default</item>
+        <item>Hanya dalam daftar besar</item>
+        <item>Sebaiknya tidak digunakan</item>
+    </string-array>
+    <string-array name="settings_common_onyxeink_refreshratestr">
+        <item>Selalu</item>
+        <item>Setelah 1 guliran</item>
+        <item>Setelah 2 guliran</item>
+        <item>Setelah 3 guliran</item>
+        <item>Setelah 5 guliran</item>
+        <item>Setelah 7 guliran</item>
+        <item>Setelah 10 guliran</item>
+        <item>Setelah 20 guliran</item>
+        <item>Setelah 50 guliran</item>
+        <item>Setelah 75 guliran</item>
+        <item>Setelah 100 guliran</item>
+        <item>Jangan segarkan</item>
+    </string-array>
+    <string-array name="settings_common_rotateonyxstr">
+        <item>Seperti di sistem</item>
+        <item>Tampilan potret</item>
+        <item>Tampilan lanskap</item>
+        <item>Potret terbalik</item>
+        <item>Lanskap terbalik</item>
+    </string-array>
+    <string-array name="settings_common_rotatestr">
+        <item>Seperti di sistem</item>
+        <item>Sensor</item>
+        <item>Potret + Sensor</item>
+        <item>Lanskap + Sensor</item>
+        <item>Tampilan potret</item>
+        <item>Tampilan lanskap</item>
+        <item>Potret terbalik</item>
+        <item>Lanskap terbalik</item>
+    </string-array>
+    <string-array name="settings_common_ttsalarm_str">
+        <item>Tidak ada</item>
+        <item>Bip merdu</item>
+        <item>Peringatan suara</item>
+        <item>Mute</item>
+    </string-array>
+    <string-array name="settings_common_ttspause_str">
+        <item>Tidak ada</item>
+        <item>Pendek</item>
+        <item>Sedang</item>
+        <item>Panjang</item>
+    </string-array>
+    <string-array name="settings_common_ttsreadnotes_str">
+        <item>Tidak ada</item>
+        <item>Di tempat</item>
+        <item>Di akhir kalimat</item>
+    </string-array>
+    <string-array name="settings_common_ttsselectedtext_str">
+        <item>Baca yang dipilih sekali</item>
+        <item>Baca yang dipilih berulang kali</item>
+        <item>Baca sampai akhir buku</item>
+    </string-array>
+    <string-array name="settings_common_ttstimer_str">
+        <item>Tidak ada</item>
+        <item>5 menit</item>
+        <item>10 menit</item>
+        <item>15 menit</item>
+        <item>20 menit</item>
+        <item>25 menit</item>
+        <item>30 menit</item>
+        <item>40 menit</item>
+        <item>50 menit</item>
+        <item>60 menit</item>
+        <item>90 menit</item>
+    </string-array>
+    <string-array name="settings_interface_statusinfo_str">
+        <item>Nama file</item>
+        <item>Judul</item>
+        <item>Penulis</item>
+        <item>Judul + Penulis</item>
+        <item>Judul bab</item>
+        <item>Halaman bab</item>
+        <item>Waktu membaca buku</item>
+        <item>Sisa waktu membaca bab</item>
+    </string-array>
+    <string-array name="settings_interface_theme21_str">
+        <item>Sistem terang</item>
+        <item>Sistem gelap</item>
+        <item>E Ink</item>
+        <item>Kustom</item>
+    </string-array>
+    <string-array name="settings_interface_theme28_str">
+        <item>Seperti di sistem</item>
+        <item>Sistem terang</item>
+        <item>Sistem gelap</item>
+        <item>E Ink</item>
+        <item>Kustom</item>
+    </string-array>
+    <string-array name="settings_interface_themebutton_str">
+        <item>Varian 1</item>
+        <item>Varian 2</item>
+        <item>Varian 3</item>
+        <item>Varian 4</item>
+    </string-array>
+    <string-array name="settings_limit_height_inline_imagesstr">
+        <item>Tidak pernah</item>
+        <item>Otomatis</item>
+        <item>Selalu</item>
+    </string-array>
+    <string-array name="settings_manage_backstr">
+        <item>Tindakan sistem</item>
+        <item>Menu</item>
+        <item>Sembunyikan</item>
+        <item>Kembali + Sembunyikan</item>
+        <item>Kembali + Menu</item>
+    </string-array>
+    <string-array name="settings_manage_backstr_onyx">
+        <item>Tindakan sistem</item>
+        <item>Menu</item>
+        <item>Sembunyikan</item>
+        <item>Kembali + Sembunyikan</item>
+        <item>Kembali + Menu</item>
+        <item>Halaman berikutnya</item>
+        <item>Tidak ada tindakan</item>
+    </string-array>
+    <string-array name="settings_manage_doubletapsstr">
+        <item>Tidak ada</item>
+        <item>Kamus</item>
+        <item>Salin teks</item>
+        <item>Menu cepat</item>
+        <item>Pilih teks</item>
+    </string-array>
+    <string-array name="settings_manage_longtapstr">
+        <item>Pilih teks</item>
+        <item>Kamus</item>
+        <item>Pilih + Kamus</item>
+        <item>Tindakan</item>
+    </string-array>
+    <string-array name="settings_manage_tts_swipes">
+        <item>Tidak ada tindakan</item>
+        <item>Kalimat sebelumnya/berikutnya</item>
+        <item>Kalimat berikutnya/sebelumnya</item>
+        <item>Nada</item>
+        <item>Volume</item>
+        <item>Kecepatan</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr">
+        <item>Gulir halaman halus</item>
+        <item>Gulir baris halus</item>
+        <item>Gulir baris</item>
+        <item>Tindakan</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr_eink">
+        <item>Gulir halaman halus</item>
+        <item>Gulir baris</item>
+        <item>Jangan gunakan</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightleftstr_onyx">
+        <item>Tidak ada</item>
+        <item>Cahaya dingin</item>
+        <item>Cahaya hangat</item>
+        <item>Kedua level</item>
+        <item>Suhu Dingin/Hangat</item>
+        <item>Suhu Hangat/Dingin</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightrightstr_onyx">
+        <item>Tidak ada</item>
+        <item>Cahaya hangat</item>
+        <item>Cahaya dingin</item>
+        <item>Kedua level</item>
+        <item>Suhu Dingin/Hangat</item>
+        <item>Suhu Hangat/Dingin</item>
+    </string-array>
+    <string-array name="settings_opendialogs_taps_str">
+        <item>Buka</item>
+        <item>Properti buku</item>
+    </string-array>
+    <string-array name="settings_pages_columncountstr">
+        <item>Otomatis</item>
+        <item>Satu</item>
+        <item>Dua</item>
+        <item>Dua dalam lanskap</item>
+    </string-array>
+    <string-array name="settings_pages_imagescalestr">
+        <item>Otomatis</item>
+        <item>Asli (100%)</item>
+        <item>150%</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_notesonpagestr">
+        <item>Tidak ada</item>
+        <item>1 baris per halaman</item>
+        <item>2 baris per halaman</item>
+        <item>3 baris per halaman</item>
+        <item>5 baris per halaman</item>
+        <item>Jika memungkinkan, sepenuhnya</item>
+        <item>Munculan</item>
+    </string-array>
+    <string-array name="settings_pages_pagesizestr">
+        <item>Otomatis</item>
+        <item>512</item>
+        <item>768</item>
+        <item>1024</item>
+        <item>1280</item>
+        <item>1536</item>
+        <item>1670</item>
+        <item>1860</item>
+        <item>2048</item>
+        <item>2340</item>
+        <item>3072</item>
+        <item>3420</item>
+        <item>4096</item>
+    </string-array>
+    <string-array name="settings_pages_progresswidthstr">
+        <item>Default</item>
+        <item>Lebih tebal</item>
+    </string-array>
+    <string-array name="settings_pages_skincalestr">
+        <item>Otomatis</item>
+        <item>Asli (100%)</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_useheaderstr">
+        <item>Tidak pernah</item>
+        <item>Hanya di jendela</item>
+        <item>Hanya di layar penuh</item>
+        <item>Selalu</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightleftstr_onyx">
+        <item>Tidak ada</item>
+        <item>Kecerahan</item>
+        <item>Suhu</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightrightstr_onyx">
+        <item>Tidak ada</item>
+        <item>Suhu</item>
+        <item>Kecerahan</item>
+    </string-array>
+    <string-array name="ttsvoices_unavailablestr">
+        <item>Perubahan suara tidak tersedia</item>
+    </string-array>
+</resources>

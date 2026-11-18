@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/mainlayout" android:paddingLeft="@dimen/dialog_padding_left" android:paddingTop="@dimen/dialog_padding_top" android:paddingRight="@dimen/dialog_padding_right" android:paddingBottom="@dimen/dialog_padding_bottom" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button android:id="@id/buttonfake" android:background="@null" android:visibility="invisible" android:layout_width="1.0px" android:layout_height="1.0px" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <com.neverland.viscomp.dialogs.CustomViewPager android:id="@id/viewpager" android:tag="paint" android:background="@null" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="32.0dp" android:layout_above="@id/settingsconfirm">
+        <com.google.android.material.tabs.TabLayout android:id="@id/maintab" android:background="@null" android:layout_width="match_parent" android:layout_height="@dimen/form_tab_height" app:tabMinWidth="100.0dp" app:tabMode="scrollable" />
+    </com.neverland.viscomp.dialogs.CustomViewPager>
+    <include layout="@layout/settingsconfirmpanelfullscreen" />
+</RelativeLayout>

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookmark_typesstr">
+        <item>Marcaj</item>
+        <item>Citat</item>
+        <item>Marcaj + Citat</item>
+    </string-array>
+    <string-array name="eink_adaptation_str">
+        <item>Nu</item>
+        <item>EInk monocrom</item>
+        <item>EInk color</item>
+    </string-array>
+    <string-array name="marker_typesstr">
+        <item>Nu marca</item>
+        <item>Fundal roșu</item>
+        <item>Fundal galben</item>
+        <item>Fundal verde</item>
+        <item>Subliniere</item>
+        <item>Subliniere roșie</item>
+        <item>Subliniere galbenă</item>
+        <item>Subliniere verde</item>
+    </string-array>
+    <string-array name="marker_underlinestr">
+        <item>Dreaptă</item>
+        <item>De mână</item>
+        <item>Unduitoare</item>
+    </string-array>
+    <string-array name="setting_fonts_spacewidthstr">
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100% (Implicit)</item>
+        <item>110%</item>
+        <item>120%</item>
+        <item>130%</item>
+    </string-array>
+    <string-array name="setting_pages_firstletterstr">
+        <item>Niciodată</item>
+        <item>Fiecare paragraf</item>
+        <item>Primul paragraf</item>
+        <item>Clasic fiecare paragraf</item>
+        <item>Clasic primul paragraf</item>
+    </string-array>
+    <string-array name="settings_backup_type_arr">
+        <item>Setări</item>
+        <item>Setări + Baza cititelor</item>
+        <item>Setări + Resurse</item>
+        <item>Tot</item>
+    </string-array>
+    <string-array name="settings_books_dialogstr">
+        <item>Nu</item>
+        <item>Elimină spații la început</item>
+        <item>Elimină spații, înlocuiește liniuță</item>
+    </string-array>
+    <string-array name="settings_color_usestatusback_str">
+        <item>Niciodată</item>
+        <item>Dacă există skin</item>
+        <item>Întotdeauna</item>
+    </string-array>
+    <string-array name="settings_common_animation_alwaysstr">
+        <item>Niciodată</item>
+        <item>Doar la glisări</item>
+        <item>Întotdeauna</item>
+    </string-array>
+    <string-array name="settings_common_animation_typestr">
+        <item>3D OpenGL tip 1</item>
+        <item>3D OpenGL tip 2</item>
+        <item>Deplasare stânga</item>
+        <item>Deplasare dreapta</item>
+        <item>Undă</item>
+        <item>Deplasare două pagini</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typeeinkstr">
+        <item>Undă</item>
+        <item>Răsfoire</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typestr">
+        <item>Undă</item>
+        <item>Sul</item>
+        <item>Răsfoire cu animație</item>
+        <item>Răsfoire</item>
+    </string-array>
+    <string-array name="settings_common_backlighthardwaremin_str">
+        <item>1%</item>
+        <item>2% (Implicit)</item>
+        <item>3%</item>
+        <item>4%</item>
+        <item>5%</item>
+    </string-array>
+    <string-array name="settings_common_backlightkeep_str">
+        <item>Ca în sistem</item>
+        <item>2 min</item>
+        <item>3 min</item>
+        <item>5 min</item>
+        <item>10 min</item>
+        <item>30 min</item>
+        <item>Permanent</item>
+    </string-array>
+    <string-array name="settings_common_eink_refreshratestr">
+        <item>După 5 răsfoiri</item>
+        <item>După 10 răsfoiri</item>
+        <item>După 20 răsfoiri</item>
+        <item>După 50 răsfoiri</item>
+        <item>Nu reîmprospăta</item>
+    </string-array>
+    <string-array name="settings_common_fontscalestr">
+        <item>Ca în sistem</item>
+        <item>Cea mai mică</item>
+        <item>Mică</item>
+        <item>Normală</item>
+        <item>Mare</item>
+        <item>Mai mare</item>
+        <item>Cea mai mare</item>
+    </string-array>
+    <string-array name="settings_common_gammamodestr">
+        <item>Nu</item>
+        <item>Pentru întreaga pagină</item>
+        <item>Doar pentru imagini</item>
+    </string-array>
+    <string-array name="settings_common_gammavaluestr">
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.9</item>
+        <item>1.0 (Implicit)</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>1.4</item>
+        <item>1.5</item>
+        <item>1.6</item>
+        <item>1.7</item>
+        <item>1.8</item>
+        <item>1.9</item>
+        <item>2.0</item>
+        <item>2.1</item>
+        <item>2.2</item>
+        <item>2.3</item>
+    </string-array>
+    <string-array name="settings_common_libraryfirstletter_str">
+        <item>Întotdeauna</item>
+        <item>Implicit</item>
+        <item>Doar în liste mari</item>
+        <item>Recomandat să nu fie folosit</item>
+    </string-array>
+    <string-array name="settings_common_onyxeink_refreshratestr">
+        <item>Întotdeauna</item>
+        <item>După 1 răsfoire</item>
+        <item>După 2 răsfoiri</item>
+        <item>După 3 răsfoiri</item>
+        <item>După 5 răsfoiri</item>
+        <item>După 7 răsfoiri</item>
+        <item>După 10 răsfoiri</item>
+        <item>După 20 răsfoiri</item>
+        <item>După 50 răsfoiri</item>
+        <item>După 75 răsfoiri</item>
+        <item>După 100 răsfoiri</item>
+        <item>Nu reîmprospăta</item>
+    </string-array>
+    <string-array name="settings_common_rotateonyxstr">
+        <item>Ca în sistem</item>
+        <item>Portret</item>
+        <item>Peisaj</item>
+        <item>Portret inversat</item>
+        <item>Peisaj inversat</item>
+    </string-array>
+    <string-array name="settings_common_rotatestr">
+        <item>Ca în sistem</item>
+        <item>Senzor</item>
+        <item>Portret + Senzor</item>
+        <item>Peisaj + Senzor</item>
+        <item>Portret</item>
+        <item>Peisaj</item>
+        <item>Portret inversat</item>
+        <item>Peisaj inversat</item>
+    </string-array>
+    <string-array name="settings_common_ttsalarm_str">
+        <item>Nu</item>
+        <item>Semnal sonor</item>
+        <item>Avertisment vocal</item>
+        <item>Mut</item>
+    </string-array>
+    <string-array name="settings_common_ttspause_str">
+        <item>Nu</item>
+        <item>Scurtă</item>
+        <item>Medie</item>
+        <item>Lungă</item>
+    </string-array>
+    <string-array name="settings_common_ttsreadnotes_str">
+        <item>Nu</item>
+        <item>Pe loc</item>
+        <item>La sfârșitul propoziției</item>
+    </string-array>
+    <string-array name="settings_common_ttsselectedtext_str">
+        <item>Citește textul selectat o dată</item>
+        <item>Citește textul selectat în buclă</item>
+        <item>Citește până la sfârșitul cărții</item>
+    </string-array>
+    <string-array name="settings_common_ttstimer_str">
+        <item>Nu</item>
+        <item>5 min</item>
+        <item>10 min</item>
+        <item>15 min</item>
+        <item>20 min</item>
+        <item>25 min</item>
+        <item>30 min</item>
+        <item>40 min</item>
+        <item>50 min</item>
+        <item>60 min</item>
+        <item>90 min</item>
+    </string-array>
+    <string-array name="settings_interface_statusinfo_str">
+        <item>Nume fișier</item>
+        <item>Titlu</item>
+        <item>Autor</item>
+        <item>Titlu + Autor</item>
+        <item>Titlu capitol</item>
+        <item>Pagini capitol</item>
+        <item>Timp citire carte</item>
+        <item>Timp rămas citire capitol</item>
+    </string-array>
+    <string-array name="settings_interface_theme21_str">
+        <item>Sistem light</item>
+        <item>Sistem dark</item>
+        <item>E Ink</item>
+        <item>Personalizată</item>
+    </string-array>
+    <string-array name="settings_interface_theme28_str">
+        <item>Ca în sistem</item>
+        <item>Sistem light</item>
+        <item>Sistem dark</item>
+        <item>E Ink</item>
+        <item>Personalizată</item>
+    </string-array>
+    <string-array name="settings_interface_themebutton_str">
+        <item>Opțiunea 1</item>
+        <item>Opțiunea 2</item>
+        <item>Opțiunea 3</item>
+        <item>Opțiunea 4</item>
+    </string-array>
+    <string-array name="settings_limit_height_inline_imagesstr">
+        <item>Niciodată</item>
+        <item>Auto</item>
+        <item>Întotdeauna</item>
+    </string-array>
+    <string-array name="settings_manage_backstr">
+        <item>Acțiune sistem</item>
+        <item>Meniu</item>
+        <item>Ascunde</item>
+        <item>Înapoi + Ascunde</item>
+        <item>Înapoi + Meniu</item>
+    </string-array>
+    <string-array name="settings_manage_backstr_onyx">
+        <item>Acțiune sistem</item>
+        <item>Meniu</item>
+        <item>Ascunde</item>
+        <item>Înapoi + Ascunde</item>
+        <item>Înapoi + Meniu</item>
+        <item>Pagina următoare</item>
+        <item>Nicio acțiune</item>
+    </string-array>
+    <string-array name="settings_manage_doubletapsstr">
+        <item>Nu</item>
+        <item>Dicționar</item>
+        <item>Copiere text</item>
+        <item>Meniu rapid</item>
+        <item>Selectare text</item>
+    </string-array>
+    <string-array name="settings_manage_longtapstr">
+        <item>Selectare text</item>
+        <item>Dicționar</item>
+        <item>Selectare + Dicționar</item>
+        <item>Acțiuni</item>
+    </string-array>
+    <string-array name="settings_manage_tts_swipes">
+        <item>Nicio acțiune</item>
+        <item>Propoziția anterioară/următoare</item>
+        <item>Propoziția următoare/anterioară</item>
+        <item>Ton</item>
+        <item>Volum</item>
+        <item>Viteză</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr">
+        <item>Defilare pagină fluidă</item>
+        <item>Defilare linie fluidă</item>
+        <item>Defilare linie cu salt</item>
+        <item>Acțiuni</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr_eink">
+        <item>Defilare pagină fluidă</item>
+        <item>Defilare linie cu salt</item>
+        <item>Nu folosi</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightleftstr_onyx">
+        <item>Nu</item>
+        <item>Lumină rece</item>
+        <item>Lumină caldă</item>
+        <item>Ambele niveluri</item>
+        <item>Temperatură Rece/Cald</item>
+        <item>Temperatură Cald/Rece</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightrightstr_onyx">
+        <item>Nu</item>
+        <item>Lumină caldă</item>
+        <item>Lumină rece</item>
+        <item>Ambele niveluri</item>
+        <item>Temperatură Rece/Cald</item>
+        <item>Temperatură Cald/Rece</item>
+    </string-array>
+    <string-array name="settings_opendialogs_taps_str">
+        <item>Deschide</item>
+        <item>Proprietăți carte</item>
+    </string-array>
+    <string-array name="settings_pages_columncountstr">
+        <item>Auto</item>
+        <item>Una</item>
+        <item>Două</item>
+        <item>Două în peisaj</item>
+    </string-array>
+    <string-array name="settings_pages_imagescalestr">
+        <item>Auto</item>
+        <item>Original (100%)</item>
+        <item>150%</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_notesonpagestr">
+        <item>Nu</item>
+        <item>1 rând pe pagină</item>
+        <item>2 rânduri pe pagină</item>
+        <item>3 rânduri pe pagină</item>
+        <item>5 rânduri pe pagină</item>
+        <item>Complet dacă posibil</item>
+        <item>Fereastră pop-up</item>
+    </string-array>
+    <string-array name="settings_pages_pagesizestr">
+        <item>Auto</item>
+        <item>512</item>
+        <item>768</item>
+        <item>1024</item>
+        <item>1280</item>
+        <item>1536</item>
+        <item>1670</item>
+        <item>1860</item>
+        <item>2048</item>
+        <item>2340</item>
+        <item>3072</item>
+        <item>3420</item>
+        <item>4096</item>
+    </string-array>
+    <string-array name="settings_pages_progresswidthstr">
+        <item>Implicit</item>
+        <item>Mai groasă</item>
+    </string-array>
+    <string-array name="settings_pages_skincalestr">
+        <item>Auto</item>
+        <item>Original (100%)</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_useheaderstr">
+        <item>Niciodată</item>
+        <item>Doar în fereastră</item>
+        <item>Doar pe tot ecranul</item>
+        <item>Întotdeauna</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightleftstr_onyx">
+        <item>Nu</item>
+        <item>Luminozitate</item>
+        <item>Temperatură</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightrightstr_onyx">
+        <item>Nu</item>
+        <item>Temperatură</item>
+        <item>Luminozitate</item>
+    </string-array>
+    <string-array name="ttsvoices_unavailablestr">
+        <item>Schimbarea vocilor nu este disponibilă</item>
+    </string-array>
+</resources>

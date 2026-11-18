@@ -1,0 +1,778 @@
+.class synthetic Lcom/onyx/android/sdk/device/SDMDevice$a;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/onyx/android/sdk/device/SDMDevice;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1008
+    name = null
+.end annotation
+
+
+# static fields
+.field static final synthetic a:[I
+
+.field static final synthetic b:[I
+
+.field static final synthetic c:[I
+
+.field static final synthetic d:[I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 7
+
+    .line 1
+    invoke-static {}, Lcom/onyx/android/sdk/api/device/epd/UpdatePolicy;->values()[Lcom/onyx/android/sdk/api/device/epd/UpdatePolicy;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    array-length v0, v0
+
+    .line 6
+    new-array v0, v0, [I
+
+    .line 7
+    .line 8
+    sput-object v0, Lcom/onyx/android/sdk/device/SDMDevice$a;->d:[I
+
+    .line 9
+    .line 10
+    const/4 v1, 0x1
+
+    .line 11
+    :try_start_0
+    sget-object v2, Lcom/onyx/android/sdk/api/device/epd/UpdatePolicy;->Automatic:Lcom/onyx/android/sdk/api/device/epd/UpdatePolicy;
+
+    .line 12
+    .line 13
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v2
+
+    .line 17
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 18
+    .line 19
+    :catch_0
+    const/4 v0, 0x2
+
+    .line 20
+    :try_start_1
+    sget-object v2, Lcom/onyx/android/sdk/device/SDMDevice$a;->d:[I
+
+    .line 21
+    .line 22
+    sget-object v3, Lcom/onyx/android/sdk/api/device/epd/UpdatePolicy;->GUIntervally:Lcom/onyx/android/sdk/api/device/epd/UpdatePolicy;
+
+    .line 23
+    .line 24
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v3
+
+    .line 28
+    aput v0, v2, v3
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 29
+    .line 30
+    :catch_1
+    invoke-static {}, Lcom/onyx/android/sdk/api/device/epd/UpdateScheme;->values()[Lcom/onyx/android/sdk/api/device/epd/UpdateScheme;
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-object v2
+
+    .line 34
+    array-length v2, v2
+
+    .line 35
+    new-array v2, v2, [I
+
+    .line 36
+    .line 37
+    sput-object v2, Lcom/onyx/android/sdk/device/SDMDevice$a;->c:[I
+
+    .line 38
+    .line 39
+    :try_start_2
+    sget-object v3, Lcom/onyx/android/sdk/api/device/epd/UpdateScheme;->SNAPSHOT:Lcom/onyx/android/sdk/api/device/epd/UpdateScheme;
+
+    .line 40
+    .line 41
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    .line 42
+    .line 43
+    .line 44
+    move-result v3
+
+    .line 45
+    aput v1, v2, v3
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    .line 46
+    .line 47
+    :catch_2
+    :try_start_3
+    sget-object v2, Lcom/onyx/android/sdk/device/SDMDevice$a;->c:[I
+
+    .line 48
+    .line 49
+    sget-object v3, Lcom/onyx/android/sdk/api/device/epd/UpdateScheme;->QUEUE:Lcom/onyx/android/sdk/api/device/epd/UpdateScheme;
+
+    .line 50
+    .line 51
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    .line 52
+    .line 53
+    .line 54
+    move-result v3
+
+    .line 55
+    aput v0, v2, v3
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    .line 56
+    .line 57
+    :catch_3
+    const/4 v2, 0x3
+
+    .line 58
+    :try_start_4
+    sget-object v3, Lcom/onyx/android/sdk/device/SDMDevice$a;->c:[I
+
+    .line 59
+    .line 60
+    sget-object v4, Lcom/onyx/android/sdk/api/device/epd/UpdateScheme;->QUEUE_AND_MERGE:Lcom/onyx/android/sdk/api/device/epd/UpdateScheme;
+
+    .line 61
+    .line 62
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    .line 63
+    .line 64
+    .line 65
+    move-result v4
+
+    .line 66
+    aput v2, v3, v4
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    .line 67
+    .line 68
+    :catch_4
+    invoke-static {}, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->values()[Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 69
+    .line 70
+    .line 71
+    move-result-object v3
+
+    .line 72
+    array-length v3, v3
+
+    .line 73
+    new-array v3, v3, [I
+
+    .line 74
+    .line 75
+    sput-object v3, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 76
+    .line 77
+    :try_start_5
+    sget-object v4, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->GU_FAST:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 78
+    .line 79
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    .line 80
+    .line 81
+    .line 82
+    move-result v4
+
+    .line 83
+    aput v1, v3, v4
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    .line 84
+    .line 85
+    :catch_5
+    :try_start_6
+    sget-object v3, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 86
+    .line 87
+    sget-object v4, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->DU:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 88
+    .line 89
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    .line 90
+    .line 91
+    .line 92
+    move-result v4
+
+    .line 93
+    aput v0, v3, v4
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    .line 94
+    .line 95
+    :catch_6
+    :try_start_7
+    sget-object v3, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 96
+    .line 97
+    sget-object v4, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->DU4:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 98
+    .line 99
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    .line 100
+    .line 101
+    .line 102
+    move-result v4
+
+    .line 103
+    aput v2, v3, v4
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
+
+    .line 104
+    .line 105
+    :catch_7
+    const/4 v3, 0x4
+
+    .line 106
+    :try_start_8
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 107
+    .line 108
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->DU_QUALITY:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 109
+    .line 110
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 111
+    .line 112
+    .line 113
+    move-result v5
+
+    .line 114
+    aput v3, v4, v5
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
+
+    .line 115
+    .line 116
+    :catch_8
+    :try_start_9
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 117
+    .line 118
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->GU:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 119
+    .line 120
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 121
+    .line 122
+    .line 123
+    move-result v5
+
+    .line 124
+    const/4 v6, 0x5
+
+    .line 125
+    aput v6, v4, v5
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
+
+    .line 126
+    .line 127
+    :catch_9
+    :try_start_a
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 128
+    .line 129
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->GC:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 130
+    .line 131
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 132
+    .line 133
+    .line 134
+    move-result v5
+
+    .line 135
+    const/4 v6, 0x6
+
+    .line 136
+    aput v6, v4, v5
+    :try_end_a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a
+
+    .line 137
+    .line 138
+    :catch_a
+    :try_start_b
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 139
+    .line 140
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->GCC:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 141
+    .line 142
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 143
+    .line 144
+    .line 145
+    move-result v5
+
+    .line 146
+    const/4 v6, 0x7
+
+    .line 147
+    aput v6, v4, v5
+    :try_end_b
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_b
+
+    .line 148
+    .line 149
+    :catch_b
+    :try_start_c
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 150
+    .line 151
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->DEEP_GC:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 152
+    .line 153
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 154
+    .line 155
+    .line 156
+    move-result v5
+
+    .line 157
+    const/16 v6, 0x8
+
+    .line 158
+    .line 159
+    aput v6, v4, v5
+    :try_end_c
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_c
+
+    .line 160
+    .line 161
+    :catch_c
+    :try_start_d
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 162
+    .line 163
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->ANIMATION:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 164
+    .line 165
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 166
+    .line 167
+    .line 168
+    move-result v5
+
+    .line 169
+    const/16 v6, 0x9
+
+    .line 170
+    .line 171
+    aput v6, v4, v5
+    :try_end_d
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_d .. :try_end_d} :catch_d
+
+    .line 172
+    .line 173
+    :catch_d
+    :try_start_e
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 174
+    .line 175
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->ANIMATION_QUALITY:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 176
+    .line 177
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 178
+    .line 179
+    .line 180
+    move-result v5
+
+    .line 181
+    const/16 v6, 0xa
+
+    .line 182
+    .line 183
+    aput v6, v4, v5
+    :try_end_e
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_e .. :try_end_e} :catch_e
+
+    .line 184
+    .line 185
+    :catch_e
+    :try_start_f
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 186
+    .line 187
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->ANIMATION_MONO:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 188
+    .line 189
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 190
+    .line 191
+    .line 192
+    move-result v5
+
+    .line 193
+    const/16 v6, 0xb
+
+    .line 194
+    .line 195
+    aput v6, v4, v5
+    :try_end_f
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_f .. :try_end_f} :catch_f
+
+    .line 196
+    .line 197
+    :catch_f
+    :try_start_10
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 198
+    .line 199
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->ANIMATION_X:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 200
+    .line 201
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 202
+    .line 203
+    .line 204
+    move-result v5
+
+    .line 205
+    const/16 v6, 0xc
+
+    .line 206
+    .line 207
+    aput v6, v4, v5
+    :try_end_10
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_10 .. :try_end_10} :catch_10
+
+    .line 208
+    .line 209
+    :catch_10
+    :try_start_11
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 210
+    .line 211
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->GC4:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 212
+    .line 213
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 214
+    .line 215
+    .line 216
+    move-result v5
+
+    .line 217
+    const/16 v6, 0xd
+
+    .line 218
+    .line 219
+    aput v6, v4, v5
+    :try_end_11
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_11 .. :try_end_11} :catch_11
+
+    .line 220
+    .line 221
+    :catch_11
+    :try_start_12
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 222
+    .line 223
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->REGAL:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 224
+    .line 225
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 226
+    .line 227
+    .line 228
+    move-result v5
+
+    .line 229
+    const/16 v6, 0xe
+
+    .line 230
+    .line 231
+    aput v6, v4, v5
+    :try_end_12
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_12 .. :try_end_12} :catch_12
+
+    .line 232
+    .line 233
+    :catch_12
+    :try_start_13
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 234
+    .line 235
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->REGAL_D:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 236
+    .line 237
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 238
+    .line 239
+    .line 240
+    move-result v5
+
+    .line 241
+    const/16 v6, 0xf
+
+    .line 242
+    .line 243
+    aput v6, v4, v5
+    :try_end_13
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_13 .. :try_end_13} :catch_13
+
+    .line 244
+    .line 245
+    :catch_13
+    :try_start_14
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 246
+    .line 247
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->REGAL_PLUS:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 248
+    .line 249
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 250
+    .line 251
+    .line 252
+    move-result v5
+
+    .line 253
+    const/16 v6, 0x10
+
+    .line 254
+    .line 255
+    aput v6, v4, v5
+    :try_end_14
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_14} :catch_14
+
+    .line 256
+    .line 257
+    :catch_14
+    :try_start_15
+    sget-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->b:[I
+
+    .line 258
+    .line 259
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/UpdateMode;->HAND_WRITING_REPAINT_MODE:Lcom/onyx/android/sdk/api/device/epd/UpdateMode;
+
+    .line 260
+    .line 261
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 262
+    .line 263
+    .line 264
+    move-result v5
+
+    .line 265
+    const/16 v6, 0x11
+
+    .line 266
+    .line 267
+    aput v6, v4, v5
+    :try_end_15
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_15 .. :try_end_15} :catch_15
+
+    .line 268
+    .line 269
+    :catch_15
+    invoke-static {}, Lcom/onyx/android/sdk/api/device/epd/EPDMode;->values()[Lcom/onyx/android/sdk/api/device/epd/EPDMode;
+
+    .line 270
+    .line 271
+    .line 272
+    move-result-object v4
+
+    .line 273
+    array-length v4, v4
+
+    .line 274
+    new-array v4, v4, [I
+
+    .line 275
+    .line 276
+    sput-object v4, Lcom/onyx/android/sdk/device/SDMDevice$a;->a:[I
+
+    .line 277
+    .line 278
+    :try_start_16
+    sget-object v5, Lcom/onyx/android/sdk/api/device/epd/EPDMode;->FULL:Lcom/onyx/android/sdk/api/device/epd/EPDMode;
+
+    .line 279
+    .line 280
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
+    .line 281
+    .line 282
+    .line 283
+    move-result v5
+
+    .line 284
+    aput v1, v4, v5
+    :try_end_16
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_16 .. :try_end_16} :catch_16
+
+    .line 285
+    .line 286
+    :catch_16
+    :try_start_17
+    sget-object v1, Lcom/onyx/android/sdk/device/SDMDevice$a;->a:[I
+
+    .line 287
+    .line 288
+    sget-object v4, Lcom/onyx/android/sdk/api/device/epd/EPDMode;->AUTO:Lcom/onyx/android/sdk/api/device/epd/EPDMode;
+
+    .line 289
+    .line 290
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    .line 291
+    .line 292
+    .line 293
+    move-result v4
+
+    .line 294
+    aput v0, v1, v4
+    :try_end_17
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_17 .. :try_end_17} :catch_17
+
+    .line 295
+    .line 296
+    :catch_17
+    :try_start_18
+    sget-object v0, Lcom/onyx/android/sdk/device/SDMDevice$a;->a:[I
+
+    .line 297
+    .line 298
+    sget-object v1, Lcom/onyx/android/sdk/api/device/epd/EPDMode;->TEXT:Lcom/onyx/android/sdk/api/device/epd/EPDMode;
+
+    .line 299
+    .line 300
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    .line 301
+    .line 302
+    .line 303
+    move-result v1
+
+    .line 304
+    aput v2, v0, v1
+    :try_end_18
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_18 .. :try_end_18} :catch_18
+
+    .line 305
+    .line 306
+    :catch_18
+    :try_start_19
+    sget-object v0, Lcom/onyx/android/sdk/device/SDMDevice$a;->a:[I
+
+    .line 307
+    .line 308
+    sget-object v1, Lcom/onyx/android/sdk/api/device/epd/EPDMode;->AUTO_PART:Lcom/onyx/android/sdk/api/device/epd/EPDMode;
+
+    .line 309
+    .line 310
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    .line 311
+    .line 312
+    .line 313
+    move-result v1
+
+    .line 314
+    aput v3, v0, v1
+    :try_end_19
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_19 .. :try_end_19} :catch_19
+
+    .line 315
+    .line 316
+    :catch_19
+    return-void
+.end method

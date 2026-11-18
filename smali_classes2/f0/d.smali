@@ -1,0 +1,74 @@
+.class public final synthetic Lf0/d;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lorg/apache/commons/io/function/IOPredicate;
+
+
+# direct methods
+.method public synthetic constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public synthetic and(Lorg/apache/commons/io/function/IOPredicate;)Lorg/apache/commons/io/function/IOPredicate;
+    .locals 0
+
+    .line 1
+    invoke-static {p0, p1}, Lf0/x0;->a(Lorg/apache/commons/io/function/IOPredicate;Lorg/apache/commons/io/function/IOPredicate;)Lorg/apache/commons/io/function/IOPredicate;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic asPredicate()Ljava/util/function/Predicate;
+    .locals 1
+
+    .line 1
+    invoke-static {p0}, Lf0/x0;->b(Lorg/apache/commons/io/function/IOPredicate;)Ljava/util/function/Predicate;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic negate()Lorg/apache/commons/io/function/IOPredicate;
+    .locals 1
+
+    .line 1
+    invoke-static {p0}, Lf0/x0;->c(Lorg/apache/commons/io/function/IOPredicate;)Lorg/apache/commons/io/function/IOPredicate;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic or(Lorg/apache/commons/io/function/IOPredicate;)Lorg/apache/commons/io/function/IOPredicate;
+    .locals 0
+
+    .line 1
+    invoke-static {p0, p1}, Lf0/x0;->d(Lorg/apache/commons/io/function/IOPredicate;Lorg/apache/commons/io/function/IOPredicate;)Lorg/apache/commons/io/function/IOPredicate;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final test(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    invoke-static {p1}, Lf0/g;->e(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method

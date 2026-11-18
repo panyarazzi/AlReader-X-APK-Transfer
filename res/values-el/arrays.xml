@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookmark_typesstr">
+        <item>Σελιδοδείκτης</item>
+        <item>Απόσπασμα</item>
+        <item>Σελιδοδείκτης + Απόσπασμα</item>
+    </string-array>
+    <string-array name="eink_adaptation_str">
+        <item>Όχι</item>
+        <item>Μονόχρωμο EInk</item>
+        <item>Έγχρωμο EInk</item>
+    </string-array>
+    <string-array name="marker_typesstr">
+        <item>Να μη σημανθεί</item>
+        <item>Κόκκινο φόντο</item>
+        <item>Κίτρινο φόντο</item>
+        <item>Πράσινο φόντο</item>
+        <item>Υπογράμμιση</item>
+        <item>Κόκκινη υπογράμμιση</item>
+        <item>Κίτρινη υπογράμμιση</item>
+        <item>Πράσινη υπογράμμιση</item>
+    </string-array>
+    <string-array name="marker_underlinestr">
+        <item>Ευθεία</item>
+        <item>Χειρόγραφη</item>
+        <item>Κυματοειδής</item>
+    </string-array>
+    <string-array name="setting_fonts_spacewidthstr">
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100% (Προεπιλογή)</item>
+        <item>110%</item>
+        <item>120%</item>
+        <item>130%</item>
+    </string-array>
+    <string-array name="setting_pages_firstletterstr">
+        <item>Ποτέ</item>
+        <item>Κάθε παράγραφος</item>
+        <item>Πρώτη παράγραφος</item>
+        <item>Κλασικό κάθε παράγραφος</item>
+        <item>Κλασικό πρώτη παράγραφος</item>
+    </string-array>
+    <string-array name="settings_backup_type_arr">
+        <item>Ρυθμίσεις</item>
+        <item>Ρυθμίσεις + Βάση δεδομένων ανάγνωσης</item>
+        <item>Ρυθμίσεις + Πόροι</item>
+        <item>Όλα</item>
+    </string-array>
+    <string-array name="settings_books_dialogstr">
+        <item>Όχι</item>
+        <item>Αφαίρεση κενών στην αρχή</item>
+        <item>Αφαίρεση κενών, αντικατάσταση παύλας</item>
+    </string-array>
+    <string-array name="settings_color_usestatusback_str">
+        <item>Ποτέ</item>
+        <item>Αν υπάρχει θέμα</item>
+        <item>Πάντα</item>
+    </string-array>
+    <string-array name="settings_common_animation_alwaysstr">
+        <item>Ποτέ</item>
+        <item>Μόνο κατά τις ολισθήσεις</item>
+        <item>Πάντα</item>
+    </string-array>
+    <string-array name="settings_common_animation_typestr">
+        <item>3D OpenGL τύπου 1</item>
+        <item>3D OpenGL τύπου 2</item>
+        <item>Μετατόπιση αριστερά</item>
+        <item>Μετατόπιση δεξιά</item>
+        <item>Κύμα</item>
+        <item>Μετατόπιση δύο σελίδων</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typeeinkstr">
+        <item>Κύμα</item>
+        <item>Αλλαγή σελίδας</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typestr">
+        <item>Κύμα</item>
+        <item>Πάπυρος</item>
+        <item>Αλλαγή σελίδας με κίνηση</item>
+        <item>Αλλαγή σελίδας</item>
+    </string-array>
+    <string-array name="settings_common_backlighthardwaremin_str">
+        <item>1%</item>
+        <item>2% (Προεπιλογή)</item>
+        <item>3%</item>
+        <item>4%</item>
+        <item>5%</item>
+    </string-array>
+    <string-array name="settings_common_backlightkeep_str">
+        <item>Όπως στο σύστημα</item>
+        <item>2 λεπτά</item>
+        <item>3 λεπτά</item>
+        <item>5 λεπτά</item>
+        <item>10 λεπτά</item>
+        <item>30 λεπτά</item>
+        <item>Συνεχώς</item>
+    </string-array>
+    <string-array name="settings_common_eink_refreshratestr">
+        <item>Μετά από 5 αλλαγές σελίδας</item>
+        <item>Μετά από 10 αλλαγές σελίδας</item>
+        <item>Μετά από 20 αλλαγές σελίδας</item>
+        <item>Μετά από 50 αλλαγές σελίδας</item>
+        <item>Να μην ανανεώνεται</item>
+    </string-array>
+    <string-array name="settings_common_fontscalestr">
+        <item>Όπως στο σύστημα</item>
+        <item>Πολύ μικρό</item>
+        <item>Μικρό</item>
+        <item>Κανονικό</item>
+        <item>Μεγάλο</item>
+        <item>Ακόμα μεγαλύτερο</item>
+        <item>Πολύ μεγάλο</item>
+    </string-array>
+    <string-array name="settings_common_gammamodestr">
+        <item>Όχι</item>
+        <item>Για ολόκληρη τη σελίδα</item>
+        <item>Μόνο για εικόνες</item>
+    </string-array>
+    <string-array name="settings_common_gammavaluestr">
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.9</item>
+        <item>1.0 (Προεπιλογή)</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>1.4</item>
+        <item>1.5</item>
+        <item>1.6</item>
+        <item>1.7</item>
+        <item>1.8</item>
+        <item>1.9</item>
+        <item>2.0</item>
+        <item>2.1</item>
+        <item>2.2</item>
+        <item>2.3</item>
+    </string-array>
+    <string-array name="settings_common_libraryfirstletter_str">
+        <item>Πάντα</item>
+        <item>Προεπιλογή</item>
+        <item>Μόνο σε μεγάλες λίστες</item>
+        <item>Κατά προτίμηση να μην χρησιμοποιείται</item>
+    </string-array>
+    <string-array name="settings_common_onyxeink_refreshratestr">
+        <item>Πάντα</item>
+        <item>Μετά από 1 αλλαγή σελίδας</item>
+        <item>Μετά από 2 αλλαγές σελίδας</item>
+        <item>Μετά από 3 αλλαγές σελίδας</item>
+        <item>Μετά από 5 αλλαγές σελίδας</item>
+        <item>Μετά από 7 αλλαγές σελίδας</item>
+        <item>Μετά από 10 αλλαγές σελίδας</item>
+        <item>Μετά από 20 αλλαγές σελίδας</item>
+        <item>Μετά από 50 αλλαγές σελίδας</item>
+        <item>Μετά από 75 αλλαγές σελίδας</item>
+        <item>Μετά από 100 αλλαγές σελίδας</item>
+        <item>Να μην ανανεώνεται</item>
+    </string-array>
+    <string-array name="settings_common_rotateonyxstr">
+        <item>Όπως στο σύστημα</item>
+        <item>Κάθετη προβολή</item>
+        <item>Οριζόντια προβολή</item>
+        <item>Αντεστραμμένος Κάθετος</item>
+        <item>Αντεστραμμένος Οριζόντιος</item>
+    </string-array>
+    <string-array name="settings_common_rotatestr">
+        <item>Όπως στο σύστημα</item>
+        <item>Αισθητήρας</item>
+        <item>Κάθετος + Αισθητήρας</item>
+        <item>Οριζόντιος + Αισθητήρας</item>
+        <item>Κάθετη προβολή</item>
+        <item>Οριζόντια προβολή</item>
+        <item>Αντεστραμμένος Κάθετος</item>
+        <item>Αντεστραμμένος Οριζόντιος</item>
+    </string-array>
+    <string-array name="settings_common_ttsalarm_str">
+        <item>Όχι</item>
+        <item>Μελωδικό μπιπ</item>
+        <item>Φωνητική προειδοποίηση</item>
+        <item>Σίγαση</item>
+    </string-array>
+    <string-array name="settings_common_ttspause_str">
+        <item>Όχι</item>
+        <item>Σύντομη</item>
+        <item>Μεσαία</item>
+        <item>Μεγάλη</item>
+    </string-array>
+    <string-array name="settings_common_ttsreadnotes_str">
+        <item>Όχι</item>
+        <item>Επιτόπου</item>
+        <item>Στο τέλος της πρότασης</item>
+    </string-array>
+    <string-array name="settings_common_ttsselectedtext_str">
+        <item>Ανάγνωση επιλεγμένου μία φορά</item>
+        <item>Ανάγνωση επιλεγμένου σε κύκλο</item>
+        <item>Ανάγνωση μέχρι το τέλος του βιβλίου</item>
+    </string-array>
+    <string-array name="settings_common_ttstimer_str">
+        <item>Όχι</item>
+        <item>5 λεπτά</item>
+        <item>10 λεπτά</item>
+        <item>15 λεπτά</item>
+        <item>20 λεπτά</item>
+        <item>25 λεπτά</item>
+        <item>30 λεπτά</item>
+        <item>40 λεπτά</item>
+        <item>50 λεπτά</item>
+        <item>60 λεπτά</item>
+        <item>90 λεπτά</item>
+    </string-array>
+    <string-array name="settings_interface_statusinfo_str">
+        <item>Όνομα αρχείου</item>
+        <item>Τίτλος</item>
+        <item>Συγγραφέας</item>
+        <item>Τίτλος + Συγγραφέας</item>
+        <item>Τίτλος κεφαλαίου</item>
+        <item>Σελίδες κεφαλαίου</item>
+        <item>Χρόνος ανάγνωσης βιβλίου</item>
+        <item>Υπόλοιπος χρόνος ανάγνωσης κεφαλαίου</item>
+    </string-array>
+    <string-array name="settings_interface_theme21_str">
+        <item>Σύστημα φωτεινό</item>
+        <item>Σύστημα σκοτεινό</item>
+        <item>E Ink</item>
+        <item>Προσαρμοσμένο</item>
+    </string-array>
+    <string-array name="settings_interface_theme28_str">
+        <item>Όπως στο σύστημα</item>
+        <item>Σύστημα φωτεινό</item>
+        <item>Σύστημα σκοτεινό</item>
+        <item>E Ink</item>
+        <item>Προσαρμοσμένο</item>
+    </string-array>
+    <string-array name="settings_interface_themebutton_str">
+        <item>Επιλογή 1</item>
+        <item>Επιλογή 2</item>
+        <item>Επιλογή 3</item>
+        <item>Επιλογή 4</item>
+    </string-array>
+    <string-array name="settings_limit_height_inline_imagesstr">
+        <item>Ποτέ</item>
+        <item>Αυτόματο</item>
+        <item>Πάντα</item>
+    </string-array>
+    <string-array name="settings_manage_backstr">
+        <item>Ενέργεια συστήματος</item>
+        <item>Μενού</item>
+        <item>Απόκρυψη</item>
+        <item>Πίσω + Απόκρυψη</item>
+        <item>Πίσω + Μενού</item>
+    </string-array>
+    <string-array name="settings_manage_backstr_onyx">
+        <item>Ενέργεια συστήματος</item>
+        <item>Μενού</item>
+        <item>Απόκρυψη</item>
+        <item>Πίσω + Απόκρυψη</item>
+        <item>Πίσω + Μενού</item>
+        <item>Επόμενη σελίδα</item>
+        <item>Καμία ενέργεια</item>
+    </string-array>
+    <string-array name="settings_manage_doubletapsstr">
+        <item>Όχι</item>
+        <item>Λεξικό</item>
+        <item>Αντιγραφή κειμένου</item>
+        <item>Γρήγορο μενού</item>
+        <item>Επιλογή κειμένου</item>
+    </string-array>
+    <string-array name="settings_manage_longtapstr">
+        <item>Επιλογή κειμένου</item>
+        <item>Λεξικό</item>
+        <item>Επιλογή + Λεξικό</item>
+        <item>Ενέργειες</item>
+    </string-array>
+    <string-array name="settings_manage_tts_swipes">
+        <item>Καμία ενέργεια</item>
+        <item>Προηγούμενη/Επόμενη πρόταση</item>
+        <item>Επόμενη/Προηγούμενη πρόταση</item>
+        <item>Τόνος</item>
+        <item>Ένταση</item>
+        <item>Ταχύτητα</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr">
+        <item>Ομαλή κύλιση ανά σελίδα</item>
+        <item>Ομαλή κύλιση ανά γραμμή</item>
+        <item>Κύλιση ανά γραμμή</item>
+        <item>Ενέργειες</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr_eink">
+        <item>Ομαλή κύλιση ανά σελίδα</item>
+        <item>Κύλιση ανά γραμμή</item>
+        <item>Να μη χρησιμοποιείται</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightleftstr_onyx">
+        <item>Όχι</item>
+        <item>Ψυχρό φως</item>
+        <item>Θερμό φως</item>
+        <item>Και τα δύο επίπεδα</item>
+        <item>Θερμοκρασία Ψυχρό/Θερμό</item>
+        <item>Θερμοκρασία Θερμό/Ψυχρό</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightrightstr_onyx">
+        <item>Όχι</item>
+        <item>Θερμό φως</item>
+        <item>Ψυχρό φως</item>
+        <item>Και τα δύο επίπεδα</item>
+        <item>Θερμοκρασία Ψυχρό/Θερμό</item>
+        <item>Θερμοκρασία Θερμό/Ψυχρό</item>
+    </string-array>
+    <string-array name="settings_opendialogs_taps_str">
+        <item>Άνοιγμα</item>
+        <item>Ιδιότητες βιβλίου</item>
+    </string-array>
+    <string-array name="settings_pages_columncountstr">
+        <item>Αυτόματο</item>
+        <item>Μία</item>
+        <item>Δύο</item>
+        <item>Δύο σε οριζόντιο προσανατολισμό</item>
+    </string-array>
+    <string-array name="settings_pages_imagescalestr">
+        <item>Αυτόματο</item>
+        <item>Πρωτότυπο (100%)</item>
+        <item>150%</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_notesonpagestr">
+        <item>Όχι</item>
+        <item>1 γραμμή ανά σελίδα</item>
+        <item>2 γραμμές ανά σελίδα</item>
+        <item>3 γραμμές ανά σελίδα</item>
+        <item>5 γραμμές ανά σελίδα</item>
+        <item>Πλήρως, αν είναι δυνατόν</item>
+        <item>Αναδυόμενο παράθυρο</item>
+    </string-array>
+    <string-array name="settings_pages_pagesizestr">
+        <item>Αυτόματο</item>
+        <item>512</item>
+        <item>768</item>
+        <item>1024</item>
+        <item>1280</item>
+        <item>1536</item>
+        <item>1670</item>
+        <item>1860</item>
+        <item>2048</item>
+        <item>2340</item>
+        <item>3072</item>
+        <item>3420</item>
+        <item>4096</item>
+    </string-array>
+    <string-array name="settings_pages_progresswidthstr">
+        <item>Προεπιλογή</item>
+        <item>Πιο παχύ</item>
+    </string-array>
+    <string-array name="settings_pages_skincalestr">
+        <item>Αυτόματο</item>
+        <item>Πρωτότυπο (100%)</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_useheaderstr">
+        <item>Ποτέ</item>
+        <item>Μόνο στο παράθυρο</item>
+        <item>Μόνο σε πλήρη οθόνη</item>
+        <item>Πάντα</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightleftstr_onyx">
+        <item>Όχι</item>
+        <item>Φωτεινότητα</item>
+        <item>Θερμοκρασία</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightrightstr_onyx">
+        <item>Όχι</item>
+        <item>Θερμοκρασία</item>
+        <item>Φωτεινότητα</item>
+    </string-array>
+    <string-array name="ttsvoices_unavailablestr">
+        <item>Η αλλαγή φωνών δεν είναι διαθέσιμη</item>
+    </string-array>
+</resources>

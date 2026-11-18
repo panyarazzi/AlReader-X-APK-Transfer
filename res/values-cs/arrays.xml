@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookmark_typesstr">
+        <item>Záložka</item>
+        <item>Citace</item>
+        <item>Záložka + Citace</item>
+    </string-array>
+    <string-array name="eink_adaptation_str">
+        <item>Ne</item>
+        <item>Monochromatický EInk</item>
+        <item>Barevný EInk</item>
+    </string-array>
+    <string-array name="marker_typesstr">
+        <item>Neznačit</item>
+        <item>Červené pozadí</item>
+        <item>Žluté pozadí</item>
+        <item>Zelené pozadí</item>
+        <item>Podtržení</item>
+        <item>Červené podtržení</item>
+        <item>Žluté podtržení</item>
+        <item>Zelené podtržení</item>
+    </string-array>
+    <string-array name="marker_underlinestr">
+        <item>Rovná</item>
+        <item>Rukopisná</item>
+        <item>Vlnitá</item>
+    </string-array>
+    <string-array name="setting_fonts_spacewidthstr">
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100% (Výchozí)</item>
+        <item>110%</item>
+        <item>120%</item>
+        <item>130%</item>
+    </string-array>
+    <string-array name="setting_pages_firstletterstr">
+        <item>Nikdy</item>
+        <item>Každý odstavec</item>
+        <item>První odstavec</item>
+        <item>Klasika každý odstavec</item>
+        <item>Klasika první odstavec</item>
+    </string-array>
+    <string-array name="settings_backup_type_arr">
+        <item>Nastavení</item>
+        <item>Nastavení + Databáze přečteného</item>
+        <item>Nastavení + Zdroje</item>
+        <item>Vše</item>
+    </string-array>
+    <string-array name="settings_books_dialogstr">
+        <item>Ne</item>
+        <item>Odstranit mezery na začátku</item>
+        <item>Odstranit mezery, nahradit pomlčku</item>
+    </string-array>
+    <string-array name="settings_color_usestatusback_str">
+        <item>Nikdy</item>
+        <item>Pokud existuje vzhled</item>
+        <item>Vždy</item>
+    </string-array>
+    <string-array name="settings_common_animation_alwaysstr">
+        <item>Nikdy</item>
+        <item>Pouze při přejetí</item>
+        <item>Vždy</item>
+    </string-array>
+    <string-array name="settings_common_animation_typestr">
+        <item>3D OpenGL typ 1</item>
+        <item>3D OpenGL typ 2</item>
+        <item>Posun doleva</item>
+        <item>Posun doprava</item>
+        <item>Vlna</item>
+        <item>Posun dvou stránek</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typeeinkstr">
+        <item>Vlna</item>
+        <item>Otočení stránky</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typestr">
+        <item>Vlna</item>
+        <item>Svitek</item>
+        <item>Otočení stránky s animací</item>
+        <item>Otočení stránky</item>
+    </string-array>
+    <string-array name="settings_common_backlighthardwaremin_str">
+        <item>1%</item>
+        <item>2% (Výchozí)</item>
+        <item>3%</item>
+        <item>4%</item>
+        <item>5%</item>
+    </string-array>
+    <string-array name="settings_common_backlightkeep_str">
+        <item>Jako v systému</item>
+        <item>2 min</item>
+        <item>3 min</item>
+        <item>5 min</item>
+        <item>10 min</item>
+        <item>30 min</item>
+        <item>Stále</item>
+    </string-array>
+    <string-array name="settings_common_eink_refreshratestr">
+        <item>Po 5 otočeních stránky</item>
+        <item>Po 10 otočeních stránky</item>
+        <item>Po 20 otočeních stránky</item>
+        <item>Po 50 otočeních stránky</item>
+        <item>Neaktualizovat</item>
+    </string-array>
+    <string-array name="settings_common_fontscalestr">
+        <item>Jako v systému</item>
+        <item>Nejmenší</item>
+        <item>Malý</item>
+        <item>Normální</item>
+        <item>Velký</item>
+        <item>Ještě větší</item>
+        <item>Největší</item>
+    </string-array>
+    <string-array name="settings_common_gammamodestr">
+        <item>Ne</item>
+        <item>Pro celou stránku</item>
+        <item>Pouze pro obrázky</item>
+    </string-array>
+    <string-array name="settings_common_gammavaluestr">
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.9</item>
+        <item>1.0 (Výchozí)</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>1.4</item>
+        <item>1.5</item>
+        <item>1.6</item>
+        <item>1.7</item>
+        <item>1.8</item>
+        <item>1.9</item>
+        <item>2.0</item>
+        <item>2.1</item>
+        <item>2.2</item>
+        <item>2.3</item>
+    </string-array>
+    <string-array name="settings_common_libraryfirstletter_str">
+        <item>Vždy</item>
+        <item>Výchozí</item>
+        <item>Pouze ve velkých seznamech</item>
+        <item>Nejlépe nepoužívat</item>
+    </string-array>
+    <string-array name="settings_common_onyxeink_refreshratestr">
+        <item>Vždy</item>
+        <item>Po 1 otočení stránky</item>
+        <item>Po 2 otočeních stránky</item>
+        <item>Po 3 otočeních stránky</item>
+        <item>Po 5 otočeních stránky</item>
+        <item>Po 7 otočeních stránky</item>
+        <item>Po 10 otočeních stránky</item>
+        <item>Po 20 otočeních stránky</item>
+        <item>Po 50 otočeních stránky</item>
+        <item>Po 75 otočeních stránky</item>
+        <item>Po 100 otočeních stránky</item>
+        <item>Neaktualizovat</item>
+    </string-array>
+    <string-array name="settings_common_rotateonyxstr">
+        <item>Jako v systému</item>
+        <item>Zobrazení na výšku</item>
+        <item>Zobrazení na šířku</item>
+        <item>Obráceně na výšku</item>
+        <item>Obráceně na šířku</item>
+    </string-array>
+    <string-array name="settings_common_rotatestr">
+        <item>Jako v systému</item>
+        <item>Senzor</item>
+        <item>Na výšku + Senzor</item>
+        <item>Na šířku + Senzor</item>
+        <item>Zobrazení na výšku</item>
+        <item>Zobrazení na šířku</item>
+        <item>Obráceně na výšku</item>
+        <item>Obráceně na šířku</item>
+    </string-array>
+    <string-array name="settings_common_ttsalarm_str">
+        <item>Ne</item>
+        <item>Melodický pípnutí</item>
+        <item>Hlasové upozornění</item>
+        <item>Ztlumit</item>
+    </string-array>
+    <string-array name="settings_common_ttspause_str">
+        <item>Ne</item>
+        <item>Krátká</item>
+        <item>Střední</item>
+        <item>Dlouhá</item>
+    </string-array>
+    <string-array name="settings_common_ttsreadnotes_str">
+        <item>Ne</item>
+        <item>Na místě</item>
+        <item>Na konci věty</item>
+    </string-array>
+    <string-array name="settings_common_ttsselectedtext_str">
+        <item>Přečíst vybrané jednou</item>
+        <item>Přečíst vybrané dokola</item>
+        <item>Přečíst do konce knihy</item>
+    </string-array>
+    <string-array name="settings_common_ttstimer_str">
+        <item>Ne</item>
+        <item>5 min</item>
+        <item>10 min</item>
+        <item>15 min</item>
+        <item>20 min</item>
+        <item>25 min</item>
+        <item>30 min</item>
+        <item>40 min</item>
+        <item>50 min</item>
+        <item>60 min</item>
+        <item>90 min</item>
+    </string-array>
+    <string-array name="settings_interface_statusinfo_str">
+        <item>Název souboru</item>
+        <item>Název</item>
+        <item>Autor</item>
+        <item>Název + Autor</item>
+        <item>Název kapitoly</item>
+        <item>Stránky kapitoly</item>
+        <item>Doba čtení knihy</item>
+        <item>Zbývající doba čtení kapitoly</item>
+    </string-array>
+    <string-array name="settings_interface_theme21_str">
+        <item>Systém světlý</item>
+        <item>Systém tmavý</item>
+        <item>E Ink</item>
+        <item>Vlastní</item>
+    </string-array>
+    <string-array name="settings_interface_theme28_str">
+        <item>Jako v systému</item>
+        <item>Systém světlý</item>
+        <item>Systém tmavý</item>
+        <item>E Ink</item>
+        <item>Vlastní</item>
+    </string-array>
+    <string-array name="settings_interface_themebutton_str">
+        <item>Varianta 1</item>
+        <item>Varianta 2</item>
+        <item>Varianta 3</item>
+        <item>Varianta 4</item>
+    </string-array>
+    <string-array name="settings_limit_height_inline_imagesstr">
+        <item>Nikdy</item>
+        <item>Auto</item>
+        <item>Vždy</item>
+    </string-array>
+    <string-array name="settings_manage_backstr">
+        <item>Systémová akce</item>
+        <item>Menu</item>
+        <item>Skrýt</item>
+        <item>Zpět + Skrýt</item>
+        <item>Zpět + Menu</item>
+    </string-array>
+    <string-array name="settings_manage_backstr_onyx">
+        <item>Systémová akce</item>
+        <item>Menu</item>
+        <item>Skrýt</item>
+        <item>Zpět + Skrýt</item>
+        <item>Zpět + Menu</item>
+        <item>Další stránka</item>
+        <item>Žádná akce</item>
+    </string-array>
+    <string-array name="settings_manage_doubletapsstr">
+        <item>Ne</item>
+        <item>Slovník</item>
+        <item>Kopírování textu</item>
+        <item>Rychlé menu</item>
+        <item>Výběr textu</item>
+    </string-array>
+    <string-array name="settings_manage_longtapstr">
+        <item>Výběr textu</item>
+        <item>Slovník</item>
+        <item>Výběr + Slovník</item>
+        <item>Akce</item>
+    </string-array>
+    <string-array name="settings_manage_tts_swipes">
+        <item>Žádná akce</item>
+        <item>Předchozí/Další věta</item>
+        <item>Další/Předchozí věta</item>
+        <item>Tón</item>
+        <item>Hlasitost</item>
+        <item>Rychlost</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr">
+        <item>Plynulé posouvání po stránkách</item>
+        <item>Plynulé posouvání po řádcích</item>
+        <item>Posouvání po řádcích</item>
+        <item>Akce</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr_eink">
+        <item>Plynulé posouvání po stránkách</item>
+        <item>Posouvání po řádcích</item>
+        <item>Nepoužívat</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightleftstr_onyx">
+        <item>Ne</item>
+        <item>Studené světlo</item>
+        <item>Teplé světlo</item>
+        <item>Obě úrovně</item>
+        <item>Teplota Studené/Teplé</item>
+        <item>Teplota Teplé/Studené</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightrightstr_onyx">
+        <item>Ne</item>
+        <item>Teplé světlo</item>
+        <item>Studené světlo</item>
+        <item>Obě úrovně</item>
+        <item>Teplota Studené/Teplé</item>
+        <item>Teplota Teplé/Studené</item>
+    </string-array>
+    <string-array name="settings_opendialogs_taps_str">
+        <item>Otevřít</item>
+        <item>Vlastnosti knihy</item>
+    </string-array>
+    <string-array name="settings_pages_columncountstr">
+        <item>Auto</item>
+        <item>Jeden</item>
+        <item>Dva</item>
+        <item>Dva na šířku</item>
+    </string-array>
+    <string-array name="settings_pages_imagescalestr">
+        <item>Auto</item>
+        <item>Originál (100%)</item>
+        <item>150%</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_notesonpagestr">
+        <item>Ne</item>
+        <item>1 řádek na stránce</item>
+        <item>2 řádky na stránce</item>
+        <item>3 řádky na stránce</item>
+        <item>5 řádků na stránce</item>
+        <item>Podle možnosti zcela</item>
+        <item>Vyskakovací okno</item>
+    </string-array>
+    <string-array name="settings_pages_pagesizestr">
+        <item>Auto</item>
+        <item>512</item>
+        <item>768</item>
+        <item>1024</item>
+        <item>1280</item>
+        <item>1536</item>
+        <item>1670</item>
+        <item>1860</item>
+        <item>2048</item>
+        <item>2340</item>
+        <item>3072</item>
+        <item>3420</item>
+        <item>4096</item>
+    </string-array>
+    <string-array name="settings_pages_progresswidthstr">
+        <item>Výchozí</item>
+        <item>Tlustší</item>
+    </string-array>
+    <string-array name="settings_pages_skincalestr">
+        <item>Auto</item>
+        <item>Originál (100%)</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_useheaderstr">
+        <item>Nikdy</item>
+        <item>Pouze v okně</item>
+        <item>Pouze na celé obrazovce</item>
+        <item>Vždy</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightleftstr_onyx">
+        <item>Ne</item>
+        <item>Jas</item>
+        <item>Teplota</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightrightstr_onyx">
+        <item>Ne</item>
+        <item>Teplota</item>
+        <item>Jas</item>
+    </string-array>
+    <string-array name="ttsvoices_unavailablestr">
+        <item>Změna hlasů není dostupná</item>
+    </string-array>
+</resources>

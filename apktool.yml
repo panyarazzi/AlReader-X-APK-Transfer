@@ -1,0 +1,20 @@
+version: 3.0.3
+apkFileName: AlReaderX E-Ink-1.33.apk
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: 21
+  targetSdkVersion: 35
+versionInfo:
+  versionCode: 2507171
+  versionName: 1.33
+resourcesInfo:
+  packageId: 127
+doNotCompress:
+- arsc
+- jpg
+- mp3
+- png
+- assets/dexopt/baseline.prof
+- assets/dexopt/baseline.profm

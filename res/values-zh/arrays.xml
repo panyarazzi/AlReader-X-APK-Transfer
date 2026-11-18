@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookmark_typesstr">
+        <item>书签</item>
+        <item>引用</item>
+        <item>书签 + 引用</item>
+    </string-array>
+    <string-array name="eink_adaptation_str">
+        <item>否</item>
+        <item>黑白墨水屏</item>
+        <item>彩色墨水屏</item>
+    </string-array>
+    <string-array name="marker_typesstr">
+        <item>无标记</item>
+        <item>红色背景</item>
+        <item>黄色背景</item>
+        <item>绿色背景</item>
+        <item>下划线</item>
+        <item>红色下划线</item>
+        <item>黄色下划线</item>
+        <item>绿色下划线</item>
+    </string-array>
+    <string-array name="marker_underlinestr">
+        <item>直线</item>
+        <item>手写</item>
+        <item>波浪</item>
+    </string-array>
+    <string-array name="setting_fonts_spacewidthstr">
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100% (默认值)</item>
+        <item>110%</item>
+        <item>120%</item>
+        <item>130%</item>
+    </string-array>
+    <string-array name="setting_pages_firstletterstr">
+        <item>从不</item>
+        <item>每个段落</item>
+        <item>第一段落</item>
+        <item>经典 每一段落</item>
+        <item>经典 第一段落</item>
+    </string-array>
+    <string-array name="settings_backup_type_arr">
+        <item>设置</item>
+        <item>设置 + 数据库</item>
+        <item>设置 + 资源</item>
+        <item>全部</item>
+    </string-array>
+    <string-array name="settings_books_dialogstr">
+        <item>否</item>
+        <item>删除空间</item>
+        <item>删除空格，替换破折号</item>
+    </string-array>
+    <string-array name="settings_color_usestatusback_str">
+        <item>从不</item>
+        <item>仅当皮肤</item>
+        <item>始终</item>
+    </string-array>
+    <string-array name="settings_common_animation_alwaysstr">
+        <item>否</item>
+        <item>仅滑动</item>
+        <item>始终</item>
+    </string-array>
+    <string-array name="settings_common_animation_typestr">
+        <item>仿真翻页1</item>
+        <item>仿真翻页2</item>
+        <item>左滑覆盖</item>
+        <item>右滑覆盖</item>
+        <item>潮起潮落</item>
+        <item>左右滑动</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typeeinkstr">
+        <item>波浪</item>
+        <item>翻页动画</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typestr">
+        <item>波浪</item>
+        <item>卷动</item>
+        <item>翻页动画</item>
+        <item>翻页</item>
+    </string-array>
+    <string-array name="settings_common_backlighthardwaremin_str">
+        <item>1%</item>
+        <item>2% (默认值)</item>
+        <item>3%</item>
+        <item>4%</item>
+        <item>5%</item>
+    </string-array>
+    <string-array name="settings_common_backlightkeep_str">
+        <item>系统默认值</item>
+        <item>2 分钟</item>
+        <item>3 分钟</item>
+        <item>5 分钟</item>
+        <item>10 分钟</item>
+        <item>30 分钟</item>
+        <item>始终</item>
+    </string-array>
+    <string-array name="settings_common_eink_refreshratestr">
+        <item>5 页后</item>
+        <item>10 页后</item>
+        <item>20 页后</item>
+        <item>50 页后</item>
+        <item>没有</item>
+    </string-array>
+    <string-array name="settings_common_fontscalestr">
+        <item>系统默认值</item>
+        <item>最小的</item>
+        <item>较小</item>
+        <item>正常</item>
+        <item>略大</item>
+        <item>较大</item>
+        <item>最大</item>
+    </string-array>
+    <string-array name="settings_common_gammamodestr">
+        <item>否</item>
+        <item>对于整个页面</item>
+        <item>仅适用于图像</item>
+    </string-array>
+    <string-array name="settings_common_gammavaluestr">
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.9</item>
+        <item>1.0 (默认值)</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>1.4</item>
+        <item>1.5</item>
+        <item>1.6</item>
+        <item>1.7</item>
+        <item>1.8</item>
+        <item>1.9</item>
+        <item>2.0</item>
+        <item>2.1</item>
+        <item>2.2</item>
+        <item>2.3</item>
+    </string-array>
+    <string-array name="settings_common_libraryfirstletter_str">
+        <item>始终</item>
+        <item>默认值</item>
+        <item>仅在大型列表中</item>
+        <item>最好不要使用</item>
+    </string-array>
+    <string-array name="settings_common_onyxeink_refreshratestr">
+        <item>始终</item>
+        <item>1 页后</item>
+        <item>2 页后</item>
+        <item>3 页后</item>
+        <item>5 页后</item>
+        <item>7 页后</item>
+        <item>10 页后</item>
+        <item>20 页后</item>
+        <item>50 页后</item>
+        <item>75 页后</item>
+        <item>100 页后</item>
+        <item>没有</item>
+    </string-array>
+    <string-array name="settings_common_rotateonyxstr">
+        <item>系统默认值</item>
+        <item>纵向</item>
+        <item>横向</item>
+        <item>反向纵向</item>
+        <item>反向横向</item>
+    </string-array>
+    <string-array name="settings_common_rotatestr">
+        <item>系统默认值</item>
+        <item>传感器</item>
+        <item>纵向 + 传感器</item>
+        <item>横向 + 传感器</item>
+        <item>纵向</item>
+        <item>横向</item>
+        <item>反向纵向</item>
+        <item>反向横向</item>
+    </string-array>
+    <string-array name="settings_common_ttsalarm_str">
+        <item>否</item>
+        <item>旋律声</item>
+        <item>语音警告</item>
+        <item>静音</item>
+    </string-array>
+    <string-array name="settings_common_ttspause_str">
+        <item>没有</item>
+        <item>较短</item>
+        <item>适中</item>
+        <item>较长</item>
+    </string-array>
+    <string-array name="settings_common_ttsreadnotes_str">
+        <item>否</item>
+        <item>在这个地方</item>
+        <item>在句子末尾</item>
+    </string-array>
+    <string-array name="settings_common_ttsselectedtext_str">
+        <item>读取所选一次</item>
+        <item>重复所选</item>
+        <item>读到书的结尾</item>
+    </string-array>
+    <string-array name="settings_common_ttstimer_str">
+        <item>没有</item>
+        <item>5 分钟</item>
+        <item>10 分钟</item>
+        <item>15 分钟</item>
+        <item>20 分钟</item>
+        <item>25 分钟</item>
+        <item>30 分钟</item>
+        <item>40 分钟</item>
+        <item>50 分钟</item>
+        <item>60 分钟</item>
+        <item>90 分钟</item>
+    </string-array>
+    <string-array name="settings_interface_statusinfo_str">
+        <item>文件名称</item>
+        <item>标题</item>
+        <item>作者</item>
+        <item>标题 + 作者</item>
+        <item>章节名称</item>
+        <item>章节页面</item>
+        <item>阅读时间</item>
+        <item>章节剩余阅读时间</item>
+    </string-array>
+    <string-array name="settings_interface_theme21_str">
+        <item>白天模式</item>
+        <item>夜晚模式</item>
+        <item>墨水屏</item>
+        <item>自定义</item>
+    </string-array>
+    <string-array name="settings_interface_theme28_str">
+        <item>系统默认值</item>
+        <item>白天模式</item>
+        <item>夜晚模式</item>
+        <item>墨水屏</item>
+        <item>自定义</item>
+    </string-array>
+    <string-array name="settings_interface_themebutton_str">
+        <item>选项 1</item>
+        <item>选项 2</item>
+        <item>选项 3</item>
+        <item>选项 4</item>
+    </string-array>
+    <string-array name="settings_limit_height_inline_imagesstr">
+        <item>從不</item>
+        <item>自動</item>
+        <item>總是</item>
+    </string-array>
+    <string-array name="settings_manage_backstr">
+        <item>系统</item>
+        <item>菜单</item>
+        <item>隐藏</item>
+        <item>后退 + 隐藏</item>
+        <item>后退 + 菜单</item>
+    </string-array>
+    <string-array name="settings_manage_backstr_onyx">
+        <item>系统</item>
+        <item>菜单</item>
+        <item>隐藏</item>
+        <item>后退 + 隐藏</item>
+        <item>后退 + 菜单</item>
+        <item>下一页面</item>
+        <item>没有</item>
+    </string-array>
+    <string-array name="settings_manage_doubletapsstr">
+        <item>没有</item>
+        <item>字典</item>
+        <item>复制文本</item>
+        <item>快速面板</item>
+        <item>选择文本</item>
+    </string-array>
+    <string-array name="settings_manage_longtapstr">
+        <item>选择文本</item>
+        <item>字典</item>
+        <item>选择 + 字典</item>
+        <item>动作</item>
+    </string-array>
+    <string-array name="settings_manage_tts_swipes">
+        <item>无操作</item>
+        <item>上一页/下一页</item>
+        <item>下一页/上一页</item>
+        <item>语气</item>
+        <item>音量</item>
+        <item>速度</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr">
+        <item>平滑页面滚动</item>
+        <item>平滑线条滚动</item>
+        <item>离散线滚动</item>
+        <item>动作</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr_eink">
+        <item>平滑页面滚动</item>
+        <item>离散线滚动</item>
+        <item>不使用</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightleftstr_onyx">
+        <item>否</item>
+        <item>冷色</item>
+        <item>暖色</item>
+        <item>全部</item>
+        <item>色温 冷/暖</item>
+        <item>色温 暖/冷</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightrightstr_onyx">
+        <item>否</item>
+        <item>暖色</item>
+        <item>冷色</item>
+        <item>全部</item>
+        <item>色温 冷/暖</item>
+        <item>色温 暖/冷</item>
+    </string-array>
+    <string-array name="settings_opendialogs_taps_str">
+        <item>打开</item>
+        <item>显示属性</item>
+    </string-array>
+    <string-array name="settings_pages_columncountstr">
+        <item>自动</item>
+        <item>单列</item>
+        <item>两列</item>
+        <item>横屏双页</item>
+    </string-array>
+    <string-array name="settings_pages_imagescalestr">
+        <item>自动</item>
+        <item>原始 (100%)</item>
+        <item>150%</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_notesonpagestr">
+        <item>否</item>
+        <item>页面上的 1 项</item>
+        <item>页面上的 2 项</item>
+        <item>页面上的 3 项</item>
+        <item>页面上的 5 项</item>
+        <item>页面上最多的项目</item>
+        <item>弹出</item>
+    </string-array>
+    <string-array name="settings_pages_pagesizestr">
+        <item>自动</item>
+        <item>512</item>
+        <item>768</item>
+        <item>1024</item>
+        <item>1280</item>
+        <item>1536</item>
+        <item>1670</item>
+        <item>1860</item>
+        <item>2048</item>
+        <item>2340</item>
+        <item>3072</item>
+        <item>3420</item>
+        <item>4096</item>
+    </string-array>
+    <string-array name="settings_pages_progresswidthstr">
+        <item>默认值</item>
+        <item>厚度</item>
+    </string-array>
+    <string-array name="settings_pages_skincalestr">
+        <item>自动</item>
+        <item>原始 (100%)</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_useheaderstr">
+        <item>从不</item>
+        <item>仅窗口</item>
+        <item>仅全屏</item>
+        <item>始终</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightleftstr_onyx">
+        <item>否</item>
+        <item>亮度</item>
+        <item>色温</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightrightstr_onyx">
+        <item>否</item>
+        <item>色温</item>
+        <item>亮度</item>
+    </string-array>
+    <string-array name="ttsvoices_unavailablestr">
+        <item>语音不可用</item>
+    </string-array>
+</resources>

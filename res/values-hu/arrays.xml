@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookmark_typesstr">
+        <item>Könyvjelző</item>
+        <item>Idézet</item>
+        <item>Könyvjelző + Idézet</item>
+    </string-array>
+    <string-array name="eink_adaptation_str">
+        <item>Nincs</item>
+        <item>Monokróm EInk</item>
+        <item>Színes EInk</item>
+    </string-array>
+    <string-array name="marker_typesstr">
+        <item>Nincs jelölés</item>
+        <item>Piros háttér</item>
+        <item>Sárga háttér</item>
+        <item>Zöld háttér</item>
+        <item>Aláhúzás</item>
+        <item>Piros aláhúzás</item>
+        <item>Sárga aláhúzás</item>
+        <item>Zöld aláhúzás</item>
+    </string-array>
+    <string-array name="marker_underlinestr">
+        <item>Egyenes</item>
+        <item>Kézzel írt</item>
+        <item>Hullámos</item>
+    </string-array>
+    <string-array name="setting_fonts_spacewidthstr">
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100% (Alapértelmezett)</item>
+        <item>110%</item>
+        <item>120%</item>
+        <item>130%</item>
+    </string-array>
+    <string-array name="setting_pages_firstletterstr">
+        <item>Soha</item>
+        <item>Minden bekezdésnél</item>
+        <item>Csak az első bekezdésnél</item>
+        <item>Klasszikus minden bekezdésnél</item>
+        <item>Klasszikus első bekezdésnél</item>
+    </string-array>
+    <string-array name="settings_backup_type_arr">
+        <item>Beállítások</item>
+        <item>Beállítások + Olvasottak adatbázisa</item>
+        <item>Beállítások + Erőforrások</item>
+        <item>Mindent</item>
+    </string-array>
+    <string-array name="settings_books_dialogstr">
+        <item>Nem</item>
+        <item>Szóközök eltávolítása elejéről</item>
+        <item>Szóközök eltávolítása, kötőjelek cseréje</item>
+    </string-array>
+    <string-array name="settings_color_usestatusback_str">
+        <item>Soha</item>
+        <item>Ha van skin</item>
+        <item>Mindig</item>
+    </string-array>
+    <string-array name="settings_common_animation_alwaysstr">
+        <item>Soha</item>
+        <item>Csak legörgetéskor</item>
+        <item>Mindig</item>
+    </string-array>
+    <string-array name="settings_common_animation_typestr">
+        <item>3D OpenGL típus 1</item>
+        <item>3D OpenGL típus 2</item>
+        <item>Balra csúsztatás</item>
+        <item>Jobbra csúsztatás</item>
+        <item>Hullám</item>
+        <item>Két oldal csúsztatása</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typeeinkstr">
+        <item>Hullám</item>
+        <item>Lapozás</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typestr">
+        <item>Hullám</item>
+        <item>Görgetés</item>
+        <item>Animált lapozás</item>
+        <item>Lapozás</item>
+    </string-array>
+    <string-array name="settings_common_backlighthardwaremin_str">
+        <item>1%</item>
+        <item>2% (Alapértelmezett)</item>
+        <item>3%</item>
+        <item>4%</item>
+        <item>5%</item>
+    </string-array>
+    <string-array name="settings_common_backlightkeep_str">
+        <item>Rendszer szerint</item>
+        <item>2 perc</item>
+        <item>3 perc</item>
+        <item>5 perc</item>
+        <item>10 perc</item>
+        <item>30 perc</item>
+        <item>Állandóan</item>
+    </string-array>
+    <string-array name="settings_common_eink_refreshratestr">
+        <item>5 lapozás után</item>
+        <item>10 lapozás után</item>
+        <item>20 lapozás után</item>
+        <item>50 lapozás után</item>
+        <item>Ne frissítsen</item>
+    </string-array>
+    <string-array name="settings_common_fontscalestr">
+        <item>Rendszer szerint</item>
+        <item>Legkisebb</item>
+        <item>Kicsi</item>
+        <item>Normál</item>
+        <item>Nagy</item>
+        <item>Nagyobb</item>
+        <item>Legnagyobb</item>
+    </string-array>
+    <string-array name="settings_common_gammamodestr">
+        <item>Nem</item>
+        <item>Az egész oldalra</item>
+        <item>Csak képekre</item>
+    </string-array>
+    <string-array name="settings_common_gammavaluestr">
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.9</item>
+        <item>1.0 (Alapértelmezett)</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>1.4</item>
+        <item>1.5</item>
+        <item>1.6</item>
+        <item>1.7</item>
+        <item>1.8</item>
+        <item>1.9</item>
+        <item>2.0</item>
+        <item>2.1</item>
+        <item>2.2</item>
+        <item>2.3</item>
+    </string-array>
+    <string-array name="settings_common_libraryfirstletter_str">
+        <item>Mindig</item>
+        <item>Alapértelmezett</item>
+        <item>Csak nagy listáknál</item>
+        <item>Kerülendő</item>
+    </string-array>
+    <string-array name="settings_common_onyxeink_refreshratestr">
+        <item>Mindig</item>
+        <item>1 lapozás után</item>
+        <item>2 lapozás után</item>
+        <item>3 lapozás után</item>
+        <item>5 lapozás után</item>
+        <item>7 lapozás után</item>
+        <item>10 lapozás után</item>
+        <item>20 lapozás után</item>
+        <item>50 lapozás után</item>
+        <item>75 lapozás után</item>
+        <item>100 lapozás után</item>
+        <item>Ne frissítsen</item>
+    </string-array>
+    <string-array name="settings_common_rotateonyxstr">
+        <item>Rendszer szerint</item>
+        <item>Portrét nézet</item>
+        <item>Tájkép nézet</item>
+        <item>Fordított portrét</item>
+        <item>Fordított tájkép</item>
+    </string-array>
+    <string-array name="settings_common_rotatestr">
+        <item>Rendszer szerint</item>
+        <item>Érintés</item>
+        <item>Portrét + Érintés</item>
+        <item>Tájkép + Érintés</item>
+        <item>Portrét nézet</item>
+        <item>Tájkép nézet</item>
+        <item>Fordított portrét</item>
+        <item>Fordított tájkép</item>
+    </string-array>
+    <string-array name="settings_common_ttsalarm_str">
+        <item>Nincs</item>
+        <item>Melodikus sípolás</item>
+        <item>Hangos figyelmeztetés</item>
+        <item>Némítás</item>
+    </string-array>
+    <string-array name="settings_common_ttspause_str">
+        <item>Nincs</item>
+        <item>Rövid</item>
+        <item>Közepes</item>
+        <item>Hosszú</item>
+    </string-array>
+    <string-array name="settings_common_ttsreadnotes_str">
+        <item>Nincs</item>
+        <item>Helyben</item>
+        <item>Mondat végén</item>
+    </string-array>
+    <string-array name="settings_common_ttsselectedtext_str">
+        <item>Kijelölt szöveg egyszeri olvasása</item>
+        <item>Kijelölt szöveg ismételt olvasása</item>
+        <item>Olvasás a könyv végéig</item>
+    </string-array>
+    <string-array name="settings_common_ttstimer_str">
+        <item>Nincs</item>
+        <item>5 perc</item>
+        <item>10 perc</item>
+        <item>15 perc</item>
+        <item>20 perc</item>
+        <item>25 perc</item>
+        <item>30 perc</item>
+        <item>40 perc</item>
+        <item>50 perc</item>
+        <item>60 perc</item>
+        <item>90 perc</item>
+    </string-array>
+    <string-array name="settings_interface_statusinfo_str">
+        <item>Fájlnév</item>
+        <item>Cím</item>
+        <item>Szerző</item>
+        <item>Cím + Szerző</item>
+        <item>Fejezet címe</item>
+        <item>Fejezet oldalai</item>
+        <item>Olvasási idő</item>
+        <item>Hátralévő olvasási idő</item>
+    </string-array>
+    <string-array name="settings_interface_theme21_str">
+        <item>Rendszer világos</item>
+        <item>Rendszer sötét</item>
+        <item>E Ink</item>
+        <item>Egyéni</item>
+    </string-array>
+    <string-array name="settings_interface_theme28_str">
+        <item>Rendszer szerint</item>
+        <item>Rendszer világos</item>
+        <item>Rendszer sötét</item>
+        <item>E Ink</item>
+        <item>Egyéni</item>
+    </string-array>
+    <string-array name="settings_interface_themebutton_str">
+        <item>1. változat</item>
+        <item>2. változat</item>
+        <item>3. változat</item>
+        <item>4. változat</item>
+    </string-array>
+    <string-array name="settings_limit_height_inline_imagesstr">
+        <item>Soha</item>
+        <item>Automatikus</item>
+        <item>Mindig</item>
+    </string-array>
+    <string-array name="settings_manage_backstr">
+        <item>Rendszerművelet</item>
+        <item>Menü</item>
+        <item>Elrejtés</item>
+        <item>Vissza + Elrejtés</item>
+        <item>Vissza + Menü</item>
+    </string-array>
+    <string-array name="settings_manage_backstr_onyx">
+        <item>Rendszerművelet</item>
+        <item>Menü</item>
+        <item>Elrejtés</item>
+        <item>Vissza + Elrejtés</item>
+        <item>Vissza + Menü</item>
+        <item>Következő oldal</item>
+        <item>Nincs művelet</item>
+    </string-array>
+    <string-array name="settings_manage_doubletapsstr">
+        <item>Nincs</item>
+        <item>Szótár</item>
+        <item>Szöveg másolása</item>
+        <item>Gyorsmenü</item>
+        <item>Szöveg kijelölése</item>
+    </string-array>
+    <string-array name="settings_manage_longtapstr">
+        <item>Szöveg kijelölése</item>
+        <item>Szótár</item>
+        <item>Kijelölés + Szótár</item>
+        <item>Műveletek</item>
+    </string-array>
+    <string-array name="settings_manage_tts_swipes">
+        <item>Nincs művelet</item>
+        <item>Előző/Következő mondat</item>
+        <item>Következő/Előző mondat</item>
+        <item>Hangmagasság</item>
+        <item>Hangerő</item>
+        <item>Sebesség</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr">
+        <item>Lapos lapozás</item>
+        <item>Soros lapozás</item>
+        <item>Soronkénti lapozás</item>
+        <item>Műveletek</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr_eink">
+        <item>Lapos lapozás</item>
+        <item>Soronkénti lapozás</item>
+        <item>Ne használja</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightleftstr_onyx">
+        <item>Nincs</item>
+        <item>Hideg fény</item>
+        <item>Meleg fény</item>
+        <item>Mindkét szint</item>
+        <item>Hőmérséklet Hideg/Meleg</item>
+        <item>Hőmérséklet Meleg/Hideg</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightrightstr_onyx">
+        <item>Nincs</item>
+        <item>Meleg fény</item>
+        <item>Hideg fény</item>
+        <item>Mindkét szint</item>
+        <item>Hőmérséklet Hideg/Meleg</item>
+        <item>Hőmérséklet Meleg/Hideg</item>
+    </string-array>
+    <string-array name="settings_opendialogs_taps_str">
+        <item>Megnyitás</item>
+        <item>Könyvtulajdonságok</item>
+    </string-array>
+    <string-array name="settings_pages_columncountstr">
+        <item>Auto</item>
+        <item>Egy</item>
+        <item>Kettő</item>
+        <item>Kettő fekvő tájolásban</item>
+    </string-array>
+    <string-array name="settings_pages_imagescalestr">
+        <item>Auto</item>
+        <item>Eredeti (100%)</item>
+        <item>150%</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_notesonpagestr">
+        <item>Nem</item>
+        <item>1 sor oldalanként</item>
+        <item>2 sor oldalanként</item>
+        <item>3 sor oldalanként</item>
+        <item>5 sor oldalanként</item>
+        <item>Teljes, ha lehetséges</item>
+        <item>Felugró ablak</item>
+    </string-array>
+    <string-array name="settings_pages_pagesizestr">
+        <item>Auto</item>
+        <item>512</item>
+        <item>768</item>
+        <item>1024</item>
+        <item>1280</item>
+        <item>1536</item>
+        <item>1670</item>
+        <item>1860</item>
+        <item>2048</item>
+        <item>2340</item>
+        <item>3072</item>
+        <item>3420</item>
+        <item>4096</item>
+    </string-array>
+    <string-array name="settings_pages_progresswidthstr">
+        <item>Alapértelmezett</item>
+        <item>Vastagabb</item>
+    </string-array>
+    <string-array name="settings_pages_skincalestr">
+        <item>Auto</item>
+        <item>Eredeti (100%)</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_useheaderstr">
+        <item>Soha</item>
+        <item>Csak ablakban</item>
+        <item>Csak teljes képernyőn</item>
+        <item>Mindig</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightleftstr_onyx">
+        <item>Nincs</item>
+        <item>Fényerő</item>
+        <item>Hőmérséklet</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightrightstr_onyx">
+        <item>Nincs</item>
+        <item>Hőmérséklet</item>
+        <item>Fényerő</item>
+    </string-array>
+    <string-array name="ttsvoices_unavailablestr">
+        <item>A hangok váltása nem elérhető</item>
+    </string-array>
+</resources>

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bookmark_typesstr">
+        <item>Đánh dấu trang</item>
+        <item>Trích dẫn</item>
+        <item>Đánh dấu trang + Trích dẫn</item>
+    </string-array>
+    <string-array name="eink_adaptation_str">
+        <item>Không có</item>
+        <item>EInk Đơn sắc</item>
+        <item>EInk Màu</item>
+    </string-array>
+    <string-array name="marker_typesstr">
+        <item>Không đánh dấu</item>
+        <item>Nền đỏ</item>
+        <item>Nền vàng</item>
+        <item>Nền xanh lá</item>
+        <item>Gạch chân</item>
+        <item>Gạch chân màu đỏ</item>
+        <item>Gạch chân màu vàng</item>
+        <item>Gạch chân màu xanh lá</item>
+    </string-array>
+    <string-array name="marker_underlinestr">
+        <item>Thẳng</item>
+        <item>Viết tay</item>
+        <item>Lượn sóng</item>
+    </string-array>
+    <string-array name="setting_fonts_spacewidthstr">
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100% (Mặc định)</item>
+        <item>110%</item>
+        <item>120%</item>
+        <item>130%</item>
+    </string-array>
+    <string-array name="setting_pages_firstletterstr">
+        <item>Không bao giờ</item>
+        <item>Mỗi đoạn</item>
+        <item>Đoạn đầu tiên</item>
+        <item>Kiểu cổ điển mỗi đoạn</item>
+        <item>Kiểu cổ điển đoạn đầu tiên</item>
+    </string-array>
+    <string-array name="settings_backup_type_arr">
+        <item>Cài đặt</item>
+        <item>Cài đặt + Cơ sở dữ liệu đã đọc</item>
+        <item>Cài đặt + Tài nguyên</item>
+        <item>Tất cả</item>
+    </string-array>
+    <string-array name="settings_books_dialogstr">
+        <item>Không có</item>
+        <item>Xóa khoảng trắng ở đầu</item>
+        <item>Xóa khoảng trắng, thay thế dấu gạch ngang</item>
+    </string-array>
+    <string-array name="settings_color_usestatusback_str">
+        <item>Không bao giờ</item>
+        <item>Nếu có giao diện</item>
+        <item>Luôn luôn</item>
+    </string-array>
+    <string-array name="settings_common_animation_alwaysstr">
+        <item>Không bao giờ</item>
+        <item>Chỉ khi vuốt</item>
+        <item>Luôn luôn</item>
+    </string-array>
+    <string-array name="settings_common_animation_typestr">
+        <item>3D OpenGL loại 1</item>
+        <item>3D OpenGL loại 2</item>
+        <item>Trượt sang trái</item>
+        <item>Trượt sang phải</item>
+        <item>Sóng</item>
+        <item>Trượt hai trang</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typeeinkstr">
+        <item>Sóng</item>
+        <item>Lật trang</item>
+    </string-array>
+    <string-array name="settings_common_autoscroll_typestr">
+        <item>Sóng</item>
+        <item>Cuộn</item>
+        <item>Lật trang có hoạt ảnh</item>
+        <item>Lật trang</item>
+    </string-array>
+    <string-array name="settings_common_backlighthardwaremin_str">
+        <item>1%</item>
+        <item>2% (Mặc định)</item>
+        <item>3%</item>
+        <item>4%</item>
+        <item>5%</item>
+    </string-array>
+    <string-array name="settings_common_backlightkeep_str">
+        <item>Như trong hệ thống</item>
+        <item>2 phút</item>
+        <item>3 phút</item>
+        <item>5 phút</item>
+        <item>10 phút</item>
+        <item>30 phút</item>
+        <item>Liên tục</item>
+    </string-array>
+    <string-array name="settings_common_eink_refreshratestr">
+        <item>Sau 5 lần cuộn</item>
+        <item>Sau 10 lần cuộn</item>
+        <item>Sau 20 lần cuộn</item>
+        <item>Sau 50 lần cuộn</item>
+        <item>Không làm mới</item>
+    </string-array>
+    <string-array name="settings_common_fontscalestr">
+        <item>Như trong hệ thống</item>
+        <item>Nhỏ nhất</item>
+        <item>Nhỏ</item>
+        <item>Bình thường</item>
+        <item>Lớn</item>
+        <item>Lớn hơn nữa</item>
+        <item>Lớn nhất</item>
+    </string-array>
+    <string-array name="settings_common_gammamodestr">
+        <item>Không có</item>
+        <item>Cho toàn bộ trang</item>
+        <item>Chỉ cho hình ảnh</item>
+    </string-array>
+    <string-array name="settings_common_gammavaluestr">
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.9</item>
+        <item>1.0 (Mặc định)</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>1.4</item>
+        <item>1.5</item>
+        <item>1.6</item>
+        <item>1.7</item>
+        <item>1.8</item>
+        <item>1.9</item>
+        <item>2.0</item>
+        <item>2.1</item>
+        <item>2.2</item>
+        <item>2.3</item>
+    </string-array>
+    <string-array name="settings_common_libraryfirstletter_str">
+        <item>Luôn luôn</item>
+        <item>Mặc định</item>
+        <item>Chỉ trong danh sách lớn</item>
+        <item>Tốt nhất không sử dụng</item>
+    </string-array>
+    <string-array name="settings_common_onyxeink_refreshratestr">
+        <item>Luôn luôn</item>
+        <item>Sau 1 lần cuộn</item>
+        <item>Sau 2 lần cuộn</item>
+        <item>Sau 3 lần cuộn</item>
+        <item>Sau 5 lần cuộn</item>
+        <item>Sau 7 lần cuộn</item>
+        <item>Sau 10 lần cuộn</item>
+        <item>Sau 20 lần cuộn</item>
+        <item>Sau 50 lần cuộn</item>
+        <item>Sau 75 lần cuộn</item>
+        <item>Sau 100 lần cuộn</item>
+        <item>Không làm mới</item>
+    </string-array>
+    <string-array name="settings_common_rotateonyxstr">
+        <item>Như trong hệ thống</item>
+        <item>Chế độ xem dọc</item>
+        <item>Chế độ xem ngang</item>
+        <item>Dọc đảo ngược</item>
+        <item>Ngang đảo ngược</item>
+    </string-array>
+    <string-array name="settings_common_rotatestr">
+        <item>Như trong hệ thống</item>
+        <item>Cảm biến</item>
+        <item>Dọc + Cảm biến</item>
+        <item>Ngang + Cảm biến</item>
+        <item>Chế độ xem dọc</item>
+        <item>Chế độ xem ngang</item>
+        <item>Dọc đảo ngược</item>
+        <item>Ngang đảo ngược</item>
+    </string-array>
+    <string-array name="settings_common_ttsalarm_str">
+        <item>Không có</item>
+        <item>Tiếng bíp du dương</item>
+        <item>Cảnh báo bằng giọng nói</item>
+        <item>Mute</item>
+    </string-array>
+    <string-array name="settings_common_ttspause_str">
+        <item>Không có</item>
+        <item>Ngắn</item>
+        <item>Trung bình</item>
+        <item>Dài</item>
+    </string-array>
+    <string-array name="settings_common_ttsreadnotes_str">
+        <item>Không có</item>
+        <item>Tại chỗ</item>
+        <item>Cuối câu</item>
+    </string-array>
+    <string-array name="settings_common_ttsselectedtext_str">
+        <item>Đọc phần đã chọn một lần</item>
+        <item>Đọc phần đã chọn lặp đi lặp lại</item>
+        <item>Đọc đến cuối sách</item>
+    </string-array>
+    <string-array name="settings_common_ttstimer_str">
+        <item>Không có</item>
+        <item>5 phút</item>
+        <item>10 phút</item>
+        <item>15 phút</item>
+        <item>20 phút</item>
+        <item>25 phút</item>
+        <item>30 phút</item>
+        <item>40 phút</item>
+        <item>50 phút</item>
+        <item>60 phút</item>
+        <item>90 phút</item>
+    </string-array>
+    <string-array name="settings_interface_statusinfo_str">
+        <item>Tên tệp</item>
+        <item>Tiêu đề</item>
+        <item>Tác giả</item>
+        <item>Tiêu đề + Tác giả</item>
+        <item>Tiêu đề chương</item>
+        <item>Trang chương</item>
+        <item>Thời gian đọc sách</item>
+        <item>Thời gian đọc chương còn lại</item>
+    </string-array>
+    <string-array name="settings_interface_theme21_str">
+        <item>Hệ thống sáng</item>
+        <item>Hệ thống tối</item>
+        <item>E Ink</item>
+        <item>Tùy chỉnh</item>
+    </string-array>
+    <string-array name="settings_interface_theme28_str">
+        <item>Như trong hệ thống</item>
+        <item>Hệ thống sáng</item>
+        <item>Hệ thống tối</item>
+        <item>E Ink</item>
+        <item>Tùy chỉnh</item>
+    </string-array>
+    <string-array name="settings_interface_themebutton_str">
+        <item>Phương án 1</item>
+        <item>Phương án 2</item>
+        <item>Phương án 3</item>
+        <item>Phương án 4</item>
+    </string-array>
+    <string-array name="settings_limit_height_inline_imagesstr">
+        <item>Không bao giờ</item>
+        <item>Tự động</item>
+        <item>Luôn luôn</item>
+    </string-array>
+    <string-array name="settings_manage_backstr">
+        <item>Hành động hệ thống</item>
+        <item>Menu</item>
+        <item>Ẩn</item>
+        <item>Quay lại + Ẩn</item>
+        <item>Quay lại + Menu</item>
+    </string-array>
+    <string-array name="settings_manage_backstr_onyx">
+        <item>Hành động hệ thống</item>
+        <item>Menu</item>
+        <item>Ẩn</item>
+        <item>Quay lại + Ẩn</item>
+        <item>Quay lại + Menu</item>
+        <item>Trang tiếp theo</item>
+        <item>Không có hành động</item>
+    </string-array>
+    <string-array name="settings_manage_doubletapsstr">
+        <item>Không có</item>
+        <item>Từ điển</item>
+        <item>Sao chép văn bản</item>
+        <item>Menu nhanh</item>
+        <item>Chọn văn bản</item>
+    </string-array>
+    <string-array name="settings_manage_longtapstr">
+        <item>Chọn văn bản</item>
+        <item>Từ điển</item>
+        <item>Chọn + Từ điển</item>
+        <item>Hành động</item>
+    </string-array>
+    <string-array name="settings_manage_tts_swipes">
+        <item>Không có hành động</item>
+        <item>Câu trước/sau</item>
+        <item>Câu sau/trước</item>
+        <item>Cao độ</item>
+        <item>Âm lượng</item>
+        <item>Tốc độ</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr">
+        <item>Cuộn trang mượt</item>
+        <item>Cuộn dòng mượt</item>
+        <item>Cuộn dòng</item>
+        <item>Hành động</item>
+    </string-array>
+    <string-array name="settings_manage_verticalswipestr_eink">
+        <item>Cuộn trang mượt</item>
+        <item>Cuộn dòng</item>
+        <item>Không sử dụng</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightleftstr_onyx">
+        <item>Không có</item>
+        <item>Ánh sáng lạnh</item>
+        <item>Ánh sáng ấm</item>
+        <item>Cả hai mức</item>
+        <item>Nhiệt độ Lạnh/Ấm</item>
+        <item>Nhiệt độ Ấm/Lạnh</item>
+    </string-array>
+    <string-array name="settings_naturalbacklightrightstr_onyx">
+        <item>Không có</item>
+        <item>Ánh sáng ấm</item>
+        <item>Ánh sáng lạnh</item>
+        <item>Cả hai mức</item>
+        <item>Nhiệt độ Lạnh/Ấm</item>
+        <item>Nhiệt độ Ấm/Lạnh</item>
+    </string-array>
+    <string-array name="settings_opendialogs_taps_str">
+        <item>Mở</item>
+        <item>Thuộc tính sách</item>
+    </string-array>
+    <string-array name="settings_pages_columncountstr">
+        <item>Tự động</item>
+        <item>Một</item>
+        <item>Hai</item>
+        <item>Hai cột ở chế độ ngang</item>
+    </string-array>
+    <string-array name="settings_pages_imagescalestr">
+        <item>Tự động</item>
+        <item>Gốc (100%)</item>
+        <item>150%</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_notesonpagestr">
+        <item>Không có</item>
+        <item>1 dòng mỗi trang</item>
+        <item>2 dòng mỗi trang</item>
+        <item>3 dòng mỗi trang</item>
+        <item>5 dòng mỗi trang</item>
+        <item>Nếu có thể, hiển thị đầy đủ</item>
+        <item>Cửa sổ bật lên</item>
+    </string-array>
+    <string-array name="settings_pages_pagesizestr">
+        <item>Tự động</item>
+        <item>512</item>
+        <item>768</item>
+        <item>1024</item>
+        <item>1280</item>
+        <item>1536</item>
+        <item>1670</item>
+        <item>1860</item>
+        <item>2048</item>
+        <item>2340</item>
+        <item>3072</item>
+        <item>3420</item>
+        <item>4096</item>
+    </string-array>
+    <string-array name="settings_pages_progresswidthstr">
+        <item>Mặc định</item>
+        <item>Dày hơn</item>
+    </string-array>
+    <string-array name="settings_pages_skincalestr">
+        <item>Tự động</item>
+        <item>Gốc (100%)</item>
+        <item>200%</item>
+        <item>300%</item>
+        <item>400%</item>
+    </string-array>
+    <string-array name="settings_pages_useheaderstr">
+        <item>Không bao giờ</item>
+        <item>Chỉ trong cửa sổ</item>
+        <item>Chỉ ở chế độ toàn màn hình</item>
+        <item>Luôn luôn</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightleftstr_onyx">
+        <item>Không có</item>
+        <item>Độ sáng</item>
+        <item>Nhiệt độ</item>
+    </string-array>
+    <string-array name="settings_temperaturebacklightrightstr_onyx">
+        <item>Không có</item>
+        <item>Nhiệt độ</item>
+        <item>Độ sáng</item>
+    </string-array>
+    <string-array name="ttsvoices_unavailablestr">
+        <item>Thay đổi giọng nói không khả dụng</item>
+    </string-array>
+</resources>
