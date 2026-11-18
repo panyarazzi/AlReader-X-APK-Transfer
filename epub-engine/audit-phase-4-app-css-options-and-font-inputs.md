@@ -57,7 +57,7 @@ TBook's book-option builder reads TPref.bookCSS and constructs AlBookOptions.for
 | cssEPUBTables | 0x800000 |
 | cssEPUBDisColor | 0x400000 (subject to device condition) |
 
-The engine constants define the corresponding support concepts: font size, font family, vertical/horizontal margins, text indent, justify, color handling and tables. EPUB format shift is 0x2. The exact packed option word contains both format markers and property support bits, so it should not be interpreted as one simple on/off flag.
+The engine constants define the corresponding support concepts: font size, font family, vertical/horizontal margins, text indent, justify, color handling and tables. EPUB format shift is 0x2. The exact packed option word contains both format markers and property support bits, so it should not be interpreted as one simple on/off flag. AlFormatEPUB.initState sets AlCSSStyles.disableExternal only if the low 48-bit worked-option mask is zero. When this flag is set, AlCSSStyles filters selected mask/value groups from each parsed stylesheet set before adding that set to the Work Set; parseTemp applies a related filter to inline style declarations. This is a property-mask filter, not a bypass of the EPUB link/@import parser, and it does not establish a single user-facing Publisher/Normal mode.
 
 TBookCSS has no single field named enableEPUBCSS, publisherStyle or normalMode. The user-facing settings resource group is titled "CSS & Book properties" and contains EPUB-specific toggles for margins, indent, font size, justify, tables and color. Thus, the available evidence supports property-by-property control of publisher CSS rather than a dedicated global Publisher/Normal mode boolean in this settings model.
 
