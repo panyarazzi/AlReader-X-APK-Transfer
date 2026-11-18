@@ -123,7 +123,7 @@ What is now known:
 - inline style attributes are applied after stylesheet matching;
 - !important is not an observed override mechanism.
 
-What remains to trace is where the Normal Mode CSS is added relative to publisher CSS, whether it changes format-option support masks, whether the app disables publisher styles wholesale, and whether per-book/user CSS is represented as another Work Set or as a different default CSS template.
+Phase 4 now confirms that the app's normal/default EPUB CSS is loaded from _epub.css, expanded with TBookCSS semantic placeholders, and installed through AlBookEng.setRealCSS. The default set is applied before the publisher Work Set, so publisher declarations can override it when the relevant property support is enabled. TBook's EPUB options are per-property support gates; no single Publisher Style / Normal Mode boolean has been identified. A separate UI preset, if one exists, remains to be located.
 
 ## 6. Remaining limitations
 
