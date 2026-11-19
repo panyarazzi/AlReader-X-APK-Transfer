@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" package="com.onyx.neverland.alreaderpro" platformBuildVersionCode="35" platformBuildVersionName="15">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" package="com.panyarazzi.alreaderx.publisher" platformBuildVersionCode="35" platformBuildVersionName="15">
     <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -106,24 +106,24 @@
         </intent>
     </queries>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <permission android:name="com.onyx.neverland.alreaderpro.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <permission android:name="com.panyarazzi.alreaderx.publisher.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
     <uses-permission android:name="com.onyx.neverland.alreaderpro.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.DUMP"/>
-    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:enableOnBackInvokedCallback="false" android:extractNativeLibs="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_eink" android:label="@string/prg_name_public" android:largeHeap="true" android:localeConfig="@xml/locale_config" android:name="com.neverland.mainApp" android:networkSecurityConfig="@xml/network_security_config" android:requestLegacyExternalStorage="true" android:resizeableActivity="true" android:supportsRtl="true" android:theme="@style/AppThemeDefault" android:usesCleartextTraffic="true">
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:enableOnBackInvokedCallback="false" android:extractNativeLibs="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_eink" android:label="AlReader X Publisher" android:largeHeap="true" android:localeConfig="@xml/locale_config" android:name="com.neverland.mainApp" android:networkSecurityConfig="@xml/network_security_config" android:requestLegacyExternalStorage="true" android:resizeableActivity="true" android:supportsRtl="true" android:theme="@style/AppThemeDefault" android:usesCleartextTraffic="true">
         <meta-data android:name="com.onyx.neverland.alreaderpro.default_notification_icon" android:resource="@drawable/icon_notify"/>
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
-        <provider android:authorities="com.onyx.neverland.alreaderpro.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider" android:readPermission="com.onyx.neverland.alreaderpro.fileprovider.READ" android:writePermission="com.onyx.neverland.alreaderpro.fileprovider.WRITE">
+        <provider android:authorities="com.panyarazzi.alreaderx.publisher.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider" android:readPermission="com.panyarazzi.alreaderx.publisher.fileprovider.READ" android:writePermission="com.panyarazzi.alreaderx.publisher.fileprovider.WRITE">
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
         </provider>
-        <activity android:configChanges="locale|touchscreen|keyboard|keyboardHidden|navigation|screenSize|smallestScreenSize|fontScale" android:exported="true" android:hardwareAccelerated="false" android:icon="@drawable/ic_eink" android:label="@string/prg_name_public" android:launchMode="singleTask" android:name="com.neverland.viscomp.TOnyxMainActivity" android:theme="@style/AppThemeEink">
+        <activity android:configChanges="locale|touchscreen|keyboard|keyboardHidden|navigation|screenSize|smallestScreenSize|fontScale" android:exported="true" android:hardwareAccelerated="false" android:icon="@drawable/ic_eink" android:label="AlReader X Publisher" android:launchMode="singleTask" android:name="com.neverland.viscomp.TOnyxMainActivity" android:theme="@style/AppThemeEink">
             <intent-filter>
                 <action android:name="com.onyx.neverland.alreaderpro.COMMAND_TTS"/>
             </intent-filter>
         </activity>
-        <activity android:configChanges="locale|touchscreen|keyboard|keyboardHidden|navigation|screenSize|smallestScreenSize|fontScale" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_eink" android:label="@string/prg_name_public" android:launchMode="singleTask" android:name="com.neverland.viscomp.TMainActivity" android:theme="@style/AppThemeDefault" android:windowSoftInputMode="stateAlwaysHidden|adjustNothing">
+        <activity android:configChanges="locale|touchscreen|keyboard|keyboardHidden|navigation|screenSize|smallestScreenSize|fontScale" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_eink" android:label="AlReader X Publisher" android:launchMode="singleTask" android:name="com.neverland.viscomp.TMainActivity" android:theme="@style/AppThemeDefault" android:windowSoftInputMode="stateAlwaysHidden|adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
