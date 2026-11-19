@@ -45,3 +45,23 @@ Additional inspection of the current branch confirms:
 ### Current conclusion
 
 The rendering architecture already has a per-book AlFormat back-reference inside AlFonts, so a per-format font catalog bridge is architecturally plausible. The missing link is not a need to redesign the renderer; it is (1) carrying a stable CSS-family identity through the style representation, and (2) verifying that AlFonts.m always points to the format currently being painted. The implementation is not yet safe to start until those two points are proven.
+
+## Phase 19 continuation — Android Paint / Canvas endpoint
+
+Further confirmed drawing behavior:
+
+- AlCalc owns the Android Paint instance exposed as fontPaint and an Android Canvas instance.
+- AlCalc.drawText(int, int, char) calls Canvas.drawText(char[], ... , fontPaint).
+- AlCalc.drawText(int, int, AlOneItem, int, int) calls Canvas.drawText(AlOneItem.text, ... , fontPaint). The overload includes width adjustment for justified text before drawing.
+- AlFonts.init(...) receives the same AlCalc instance and AlPaintFont instance; it stores both references. AlFonts.modifyPaint(...) obtains the resolved AlTypefaces.tpf and calls Paint.setTypeface() on its AlPaintFont-backed Paint. It also updates text size and other metrics through the shared AlCalc/font paint objects.
+- This establishes the low-level drawing pipeline: AlFormat emits styled text runs -> a higher-level layout/render coordinator asks AlFonts to configure the shared font paint -> AlCalc draws the resulting text through Canvas.drawText().
+- The five initially checked application/view classes (TBook, TMainActivity, TMainTextView, TScrollPage, and AlBookEng) do not contain direct symbolic references to AlFonts, AlCalc, AlPaintFont, or AlFormat. This suggests the coordinator may be in another engine object or behind an interface/callback, and the AlBookEng smali file retrieved from this branch was empty in the connector response, so it cannot be treated as inspected.
+
+### Remaining proof required before code changes
+
+1. Find the owner/coordinator that constructs AlFonts and AlCalc and calls AlFonts.init(...).
+2. Find the owner that calls AlFonts.modifyPaint(...) and verify whether AlFonts.setFormat(...) is called for every active AlFormat, including page redraw, notes, popup notes, and book switches.
+3. Trace how AlOneItem.style[] is generated from PairTextStyle.stl and how each run's style is passed to modifyPaint. This is the safest point to decide whether a Publisher-only family token can travel through the existing style long.
+4. Check text measurement paths as well as Canvas drawing. Typeface must be selected before Paint.measureText/getTextWidths as well as before drawText, otherwise Publisher fonts may draw but wrap/paginate using the wrong metrics.
+
+Do not patch yet: drawing and measurement must resolve the same Typeface, and the active AlFormat association must be proven for both paths.
