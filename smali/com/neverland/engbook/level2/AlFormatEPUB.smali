@@ -8449,6 +8449,10 @@
     .locals 7
 
     .line 1
+    iget-boolean v2, p1, Lcom/neverland/engbook/forpublic/AlBookOptions;->publisherMode:Z
+
+    iput-boolean v2, p0, Lcom/neverland/engbook/level2/AlFormat;->publisherMode:Z
+
     const-wide/16 v0, 0x10
 
     .line 2
