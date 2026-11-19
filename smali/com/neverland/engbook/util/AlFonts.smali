@@ -362,19 +362,9 @@
     :publisher_font_name_ready
     .line 39
     .line 40
-    iget-object p2, p0, Lcom/neverland/engbook/util/AlFonts;->b:Ljava/util/HashMap;
+    invoke-direct {p0, p1}, Lcom/neverland/engbook/util/AlFonts;->resolvePublisherFontFamily(Ljava/lang/String;)Ljava/lang/Integer;
 
-    .line 41
-    .line 42
-    invoke-virtual {p2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 43
-    .line 44
-    .line 45
     move-result-object p1
-
-    .line 46
-    check-cast p1, Ljava/lang/Integer;
 
     .line 47
     .line 48
@@ -1306,6 +1296,110 @@
     :cond_29
     :goto_12
     return-object v2
+.end method
+
+.method private resolvePublisherFontFamily(Ljava/lang/String;)Ljava/lang/Integer;
+    .locals 8
+
+    if-eqz p1, :publisher_font_no_match
+
+    const/4 v0, 0x0
+
+    :publisher_font_candidate
+    const-string v1, ","
+
+    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
+
+    move-result v2
+
+    if-ltz v2, :publisher_font_last_candidate
+
+    invoke-virtual {p1, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v3
+
+    add-int/lit8 v0, v2, 0x1
+
+    const/4 v4, 0x1
+
+    goto :publisher_font_trim_candidate
+
+    :publisher_font_last_candidate
+    invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    :publisher_font_trim_candidate
+    invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-lez v5, :publisher_font_next_candidate
+
+    iget-object v5, p0, Lcom/neverland/engbook/util/AlFonts;->b:Ljava/util/HashMap;
+
+    invoke-virtual {v5, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Integer;
+
+    if-eqz v5, :publisher_font_case_insensitive
+
+    return-object v5
+
+    :publisher_font_case_insensitive
+    iget-object v5, p0, Lcom/neverland/engbook/util/AlFonts;->a:Ljava/util/ArrayList;
+
+    const/4 v6, 0x0
+
+    :publisher_font_catalog_loop
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+
+    move-result v7
+
+    if-ge v6, v7, :publisher_font_next_candidate
+
+    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lcom/neverland/engbook/util/AlOneFont;
+
+    iget-object v7, v7, Lcom/neverland/engbook/util/AlOneFont;->aName:Ljava/lang/String;
+
+    invoke-virtual {v7, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :publisher_font_catalog_next
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    return-object v5
+
+    :publisher_font_catalog_next
+    add-int/lit8 v6, v6, 0x1
+
+    goto :publisher_font_catalog_loop
+
+    :publisher_font_next_candidate
+    if-eqz v4, :publisher_font_no_match
+
+    goto :publisher_font_candidate
+
+    :publisher_font_no_match
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method private b(Lcom/neverland/engbook/util/TTFInfo;Ljava/io/File;)V
