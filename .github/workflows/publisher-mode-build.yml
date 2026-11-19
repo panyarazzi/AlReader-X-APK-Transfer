@@ -12,6 +12,7 @@ on:
       - 'lib/**'
       - 'unknown/**'
       - 'apktool.yml'
+      - 'AndroidManifest.xml'
       - '.github/workflows/publisher-mode-build.yml'
   workflow_dispatch:
 
@@ -21,7 +22,7 @@ permissions:
 jobs:
   rebuild:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
     steps:
       - name: Checkout private 1.33 workspace
         uses: actions/checkout@v4
@@ -32,9 +33,31 @@ jobs:
           distribution: temurin
           java-version: '21'
 
+      - name: Set up Android SDK build tools
+        uses: android-actions/setup-android@v3
+        with:
+          packages: 'build-tools;35.0.0'
+
+      - name: Verify isolated Publisher identity and audit hard-coded references
+        shell: bash
+        run: |
+          set -euo pipefail
+          APP_ID='com.panyarazzi.alreaderx.publisher'
+          OLD_ID='com.onyx.neverland.alreaderpro'
+          grep -Fq "package=\"$APP_ID\"" AndroidManifest.xml
+          grep -Fq "android:authorities=\"$APP_ID.fileprovider\"" AndroidManifest.xml
+          grep -Fq "android:name=\"$APP_ID.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\"" AndroidManifest.xml
+          grep -Fq "<string name=\"app_autority\">$APP_ID.fileprovider</string>" res/values/strings.xml
+          echo "Publisher applicationId: $APP_ID"
+          echo "Remaining legacy package references in app source (review for intentional external contracts):"
+          grep -RIn --binary-files=without-match --include='*.smali' --include='*.xml' "$OLD_ID" smali smali_classes* res 2>/dev/null || true
+          echo "Remaining legacy FileProvider authority references:"
+          grep -RIn --binary-files=without-match --include='*.smali' --include='*.xml' "$OLD_ID.fileprovider" smali smali_classes* res 2>/dev/null || true
+
       - name: Download and verify Apktool 3.0.3
         shell: bash
         run: |
+          set -euo pipefail
           curl --fail --location --retry 3 \
             https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar \
             --output apktool_3.0.3.jar
@@ -44,14 +67,40 @@ jobs:
       - name: Rebuild decoded APK
         shell: bash
         run: |
+          set -euo pipefail
           mkdir -p dist
           java -Xmx4g -jar apktool_3.0.3.jar b . -o dist/AlReaderX-PublisherMode-1.33-unsigned.apk
 
-      - name: Upload unsigned rebuild for inspection
+      - name: Sign test APK with a run-scoped test certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          keytool -genkeypair -v \
+            -keystore publisher-test.p12 \
+            -storetype PKCS12 \
+            -storepass 'publisher-test-only' \
+            -keypass 'publisher-test-only' \
+            -alias publisher-test \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname 'CN=AlReader X Publisher Test, OU=Testing, O=Local, C=TH'
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" sign \
+            --ks publisher-test.p12 \
+            --ks-key-alias publisher-test \
+            --ks-pass pass:publisher-test-only \
+            --key-pass pass:publisher-test-only \
+            --out dist/AlReaderX-PublisherMode-1.33-test.apk \
+            dist/AlReaderX-PublisherMode-1.33-unsigned.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs \
+            dist/AlReaderX-PublisherMode-1.33-test.apk
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging \
+            dist/AlReaderX-PublisherMode-1.33-test.apk | head -n 1 | tee dist/package-id.txt
+          grep -Fq "name='com.panyarazzi.alreaderx.publisher'" dist/package-id.txt
+
+      - name: Upload signed test APK
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: AlReaderX-PublisherMode-1.33-unsigned
-          path: dist/AlReaderX-PublisherMode-1.33-unsigned.apk
+          name: AlReaderX-PublisherMode-1.33-signed-test
+          path: dist/AlReaderX-PublisherMode-1.33-test.apk
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 7
