@@ -7313,7 +7313,7 @@
 .end method
 
 .method protected getValue(I[CI)Lcom/neverland/engbook/allstyles/AlOneCSSPair;
-    .locals 23
+    .locals 25
 
     .line 1
     move-object/from16 v0, p0
@@ -7629,7 +7629,7 @@
 
     .line 154
     .line 155
-    const-wide/32 v21, -0x7000001
+    const-wide/32 v23, -0x7000001
 
     .line 156
     .line 157
@@ -10459,7 +10459,7 @@
 
     .line 1548
     .line 1549
-    and-long v2, v2, v21
+    and-long v2, v2, v23
 
     .line 1550
     .line 1551
@@ -10624,7 +10624,7 @@
 
     .line 1630
     .line 1631
-    and-long v2, v2, v21
+    and-long v2, v2, v23
 
     .line 1632
     .line 1633
@@ -10685,7 +10685,7 @@
 
     .line 1660
     .line 1661
-    and-long v2, v2, v21
+    and-long v2, v2, v23
 
     .line 1662
     .line 1663
@@ -10746,7 +10746,7 @@
 
     .line 1690
     .line 1691
-    and-long v2, v2, v21
+    and-long v2, v2, v23
 
     .line 1692
     .line 1693
@@ -10807,7 +10807,7 @@
 
     .line 1720
     .line 1721
-    and-long v2, v2, v21
+    and-long v2, v2, v23
 
     .line 1722
     .line 1723
@@ -10868,7 +10868,7 @@
 
     .line 1750
     .line 1751
-    and-long v2, v2, v21
+    and-long v2, v2, v23
 
     .line 1752
     .line 1753
@@ -10934,7 +10934,7 @@
 
     .line 1762
     .line 1763
-    and-long v2, v2, v21
+    and-long v2, v2, v23
 
     .line 1764
     .line 1765
@@ -10946,7 +10946,7 @@
 
     .line 1768
     .line 1769
-    and-long v2, v2, v21
+    and-long v2, v2, v23
 
     .line 1770
     .line 1771
@@ -10980,7 +10980,7 @@
 
     .line 1784
     .line 1785
-    and-long v2, v2, v21
+    and-long v2, v2, v23
 
     .line 1786
     .line 1787
@@ -11022,7 +11022,7 @@
 
     .line 1804
     .line 1805
-    and-long v2, v2, v21
+    and-long v2, v2, v23
 
     .line 1806
     .line 1807
@@ -11264,7 +11264,7 @@
 
     .line 1922
     .line 1923
-    and-long v2, v2, v21
+    and-long v2, v2, v23
 
     .line 1924
     .line 1925
@@ -12307,7 +12307,7 @@
 
     .line 2409
     .line 2410
-    and-long v8, v8, v21
+    and-long v8, v8, v23
 
     .line 2411
     .line 2412
@@ -12462,7 +12462,7 @@
 
     .line 2485
     .line 2486
-    and-long v8, v8, v21
+    and-long v8, v8, v23
 
     .line 2487
     .line 2488
@@ -12511,7 +12511,7 @@
 
     .line 2509
     .line 2510
-    and-long v8, v8, v21
+    and-long v8, v8, v23
 
     .line 2511
     .line 2512
@@ -12559,7 +12559,7 @@
 
     .line 2532
     .line 2533
-    and-long v8, v8, v21
+    and-long v8, v8, v23
 
     .line 2534
     .line 2535
@@ -12607,7 +12607,7 @@
 
     .line 2555
     .line 2556
-    and-long v8, v8, v21
+    and-long v8, v8, v23
 
     .line 2557
     .line 2558
@@ -12655,7 +12655,7 @@
 
     .line 2578
     .line 2579
-    and-long v8, v8, v21
+    and-long v8, v8, v23
 
     .line 2580
     .line 2581
@@ -12680,7 +12680,7 @@
 
     .line 2589
     .line 2590
-    and-long v8, v8, v21
+    and-long v8, v8, v23
 
     .line 2591
     .line 2592
@@ -12709,7 +12709,7 @@
 
     .line 2602
     .line 2603
-    and-long v8, v8, v21
+    and-long v8, v8, v23
 
     .line 2604
     .line 2605
