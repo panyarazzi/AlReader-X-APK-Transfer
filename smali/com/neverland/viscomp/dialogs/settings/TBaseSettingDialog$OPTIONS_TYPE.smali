@@ -1029,13 +1029,15 @@
 
 .field public static final enum text_third:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
 
+.field public static final enum books_epub_publisher_mode:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
 
 # direct methods
 .method private static synthetic $values()[Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
     .locals 3
 
     .line 1
-    const/16 v0, 0x1f6
+    const/16 v0, 0x1f7
 
     .line 2
     .line 3
@@ -7057,6 +7059,12 @@
     .line 3007
     aput-object v1, v0, v2
 
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->books_epub_publisher_mode:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const/16 v2, 0x1f6
+
+    aput-object v1, v0, v2
+
     .line 3008
     .line 3009
     return-object v0
@@ -12588,6 +12596,17 @@
     sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->string_sync_sftppass:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
 
     .line 503
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const-string/jumbo v1, "books_epub_publisher_mode"
+
+    const/16 v2, 0x1f6
+
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->books_epub_publisher_mode:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    .line 504
     invoke-static {}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->$values()[Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
 
     move-result-object v0
