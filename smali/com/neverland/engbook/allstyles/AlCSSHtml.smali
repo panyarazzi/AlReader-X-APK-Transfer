@@ -22655,25 +22655,6 @@
 
     move-result-object v1
 
-    const-string v2, ","
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v2
-
-    if-ltz v2, :publisher_css_family_no_fallback
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    :publisher_css_family_no_fallback
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v2
