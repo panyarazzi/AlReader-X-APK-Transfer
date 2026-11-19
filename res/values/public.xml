@@ -6742,4 +6742,5 @@
     <public type="xml" name="network_security_config" id="0x7f150001" />
     <public type="xml" name="provider_paths" id="0x7f150002" />
     <public type="xml" name="spinner_item" id="0x7f150003" />
+    <public type="string" name="books_epub_publisher_mode" id="0x7f1204b9" />
 </resources>
