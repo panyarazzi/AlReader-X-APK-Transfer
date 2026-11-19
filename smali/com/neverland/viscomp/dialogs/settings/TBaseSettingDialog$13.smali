@@ -100,6 +100,13 @@
     .line 6
     move-result p1
 
+    const/16 v0, 0x1f6
+
+    if-ne p1, v0, :cond_publisher_dispatch_continue
+
+    goto :pswitch_8e
+
+    :cond_publisher_dispatch_continue
     .line 7
     const/4 v0, 0x0
 
@@ -5838,6 +5845,29 @@
     .line 2795
     .line 2796
     .line 2797
+    goto :goto_f
+
+    :pswitch_8e
+    sget-object p1, Lcom/neverland/mainApp;->pref:Lcom/neverland/prefs/TPref;
+
+    iget-object p1, p1, Lcom/neverland/prefs/TPref;->intopt:Lcom/neverland/prefs/TInternalOptions;
+
+    iget-boolean v0, p1, Lcom/neverland/prefs/TInternalOptions;->publisherMode:Z
+
+    if-eq v0, p2, :cond_20
+
+    iput-boolean p2, p1, Lcom/neverland/prefs/TInternalOptions;->publisherMode:Z
+
+    invoke-static {}, Lcom/neverland/mainApp;->getBaseDialog()Lcom/neverland/viscomp/dialogs/TBaseDialog;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_20
+
+    sget-object p2, Lcom/neverland/viscomp/dialogs/TBaseDialog$SETTINGS_RESULT;->reloadbook:Lcom/neverland/viscomp/dialogs/TBaseDialog$SETTINGS_RESULT;
+
+    iput-object p2, v0, Lcom/neverland/viscomp/dialogs/TBaseDialog;->resultAfterClose:Lcom/neverland/viscomp/dialogs/TBaseDialog$SETTINGS_RESULT;
+
     :cond_20
     :goto_f
     return-void
