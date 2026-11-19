@@ -19031,6 +19031,13 @@
     .line 4
     move-result p2
 
+    const/16 v0, 0x1f6
+
+    if-ne p2, v0, :cond_publisher_init_dispatch_continue
+
+    goto :pswitch_8e
+
+    :cond_publisher_init_dispatch_continue
     .line 5
     const/4 v0, 0x5
 
@@ -21706,6 +21713,17 @@
     .line 1252
     .line 1253
     move-result v5
+
+    goto :goto_2
+
+    :pswitch_8e
+    sget-object p2, Lcom/neverland/mainApp;->pref:Lcom/neverland/prefs/TPref;
+
+    iget-object p2, p2, Lcom/neverland/prefs/TPref;->intopt:Lcom/neverland/prefs/TInternalOptions;
+
+    iget-boolean v5, p2, Lcom/neverland/prefs/TInternalOptions;->publisherMode:Z
+
+    goto :goto_2
 
     .line 1254
     :goto_2
