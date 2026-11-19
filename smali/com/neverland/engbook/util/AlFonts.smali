@@ -3415,7 +3415,7 @@
 
     .line 54
     .line 55
-    const-wide v14, 0x807000083L
+    const-wide v14, 0x80f000083L
 
     .line 56
     .line 57
