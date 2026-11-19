@@ -3365,13 +3365,13 @@
     .line 34
     long-to-int v7, v6
 
-    const-wide/32 v18, 0x8000000
+    const-wide/32 v14, 0x8000000
 
-    and-long v18, v2, v18
+    and-long v14, v2, v14
 
-    long-to-int v18, v18
+    long-to-int v14, v14
 
-    if-eqz v18, :publisher_profile_metrics_slot_ready
+    if-eqz v14, :publisher_profile_metrics_slot_ready
 
     const/4 v7, 0x0
 
