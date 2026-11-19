@@ -60922,7 +60922,7 @@
 .end method
 
 .method openBookInThread(Ljava/lang/String;Lcom/neverland/engbook/forpublic/AlBookOptions;)Lcom/neverland/engbook/forpublic/EngBookMyType$TAL_NOTIFY_RESULT;
-    .locals 21
+    .locals 23
 
     .line 1
     move-object/from16 v1, p0
@@ -63155,6 +63155,15 @@
     .line 1074
     xor-long/2addr v7, v14
 
+    iget-boolean v21, v3, Lcom/neverland/engbook/forpublic/AlBookOptions;->publisherMode:Z
+
+    if-eqz v21, :cond_publisher_cache_read_done
+
+    const-wide v21, 0x5055424c49534852L
+
+    xor-long/2addr v7, v21
+
+    :cond_publisher_cache_read_done
     .line 1075
     cmp-long v0, v10, v7
 
@@ -63745,6 +63754,15 @@
     .line 1340
     xor-long/2addr v9, v11
 
+    iget-boolean v21, v3, Lcom/neverland/engbook/forpublic/AlBookOptions;->publisherMode:Z
+
+    if-eqz v21, :cond_publisher_cache_write_done
+
+    const-wide v21, 0x5055424c49534852L
+
+    xor-long/2addr v9, v21
+
+    :cond_publisher_cache_write_done
     .line 1341
     invoke-virtual {v8, v9, v10}, Ljava/io/ObjectOutputStream;->writeLong(J)V
 
