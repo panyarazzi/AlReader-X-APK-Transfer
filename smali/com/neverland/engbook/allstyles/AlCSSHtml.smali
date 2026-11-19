@@ -10961,6 +10961,45 @@
     .line 1795
     :cond_2d
     :goto_b
+    invoke-direct {v0}, Lcom/neverland/engbook/allstyles/AlCSSHtml;->registerPublisherFontFamily()I
+
+    move-result v22
+
+    if-ltz v22, :goto_b_legacy
+
+    iget-object v1, v0, Lcom/neverland/engbook/allstyles/AlCSSHtml;->internalCSSValue:Lcom/neverland/engbook/allstyles/AlOneCSSPair;
+
+    iget-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->m_0:J
+
+    const-wide/32 v3, 0xf000000
+
+    or-long/2addr v2, v3
+
+    iput-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->m_0:J
+
+    iget-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->v_0:J
+
+    const-wide/32 v3, -0xf000001
+
+    and-long/2addr v2, v3
+
+    const-wide/32 v3, 0x8000000
+
+    or-long/2addr v2, v3
+
+    int-to-long v4, v22
+
+    const/16 v6, 0x18
+
+    shl-long/2addr v4, v6
+
+    or-long/2addr v2, v4
+
+    iput-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->v_0:J
+
+    goto/16 :goto_2e
+
+    :goto_b_legacy
     iget-object v1, v0, Lcom/neverland/engbook/allstyles/AlCSSHtml;->internalCSSValue:Lcom/neverland/engbook/allstyles/AlOneCSSPair;
 
     .line 1796
@@ -22577,4 +22616,76 @@
     .line 77
     .line 78
     return-void
+.end method
+
+.method private registerPublisherFontFamily()I
+    .locals 4
+
+    iget-object v0, p0, Lcom/neverland/engbook/allstyles/AlCSSStyles;->format:Lcom/neverland/engbook/level2/AlFormat;
+
+    if-eqz v0, :publisher_css_family_unavailable
+
+    iget-boolean v2, v0, Lcom/neverland/engbook/level2/AlFormat;->publisherMode:Z
+
+    if-eqz v2, :publisher_css_family_unavailable
+
+    iget-object v1, p0, Lcom/neverland/engbook/allstyles/AlCSSHtml;->c:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "\u0022"
+
+    const-string v3, ""
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "'"
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, ","
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+
+    move-result v2
+
+    if-ltz v2, :publisher_css_family_no_fallback
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v1
+
+    :publisher_css_family_no_fallback
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-lez v2, :publisher_css_family_unavailable
+
+    invoke-virtual {v0, v1}, Lcom/neverland/engbook/level2/AlFormat;->registerPublisherFontFamily(Ljava/lang/String;)I
+
+    move-result v0
+
+    return v0
+
+    :publisher_css_family_unavailable
+    const/4 v0, -0x1
+
+    return v0
 .end method
