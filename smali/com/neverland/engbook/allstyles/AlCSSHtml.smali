@@ -10885,6 +10885,47 @@
     .line 1758
     .line 1759
     :cond_2b
+    invoke-direct {v0}, Lcom/neverland/engbook/allstyles/AlCSSHtml;->registerPublisherFontFamily()I
+
+    move-result v22
+
+    if-ltz v22, :cond_2b_legacy
+
+    iget-object v1, v0, Lcom/neverland/engbook/allstyles/AlCSSHtml;->internalCSSValue:Lcom/neverland/engbook/allstyles/AlOneCSSPair;
+
+    iget-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->m_0:J
+
+    const-wide/32 v3, 0xf000000
+
+    or-long/2addr v2, v3
+
+    iput-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->m_0:J
+
+    iget-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->v_0:J
+
+    const-wide/32 v3, -0xf000001
+
+    and-long/2addr v2, v3
+
+    const-wide/32 v3, 0x8000000
+
+    or-long/2addr v2, v3
+
+    move/from16 v15, v22
+
+    int-to-long v4, v15
+
+    const/16 v6, 0x18
+
+    shl-long/2addr v4, v6
+
+    or-long/2addr v2, v4
+
+    iput-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->v_0:J
+
+    goto/16 :goto_2e
+
+    :cond_2b_legacy
     iget-object v1, v0, Lcom/neverland/engbook/allstyles/AlCSSHtml;->internalCSSValue:Lcom/neverland/engbook/allstyles/AlOneCSSPair;
 
     .line 1760
@@ -10961,47 +11002,6 @@
     .line 1795
     :cond_2d
     :goto_b
-    invoke-direct {v0}, Lcom/neverland/engbook/allstyles/AlCSSHtml;->registerPublisherFontFamily()I
-
-    move-result v22
-
-    if-ltz v22, :goto_b_legacy
-
-    iget-object v1, v0, Lcom/neverland/engbook/allstyles/AlCSSHtml;->internalCSSValue:Lcom/neverland/engbook/allstyles/AlOneCSSPair;
-
-    iget-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->m_0:J
-
-    const-wide/32 v3, 0xf000000
-
-    or-long/2addr v2, v3
-
-    iput-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->m_0:J
-
-    iget-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->v_0:J
-
-    const-wide/32 v3, -0xf000001
-
-    and-long/2addr v2, v3
-
-    const-wide/32 v3, 0x8000000
-
-    or-long/2addr v2, v3
-
-    move/from16 v15, v22
-
-    int-to-long v4, v15
-
-    const/16 v6, 0x18
-
-    shl-long/2addr v4, v6
-
-    or-long/2addr v2, v4
-
-    iput-wide v2, v1, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->v_0:J
-
-    goto/16 :goto_2e
-
-    :goto_b_legacy
     iget-object v1, v0, Lcom/neverland/engbook/allstyles/AlCSSHtml;->internalCSSValue:Lcom/neverland/engbook/allstyles/AlOneCSSPair;
 
     .line 1796
