@@ -63155,13 +63155,13 @@
     .line 1074
     xor-long/2addr v7, v14
 
-    iget-boolean v21, v3, Lcom/neverland/engbook/forpublic/AlBookOptions;->publisherMode:Z
+    iget-boolean v0, v3, Lcom/neverland/engbook/forpublic/AlBookOptions;->publisherMode:Z
 
-    if-eqz v21, :cond_publisher_cache_read_done
+    if-eqz v0, :cond_publisher_cache_read_done
 
     const-wide v21, 0x5055424c49534852L
 
-    xor-long/2addr v7, v21
+    xor-long v7, v7, v21
 
     :cond_publisher_cache_read_done
     .line 1075
@@ -63754,13 +63754,13 @@
     .line 1340
     xor-long/2addr v9, v11
 
-    iget-boolean v21, v3, Lcom/neverland/engbook/forpublic/AlBookOptions;->publisherMode:Z
+    iget-boolean v0, v3, Lcom/neverland/engbook/forpublic/AlBookOptions;->publisherMode:Z
 
-    if-eqz v21, :cond_publisher_cache_write_done
+    if-eqz v0, :cond_publisher_cache_write_done
 
     const-wide v21, 0x5055424c49534852L
 
-    xor-long/2addr v9, v21
+    xor-long v9, v9, v21
 
     :cond_publisher_cache_write_done
     .line 1341
