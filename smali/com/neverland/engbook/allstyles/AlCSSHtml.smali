@@ -17876,6 +17876,15 @@
     .line 36
     .line 37
     :cond_0
+    iget-object v1, p0, Lcom/neverland/engbook/allstyles/AlCSSStyles;->format:Lcom/neverland/engbook/level2/AlFormat;
+
+    iget-boolean v1, v1, Lcom/neverland/engbook/level2/AlFormat;->publisherMode:Z
+
+    if-eqz v1, :cond_publisher_css_app_baseline
+
+    goto :cond_1
+
+    :cond_publisher_css_app_baseline
     :try_start_0
     sget-object p1, Lcom/neverland/engbook/allstyles/CSS_DefaultProperty;->DEFAULT_CSS_ALL0:Ljava/lang/String;
 
