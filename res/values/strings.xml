@@ -1210,4 +1210,5 @@ Only Basic Authorization is supported for HTTP proxies. Unfortunately, Authoriza
     <string name="tts_speak_notes_body_start">- Start of notes: -</string>
     <string name="tts_speak_notes_body_stop">- End of notes! -</string>
     <string name="tts_speak_warning_sleep_timer">(Reading will stop within a minute!)</string>
+    <string name="books_epub_publisher_mode">Publisher Mode</string>
 </resources>
