@@ -247,6 +247,12 @@
     and-long/2addr v0, p1
 
     .line 4
+    const-wide/32 v2, 0x8000000
+
+    and-long v2, p1, v2
+
+    long-to-int v9, v2
+
     const-wide/32 v2, 0x7000000
 
     .line 5
@@ -268,6 +274,13 @@
     .line 13
     long-to-int p2, p1
 
+    move v10, p2
+
+    if-eqz v9, :publisher_font_profile_slot_ready
+
+    const/4 p2, 0x0
+
+    :publisher_font_profile_slot_ready
     .line 14
     aget-boolean p1, v2, p2
 
@@ -327,12 +340,26 @@
 
     .line 36
     :goto_1
+    if-eqz v9, :publisher_font_profile_name
+
+    iget-object v2, p0, Lcom/neverland/engbook/util/AlFonts;->m:Lcom/neverland/engbook/level2/AlFormat;
+
+    if-eqz v2, :publisher_font_profile_name
+
+    invoke-virtual {v2, v10}, Lcom/neverland/engbook/level2/AlFormat;->getPublisherFontFamily(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    if-eqz p1, :publisher_font_profile_name
+
+    goto :publisher_font_name_ready
+
+    :publisher_font_profile_name
     iget-object p1, p3, Lcom/neverland/engbook/util/AlProfileOptions;->font_names:[Ljava/lang/String;
 
-    .line 37
-    .line 38
     aget-object p1, p1, p2
 
+    :publisher_font_name_ready
     .line 39
     .line 40
     iget-object p2, p0, Lcom/neverland/engbook/util/AlFonts;->b:Ljava/util/HashMap;
@@ -1727,7 +1754,7 @@
 
     .line 2
     .line 3
-    const-wide/32 v1, 0x7000003
+    const-wide/32 v1, 0xf000003
 
     .line 4
     .line 5
@@ -3338,6 +3365,17 @@
     .line 34
     long-to-int v7, v6
 
+    const-wide/32 v18, 0x8000000
+
+    and-long v18, v2, v18
+
+    long-to-int v18, v18
+
+    if-eqz v18, :publisher_profile_metrics_slot_ready
+
+    const/4 v7, 0x0
+
+    :publisher_profile_metrics_slot_ready
     .line 35
     iget-object v6, v1, Lcom/neverland/engbook/util/AlProfileOptions;->font_sizes1:[F
 
@@ -5186,12 +5224,18 @@
 .end method
 
 .method public setFormat(Lcom/neverland/engbook/level2/AlFormat;)V
-    .locals 0
+    .locals 1
 
-    .line 1
+    iget-object v0, p0, Lcom/neverland/engbook/util/AlFonts;->m:Lcom/neverland/engbook/level2/AlFormat;
+
+    if-ne v0, p1, :publisher_format_changed
+
+    return-void
+
+    :publisher_format_changed
     iput-object p1, p0, Lcom/neverland/engbook/util/AlFonts;->m:Lcom/neverland/engbook/level2/AlFormat;
 
-    .line 2
-    .line 3
+    invoke-virtual {p0}, Lcom/neverland/engbook/util/AlFonts;->clearFontCache()V
+
     return-void
 .end method
