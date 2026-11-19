@@ -10987,7 +10987,9 @@
 
     or-long/2addr v2, v3
 
-    int-to-long v4, v22
+    move/from16 v15, v22
+
+    int-to-long v4, v15
 
     const/16 v6, 0x18
 
