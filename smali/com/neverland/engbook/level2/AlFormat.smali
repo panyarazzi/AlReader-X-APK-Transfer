@@ -28011,6 +28011,7 @@
     iput-object p3, p0, Lcom/neverland/engbook/level2/AlFormat;->defTextPar0:Lcom/neverland/engbook/util/AlDeafultTextParameters;
 
     :cond_publisher_textpar_done
+    iget-wide v0, p1, Lcom/neverland/engbook/forpublic/AlBookOptions;->formatOptions:J
     .line 35
     .line 36
     const-wide/16 v2, -0x100
