@@ -27949,7 +27949,7 @@
     .line 34
     iget-boolean v0, p0, Lcom/neverland/engbook/level2/AlFormat;->publisherMode:Z
 
-    if-eqz v11, :cond_publisher_textpar_normal
+    if-eqz v0, :cond_publisher_textpar_normal
 
     new-instance v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;
 
