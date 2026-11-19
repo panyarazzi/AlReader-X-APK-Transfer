@@ -28,3 +28,20 @@ Date: 2026-11-19
 - Static source inspection only.
 - No Smali source changed in this phase.
 - No APK assembled, installed, or runtime-tested.
+
+## Phase 19 continuation — complete text-paint path findings
+
+Additional inspection of the current branch confirms:
+
+- AlFormat.getTextBuffer(int, PairTextStyle, int, AlProfileOptions) delegates to private AlFormat.x(...). That routine fills PairTextStyle.txt and PairTextStyle.stl; it is the text/style extraction boundary, not the final Android drawing call.
+- PairTextStyle itself contains only char[] txt and long[] stl. It has no per-character or per-run CSS family string field.
+- AlOneStyleStack contains the CSS cascade state (paragraph, prop1, prop2, prop3, class/tag metadata, etc.) but no font-family string field. Its copyFrom() copies the current style fields, so adding metadata there would require updating constructor, copy, reset, and stack push/pop paths.
+- AlFonts.modifyPaint(long, long, AlProfileOptions, boolean, int) is the concrete Typeface application point. It normalizes the font-slot bits, obtains a cached AlTypefaces via the internal resolver, then calls Android Paint.setTypeface().
+- AlFonts already owns a nullable AlFormat reference in field m, initialized to null and assigned by public setFormat(AlFormat). The class already uses this back-reference for per-format text-color maps. This is a strong existing extension point for a per-format CSS font-family resolver; it avoids threading a new AlFormat argument through every paint call.
+- However, the internal Typeface resolver currently does not consult m: it reads the 3-bit slot from the style long, reads AlProfileOptions.font_names[slot], and resolves the resulting string through the Font Catalog name map. A safe implementation can add a Publisher-only override at this resolver boundary, but must first determine how a CSS family identity survives from AlCSSHtml parsing into the style long passed to modifyPaint.
+- The first candidate is a Publisher-only style-slot token that remains within the existing 3-bit slot field and is interpreted by AlFonts using the current m format's CSS-family mapping. This requires a collision-safe reserved token and must preserve the other style bits. Do not implement until all existing slot aliases and style masks have been enumerated.
+- Direct call-site references to AlFonts.setFormat() and modifyPaint() were not found in the initially inspected AlBookEng, AlCalc, TBook, AlTextOnScreen, or visible reader view/renderer classes. The caller may be in another engine/bridge class or invoked through a different dispatch path. The exact setter lifecycle (when the current format is attached/detached) remains unresolved and must be traced before coding.
+
+### Current conclusion
+
+The rendering architecture already has a per-book AlFormat back-reference inside AlFonts, so a per-format font catalog bridge is architecturally plausible. The missing link is not a need to redesign the renderer; it is (1) carrying a stable CSS-family identity through the style representation, and (2) verifying that AlFonts.m always points to the format currently being painted. The implementation is not yet safe to start until those two points are proven.
