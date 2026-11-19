@@ -228,6 +228,7 @@
 .field public favorPath1:Ljava/lang/String;
 
 .field public formatOptionWorked:J
+.field public publisherMode:Z
 
 .field public fullPath0:Ljava/lang/String;
 
@@ -27946,8 +27947,70 @@
 
     .line 33
     .line 34
+    iget-boolean v0, p0, Lcom/neverland/engbook/level2/AlFormat;->publisherMode:Z
+
+    if-eqz v0, :cond_publisher_textpar_normal
+
+    new-instance v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;
+
+    invoke-direct {v0}, Lcom/neverland/engbook/util/AlDeafultTextParameters;-><init>()V
+
+    iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->flet_par_:J
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->flet_par_:J
+
+    iget v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->imageback:I
+
+    iput v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->imageback:I
+
+    iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_par_0:J
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_par_0:J
+
+    iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop1:J
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop1:J
+
+    iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop2:J
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop2:J
+
+    iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop3:J
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop3:J
+
+    iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->sup_fontsize:D
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->sup_fontsize:D
+
+    iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->table_fontsize:D
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->table_fontsize:D
+
+    iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->title_par:J
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->title_par:J
+
+    const-wide/16 v1, 0x0
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_par:J
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_prop_1:J
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_prop_2:J
+
+    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_prop_3:J
+
+    iput-object v0, p0, Lcom/neverland/engbook/level2/AlFormat;->defTextPar0:Lcom/neverland/engbook/util/AlDeafultTextParameters;
+
+    move-object p3, v0
+
+    goto :cond_publisher_textpar_done
+
+    :cond_publisher_textpar_normal
     iput-object p3, p0, Lcom/neverland/engbook/level2/AlFormat;->defTextPar0:Lcom/neverland/engbook/util/AlDeafultTextParameters;
 
+    :cond_publisher_textpar_done
     .line 35
     .line 36
     const-wide/16 v2, -0x100
