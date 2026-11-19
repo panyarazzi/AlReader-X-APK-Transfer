@@ -27869,7 +27869,7 @@
 .end method
 
 .method public initState(Lcom/neverland/engbook/forpublic/AlBookOptions;Lcom/neverland/engbook/level1/AlFiles;Lcom/neverland/engbook/util/AlPreferenceOptions;)V
-    .locals 11
+    .locals 12
 
     .line 1
     iget-boolean v0, p3, Lcom/neverland/engbook/util/AlPreferenceOptions;->englishTextIdent:Z
@@ -27949,61 +27949,61 @@
     .line 34
     iget-boolean v0, p0, Lcom/neverland/engbook/level2/AlFormat;->publisherMode:Z
 
-    if-eqz v0, :cond_publisher_textpar_normal
+    if-eqz v11, :cond_publisher_textpar_normal
 
-    new-instance v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;
+    new-instance v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;
 
-    invoke-direct {v0}, Lcom/neverland/engbook/util/AlDeafultTextParameters;-><init>()V
+    invoke-direct {v11}, Lcom/neverland/engbook/util/AlDeafultTextParameters;-><init>()V
 
     iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->flet_par_:J
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->flet_par_:J
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->flet_par_:J
 
     iget v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->imageback:I
 
-    iput v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->imageback:I
+    iput v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->imageback:I
 
     iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_par_0:J
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_par_0:J
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_par_0:J
 
     iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop1:J
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop1:J
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop1:J
 
     iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop2:J
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop2:J
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop2:J
 
     iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop3:J
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop3:J
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->notes_prop3:J
 
     iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->sup_fontsize:D
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->sup_fontsize:D
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->sup_fontsize:D
 
     iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->table_fontsize:D
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->table_fontsize:D
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->table_fontsize:D
 
     iget-wide v1, p3, Lcom/neverland/engbook/util/AlDeafultTextParameters;->title_par:J
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->title_par:J
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->title_par:J
 
     const-wide/16 v1, 0x0
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_par:J
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_par:J
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_prop_1:J
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_prop_1:J
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_prop_2:J
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_prop_2:J
 
-    iput-wide v1, v0, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_prop_3:J
+    iput-wide v1, v11, Lcom/neverland/engbook/util/AlDeafultTextParameters;->p_prop_3:J
 
-    iput-object v0, p0, Lcom/neverland/engbook/level2/AlFormat;->defTextPar0:Lcom/neverland/engbook/util/AlDeafultTextParameters;
+    iput-object v11, p0, Lcom/neverland/engbook/level2/AlFormat;->defTextPar0:Lcom/neverland/engbook/util/AlDeafultTextParameters;
 
-    move-object p3, v0
+    move-object p3, v11
 
     goto :cond_publisher_textpar_done
 
