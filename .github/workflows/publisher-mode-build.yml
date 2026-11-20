@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feature/publisher-mode-rebased-1.33
+      - feature/publisher-embedded-epub-fonts
     paths:
       - 'smali/**'
       - 'smali_classes*/**'
@@ -13,6 +14,7 @@ on:
       - 'unknown/**'
       - 'apktool.yml'
       - 'AndroidManifest.xml'
+      - 'publisher-font-loader/**'
       - '.github/workflows/publisher-mode-build.yml'
   workflow_dispatch:
 
@@ -36,7 +38,7 @@ jobs:
       - name: Set up Android SDK build tools
         uses: android-actions/setup-android@v3
         with:
-          packages: 'build-tools;35.0.0'
+          packages: 'platforms;android-35,build-tools;35.0.0'
 
       - name: Verify isolated Publisher identity and audit hard-coded references
         shell: bash
@@ -64,12 +66,85 @@ jobs:
           echo "dbf930b076c6b9be08d57c449cacefc3bdd6b71ebd59b3066fc0e1f5b14f9423  apktool_3.0.3.jar" | sha256sum --check
           java -jar apktool_3.0.3.jar --version
 
+      - name: Compile Publisher embedded-font runtime helper
+        shell: bash
+        run: |
+          set -euo pipefail
+          ANDROID_JAR="$ANDROID_HOME/platforms/android-35/android.jar"
+          D8="$ANDROID_HOME/build-tools/35.0.0/d8"
+          test -f "$ANDROID_JAR"
+          test -x "$D8"
+          mkdir -p build/publisher-font-loader/classes build/publisher-font-loader/dex
+          javac -source 8 -target 8 -bootclasspath "$ANDROID_JAR" \
+            -d build/publisher-font-loader/classes \
+            publisher-font-loader/src/com/neverland/engbook/util/PublisherFontLoader.java
+          mapfile -t HELPER_CLASSES < <(find build/publisher-font-loader/classes -name '*.class' -print)
+          test "${#HELPER_CLASSES[@]}" -gt 0
+          "$D8" --min-api 21 --lib "$ANDROID_JAR" \
+            --output build/publisher-font-loader/dex "${HELPER_CLASSES[@]}"
+          test -s build/publisher-font-loader/dex/classes.dex
+
       - name: Rebuild decoded APK
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p dist
           java -Xmx4g -jar apktool_3.0.3.jar b . -o dist/AlReaderX-PublisherMode-1.33-unsigned.apk
+
+      - name: Add embedded-font helper DEX
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK='dist/AlReaderX-PublisherMode-1.33-unsigned.apk'
+          mapfile -t DEX_ENTRIES < <(unzip -Z1 "$APK" | grep -E '^classes([0-9]+)?\\.dex
+      - name: Sign test APK with a run-scoped test certificate
+        shell: bash
+        run: |
+          set -euo pipefail
+          keytool -genkeypair -v \
+            -keystore publisher-test.p12 \
+            -storetype PKCS12 \
+            -storepass 'publisher-test-only' \
+            -keypass 'publisher-test-only' \
+            -alias publisher-test \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname 'CN=AlReader X Publisher Test, OU=Testing, O=Local, C=TH'
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" sign \
+            --ks publisher-test.p12 \
+            --ks-key-alias publisher-test \
+            --ks-pass pass:publisher-test-only \
+            --key-pass pass:publisher-test-only \
+            --out dist/AlReaderX-PublisherMode-1.33-test.apk \
+            dist/AlReaderX-PublisherMode-1.33-unsigned.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs \
+            dist/AlReaderX-PublisherMode-1.33-test.apk
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging \
+            dist/AlReaderX-PublisherMode-1.33-test.apk | head -n 1 | tee dist/package-id.txt
+          grep -Fq "name='com.panyarazzi.alreaderx.publisher'" dist/package-id.txt
+
+      - name: Upload signed test APK
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: AlReaderX-PublisherMode-1.33-signed-test
+          path: dist/AlReaderX-PublisherMode-1.33-test.apk
+          if-no-files-found: error
+          retention-days: 7
+ || true)
+          MAX_DEX=1
+          for ENTRY in "${DEX_ENTRIES[@]}"; do
+            BASE="${ENTRY#classes}"
+            BASE="${BASE%.dex}"
+            if [[ -n "$BASE" && "$BASE" =~ ^[0-9]+$ ]] && (( BASE > MAX_DEX )); then
+              MAX_DEX="$BASE"
+            fi
+          done
+          NEXT_DEX=$((MAX_DEX + 1))
+          HELPER="classes${NEXT_DEX}.dex"
+          cp build/publisher-font-loader/dex/classes.dex "dist/$HELPER"
+          (cd dist && zip -q 'AlReaderX-PublisherMode-1.33-unsigned.apk' "$HELPER")
+          unzip -Z1 "$APK" | grep -Fxq "$HELPER"
+          echo "Injected embedded-font runtime as $HELPER"
 
       - name: Sign test APK with a run-scoped test certificate
         shell: bash
