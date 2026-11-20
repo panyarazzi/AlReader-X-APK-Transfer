@@ -37,7 +37,7 @@ public final class PublisherFontLoader {
     private static final Pattern PROPERTY =
             Pattern.compile("([a-z-]+)\\s*:\\s*([^;]+)", Pattern.CASE_INSENSITIVE);
     private static final Pattern URL =
-            Pattern.compile("url\\(\\s*(['\\"]?)(.*?)\\1\\s*\\)", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+            Pattern.compile("url\\(\\s*(.*?)\\s*\\)", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
     private static final Map<Object, BookRegistry> REGISTRIES =
             Collections.synchronizedMap(new WeakHashMap<Object, BookRegistry>());
 
@@ -81,7 +81,7 @@ public final class PublisherFontLoader {
                 if (family.length() == 0 || srcValue == null) continue;
                 Matcher url = URL.matcher(srcValue);
                 if (!url.find()) continue;
-                String rawSource = unquote(url.group(2).trim());
+                String rawSource = unquote(url.group(1).trim());
                 if (rawSource.length() == 0 || rawSource.regionMatches(true, 0, "data:", 0, 5)
                         || rawSource.indexOf(':') >= 0 || rawSource.startsWith("//")) continue;
                 String resolved = resolvePath(cssPath, rawSource);
