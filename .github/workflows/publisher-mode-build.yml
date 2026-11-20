@@ -96,7 +96,13 @@ jobs:
         run: |
           set -euo pipefail
           APK='dist/AlReaderX-PublisherMode-1.33-unsigned.apk'
-          mapfile -t DEX_ENTRIES < <(unzip -Z1 "$APK" | grep -E '^classes([0-9]+)?\\.dex
+          NEXT_DEX=$(python3 -c 'import sys,zipfile; z=zipfile.ZipFile(sys.argv[1]); nums=[(1 if n == "classes.dex" else int(n[7:-4])) for n in z.namelist() if n.startswith("classes") and n.endswith(".dex") and (n == "classes.dex" or n[7:-4].isdigit())]; print(max(nums or [1])+1)' "$APK")
+          HELPER="classes${NEXT_DEX}.dex"
+          cp build/publisher-font-loader/dex/classes.dex "dist/$HELPER"
+          (cd dist && zip -q 'AlReaderX-PublisherMode-1.33-unsigned.apk' "$HELPER")
+          unzip -Z1 "$APK" | grep -Fxq "$HELPER"
+          echo "Injected embedded-font runtime as $HELPER"
+
       - name: Sign test APK with a run-scoped test certificate
         shell: bash
         run: |
