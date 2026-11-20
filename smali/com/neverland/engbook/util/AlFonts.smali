@@ -239,7 +239,7 @@
 .end method
 
 .method private a(JLcom/neverland/engbook/util/AlProfileOptions;Z)Lcom/neverland/engbook/util/AlTypefaces;
-    .locals 16
+    .locals 11
 
     .line 1
     const-wide/16 v0, 0x3
@@ -363,33 +363,34 @@
 
     :publisher_font_name_ready
     if-eqz v9, :publisher_font_catalog_fallback
-    iget-object v11, p0, Lcom/neverland/engbook/util/AlFonts;->publisherContext:Landroid/content/Context;
-    if-eqz v11, :publisher_font_catalog_fallback
-    iget-object v12, p0, Lcom/neverland/engbook/util/AlFonts;->m:Lcom/neverland/engbook/level2/AlFormat;
-    if-eqz v12, :publisher_font_catalog_fallback
-    long-to-int v13, v0
-    and-int/lit8 v14, v13, 0x1
-    if-eqz v14, :publisher_font_not_bold
-    const/4 v14, 0x1
+    iget-object p3, p0, Lcom/neverland/engbook/util/AlFonts;->publisherContext:Landroid/content/Context;
+    if-eqz p3, :publisher_font_catalog_fallback
+    iget-object p2, p0, Lcom/neverland/engbook/util/AlFonts;->m:Lcom/neverland/engbook/level2/AlFormat;
+    if-eqz p2, :publisher_font_catalog_fallback
+    long-to-int v10, v0
+    and-int/lit8 p4, v10, 0x1
+    if-eqz p4, :publisher_font_not_bold
+    const/4 p4, 0x1
     goto :publisher_font_bold_ready
     :publisher_font_not_bold
-    const/4 v14, 0x0
+    const/4 p4, 0x0
     :publisher_font_bold_ready
-    and-int/lit8 v15, v13, 0x2
-    if-eqz v15, :publisher_font_not_italic
-    const/4 v15, 0x1
+    and-int/lit8 v4, v10, 0x2
+    if-eqz v4, :publisher_font_not_italic
+    const/4 v4, 0x1
     goto :publisher_font_italic_ready
     :publisher_font_not_italic
-    const/4 v15, 0x0
+    const/4 v4, 0x0
     :publisher_font_italic_ready
-    invoke-static {v11, v12, p1, v14, v15}, Lcom/neverland/engbook/util/PublisherFontLoader;->resolveTypeface(Landroid/content/Context;Ljava/lang/Object;Ljava/lang/String;ZZ)Landroid/graphics/Typeface;
-    move-result-object v11
-    if-eqz v11, :publisher_font_catalog_fallback
-    new-instance v12, Lcom/neverland/engbook/util/AlTypefaces;
-    invoke-direct {v12}, Lcom/neverland/engbook/util/AlTypefaces;-><init>()V
-    iput-object v11, v12, Lcom/neverland/engbook/util/AlTypefaces;->tpf:Landroid/graphics/Typeface;
-    return-object v12
+    invoke-static {p3, p2, p1, p4, v4}, Lcom/neverland/engbook/util/PublisherFontLoader;->resolveTypeface(Landroid/content/Context;Ljava/lang/Object;Ljava/lang/String;ZZ)Landroid/graphics/Typeface;
+    move-result-object p3
+    if-eqz p3, :publisher_font_catalog_fallback
+    new-instance p2, Lcom/neverland/engbook/util/AlTypefaces;
+    invoke-direct {p2}, Lcom/neverland/engbook/util/AlTypefaces;-><init>()V
+    iput-object p3, p2, Lcom/neverland/engbook/util/AlTypefaces;->tpf:Landroid/graphics/Typeface;
+    return-object p2
     :publisher_font_catalog_fallback
+    const/4 v4, 0x0
     .line 39
     .line 40
     invoke-direct {p0, p1}, Lcom/neverland/engbook/util/AlFonts;->resolvePublisherFontFamily(Ljava/lang/String;)Ljava/lang/Integer;
