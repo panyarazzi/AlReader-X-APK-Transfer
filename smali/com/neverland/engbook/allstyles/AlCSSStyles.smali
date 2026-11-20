@@ -4481,7 +4481,7 @@
 .end method
 
 .method public parseFile(Ljava/lang/String;Ljava/lang/String;II)Z
-    .locals 11
+    .locals 13
 
     .line 1
     iget-boolean p3, p0, Lcom/neverland/engbook/allstyles/AlCSSStyles;->enable:Z
@@ -5199,6 +5199,12 @@
 
     .line 340
     :goto_2
+    if-eqz v5, :publisher_font_css_register_skip
+    if-lez v6, :publisher_font_css_register_skip
+    iget-object v11, p0, Lcom/neverland/engbook/allstyles/AlCSSStyles;->format:Lcom/neverland/engbook/level2/AlFormat;
+    if-eqz v11, :publisher_font_css_register_skip
+    invoke-static {v11, v9, v5, v6}, Lcom/neverland/engbook/util/PublisherFontLoader;->registerCss(Ljava/lang/Object;Ljava/lang/String;[BI)V
+    :publisher_font_css_register_skip
     if-eqz v5, :cond_e
 
     .line 341
