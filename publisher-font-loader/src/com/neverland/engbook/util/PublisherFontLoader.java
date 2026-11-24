@@ -45,13 +45,18 @@ public final class PublisherFontLoader {
 
     private static final class Face {
         final String family;
+        final String cssPath;
         final String source;
+        final String resolvedPath;
         final int weight;
         final boolean italic;
 
-        Face(String family, String source, int weight, boolean italic) {
+        Face(String family, String cssPath, String source, String resolvedPath,
+             int weight, boolean italic) {
             this.family = family;
+            this.cssPath = cssPath;
             this.source = source;
+            this.resolvedPath = resolvedPath;
             this.weight = weight;
             this.italic = italic;
         }
@@ -92,7 +97,8 @@ public final class PublisherFontLoader {
                 String style = properties.get("font-style");
                 boolean italic = style != null && (style.toLowerCase(Locale.US).contains("italic")
                         || style.toLowerCase(Locale.US).contains("oblique"));
-                parsed.add(new Face(family, resolved, weight, italic));
+                // Resolve relative font URLs against the stylesheet that declared them.
+                parsed.add(new Face(family, cssPath, rawSource, resolved, weight, italic));
             }
             if (parsed.isEmpty()) return;
             synchronized (REGISTRIES) {
@@ -104,7 +110,9 @@ public final class PublisherFontLoader {
                 for (Face face : parsed) {
                     boolean duplicate = false;
                     for (Face old : registry.faces) {
-                        if (old.family.equalsIgnoreCase(face.family) && old.source.equals(face.source)
+                        if (old.family.equalsIgnoreCase(face.family)
+                                && old.cssPath.equals(face.cssPath)
+                                && old.source.equals(face.source)
                                 && old.weight == face.weight && old.italic == face.italic) {
                             duplicate = true;
                             break;
@@ -130,8 +138,8 @@ public final class PublisherFontLoader {
 
             Face selected = selectFace(registry.faces, family, bold, italic);
             if (selected == null) return null;
-            String cacheKey = selected.source + "|" + selected.weight + "|" + selected.italic
-                    + "|" + bold + "|" + italic;
+            String cacheKey = selected.cssPath + "|" + selected.resolvedPath + "|"
+                    + selected.weight + "|" + selected.italic + "|" + bold + "|" + italic;
             synchronized (registry) {
                 Typeface cached = registry.typefaces.get(cacheKey);
                 if (cached != null) return cached;
@@ -181,8 +189,9 @@ public final class PublisherFontLoader {
         Field filesField = format.getClass().getField("aFiles");
         Object files = filesField.get(format);
         if (files == null) return null;
-        Method find = files.getClass().getMethod("getExternalFileNum", String.class);
-        int index = ((Integer) find.invoke(files, face.source)).intValue();
+        Method find = files.getClass().getMethod("getExternalFileNum", String.class, String.class);
+        // The one-argument overload uses the current fileName, which can be a chapter.
+        int index = ((Integer) find.invoke(files, face.cssPath, face.source)).intValue();
         if (index < 0) return null;
         Method sizeMethod = files.getClass().getMethod("getExternalFileSize", Integer.TYPE);
         int size = ((Integer) sizeMethod.invoke(files, Integer.valueOf(index))).intValue();
@@ -193,7 +202,7 @@ public final class PublisherFontLoader {
         if (identity.equals("|")) identity = "format-" + System.identityHashCode(format);
         String bookFolder = digest(identity);
         String extension = face.source.toLowerCase(Locale.US).endsWith(".otf") ? ".otf" : ".ttf";
-        String filename = digest(face.source + "|" + face.family + "|" + face.weight + "|" + face.italic)
+        String filename = digest(face.resolvedPath + "|" + face.family + "|" + face.weight + "|" + face.italic)
                 + extension;
         File directory = new File(new File(context.getCacheDir(), "publisher-embedded-fonts"), bookFolder);
         if (!directory.isDirectory() && !directory.mkdirs()) return null;
