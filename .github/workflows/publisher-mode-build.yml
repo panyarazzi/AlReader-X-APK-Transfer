@@ -142,3 +142,5 @@ jobs:
           path: dist/AlReaderX-PublisherMode-1.33-test.apk
           if-no-files-found: error
           retention-days: 7
+
+# Manual verification trigger: no build logic changed.
