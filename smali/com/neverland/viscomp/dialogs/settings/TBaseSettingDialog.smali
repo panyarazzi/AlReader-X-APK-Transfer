@@ -8713,7 +8713,10 @@
     .line 2794
     .line 2795
     .line 2796
-    iget v0, v6, Lcom/neverland/viscomp/dialogs/TBaseDialog;->menuTextColor:I
+    # Preserve the dialog receiver in a register whose type is explicit at this point.
+    move-object/from16 v15, p0
+
+    iget v0, v15, Lcom/neverland/viscomp/dialogs/TBaseDialog;->menuTextColor:I
 
     .line 2797
     .line 2798
