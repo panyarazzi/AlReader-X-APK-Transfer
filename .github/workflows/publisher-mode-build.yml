@@ -36,7 +36,7 @@ jobs:
       - name: Set up Android SDK build tools
         uses: android-actions/setup-android@v3
         with:
-          packages: 'build-tools;35.0.0 emulator system-images;android-35;google_apis;x86_64'
+          packages: 'build-tools;35.0.0 emulator system-images;android-30;google_apis;x86_64'
 
       - name: Verify isolated Publisher identity and audit hard-coded references
         shell: bash
@@ -105,9 +105,8 @@ jobs:
           target: google_apis
           arch: x86_64
           profile: pixel_2
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot -no-snapshot-save -camera-back none
           emulator-boot-timeout: 600
-          disable-animations: true
           script: |
             set -euo pipefail
             APK="dist/AlReaderX-PublisherMode-1.33-test.apk"
