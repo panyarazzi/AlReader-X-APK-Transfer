@@ -37,9 +37,9 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           packages: |
-          build-tools;35.0.0
-          emulator
-          system-images;android-35;google_apis;x86_64
+            build-tools;35.0.0
+            emulator
+            system-images;android-35;google_apis;x86_64
 
       - name: Verify isolated Publisher identity and audit hard-coded references
         shell: bash
