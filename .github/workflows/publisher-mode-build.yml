@@ -36,7 +36,7 @@ jobs:
       - name: Set up Android SDK build tools
         uses: android-actions/setup-android@v3
         with:
-          packages: 'build-tools;35.0.0'
+          packages: 'build-tools;35.0.0, emulator, system-images;android-35;google_apis;x86_64'
 
       - name: Verify isolated Publisher identity and audit hard-coded references
         shell: bash
@@ -95,6 +95,38 @@ jobs:
           "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging \
             dist/AlReaderX-PublisherMode-1.33-test.apk | head -n 1 | tee dist/package-id.txt
           grep -Fq "name='com.panyarazzi.alreaderx.publisher'" dist/package-id.txt
+
+      - name: Install and launch APK on Android 15 emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_2
+          disable-animations: true
+          script: |
+            set -euo pipefail
+            APK="dist/AlReaderX-PublisherMode-1.33-test.apk"
+            APP_ID="com.panyarazzi.alreaderx.publisher"
+            adb install -r "$APK"
+            adb shell am force-stop "$APP_ID"
+            adb logcat -c
+            adb shell am start -W -n "$APP_ID/com.neverland.viscomp.TMainActivity"
+            sleep 20
+            if ! adb shell pidof "$APP_ID" >/dev/null; then
+              echo "Publisher process exited after launch."
+              adb logcat -d -v brief
+              exit 1
+            fi
+            adb shell dumpsys activity activities | tee dist/emulator-activities.txt
+            grep -F "$APP_ID/" dist/emulator-activities.txt
+            adb logcat -d -v brief -s AndroidRuntime:E | tee dist/emulator-runtime-errors.txt
+            if grep -E "FATAL EXCEPTION|Process: $APP_ID|VerifyError|NoClassDefFoundError|Resources\\$NotFoundException|InflateException" dist/emulator-runtime-errors.txt; then
+              echo "Fatal Android runtime error detected."
+              exit 1
+            fi
+            adb exec-out screencap -p > dist/emulator-launch.png
+            test -s dist/emulator-launch.png
 
       - name: Upload signed test APK
         if: success()
