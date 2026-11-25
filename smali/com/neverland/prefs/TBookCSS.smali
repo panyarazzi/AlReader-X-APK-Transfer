@@ -23,7 +23,7 @@
 
 
 # static fields
-.field public static final MAX_STYLES:I = 0xc
+.field public static final MAX_STYLES:I = 0xe
 
 .field public static final STYLE_ANNOTATION:I = 0x2
 
@@ -46,6 +46,8 @@
 .field public static final STYLE_SUBTITLE:I = 0x1
 
 .field public static final STYLE_TEXT:I = 0xa
+.field public static final STYLE_STRONG:I = 0xc
+.field public static final STYLE_EM:I = 0xd
 
 .field public static final STYLE_TITLE:I
 
@@ -175,7 +177,7 @@
 
     .line 12
     .line 13
-    const/16 v0, 0xc
+    const/16 v0, 0xe
 
     .line 14
     .line 15
@@ -2547,6 +2549,14 @@
 
     .line 657
     .line 658
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS;->arrStyles:[Lcom/neverland/prefs/TBookCSS$TOneStyles;
+    const/16 v2, 0xc
+    const/4 v3, 0x0
+    aput-object v3, v1, v2
+    const/16 v2, 0xd
+    aput-object v3, v1, v2
+    invoke-direct {v0}, Lcom/neverland/prefs/TBookCSS;->ensureStrongEmStyles()V
+
     return-void
 .end method
 
@@ -2558,7 +2568,7 @@
 
     .line 2
     :goto_0
-    const/16 v1, 0xc
+    const/16 v1, 0xe
 
     .line 3
     .line 4
@@ -2632,4 +2642,69 @@
     .line 36
     :cond_1
     return-object p1
+.end method
+
+.method private ensureStrongEmStyles()V
+    .locals 8
+    iget-object v0, p0, Lcom/neverland/prefs/TBookCSS;->arrStyles:[Lcom/neverland/prefs/TBookCSS$TOneStyles;
+    array-length v1, v0
+    const/16 v2, 0xe
+    if-ge v1, v2, :check_slots
+    new-array v3, v2, [Lcom/neverland/prefs/TBookCSS$TOneStyles;
+    const/4 v4, 0x0
+    :copy_old_styles
+    if-ge v4, v1, :copy_old_done
+    aget-object v5, v0, v4
+    aput-object v5, v3, v4
+    add-int/lit8 v4, v4, 0x1
+    goto :copy_old_styles
+    :copy_old_done
+    iput-object v3, p0, Lcom/neverland/prefs/TBookCSS;->arrStyles:[Lcom/neverland/prefs/TBookCSS$TOneStyles;
+    move-object v0, v3
+    :check_slots
+    const/16 v1, 0xa
+    aget-object v1, v0, v1
+    if-eqz v1, :ensure_done
+    invoke-static {v1}, Lcom/neverland/prefs/TBookCSS;->getString4SaveOneStyles(Lcom/neverland/prefs/TBookCSS$TOneStyles;)Ljava/lang/String;
+    move-result-object v2
+    const/16 v3, 0xc
+    aget-object v4, v0, v3
+    if-nez v4, :strong_check
+    new-instance v4, Lcom/neverland/prefs/TBookCSS$TOneStyles;
+    invoke-direct {v4}, Lcom/neverland/prefs/TBookCSS$TOneStyles;-><init>()V
+    aput-object v4, v0, v3
+    :strong_check
+    iget-object v5, v4, Lcom/neverland/prefs/TBookCSS$TOneStyles;->name:Ljava/lang/String;
+    if-nez v5, :em_start
+    invoke-static {v2, v4}, Lcom/neverland/prefs/TBookCSS;->setOneStylesFromString(Ljava/lang/String;Lcom/neverland/prefs/TBookCSS$TOneStyles;)V
+    const-string v5, "@@strong"
+    iput-object v5, v4, Lcom/neverland/prefs/TBookCSS$TOneStyles;->name:Ljava/lang/String;
+    iput v3, v4, Lcom/neverland/prefs/TBookCSS$TOneStyles;->id:I
+    sget-object v5, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->on:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    iput-object v5, v4, Lcom/neverland/prefs/TBookCSS$TOneStyles;->bold:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    :em_start
+    const/16 v3, 0xd
+    aget-object v4, v0, v3
+    if-nez v4, :em_check
+    new-instance v4, Lcom/neverland/prefs/TBookCSS$TOneStyles;
+    invoke-direct {v4}, Lcom/neverland/prefs/TBookCSS$TOneStyles;-><init>()V
+    aput-object v4, v0, v3
+    :em_check
+    iget-object v5, v4, Lcom/neverland/prefs/TBookCSS$TOneStyles;->name:Ljava/lang/String;
+    if-nez v5, :ensure_done
+    invoke-static {v2, v4}, Lcom/neverland/prefs/TBookCSS;->setOneStylesFromString(Ljava/lang/String;Lcom/neverland/prefs/TBookCSS$TOneStyles;)V
+    const-string v5, "@@em"
+    iput-object v5, v4, Lcom/neverland/prefs/TBookCSS$TOneStyles;->name:Ljava/lang/String;
+    iput v3, v4, Lcom/neverland/prefs/TBookCSS$TOneStyles;->id:I
+    sget-object v5, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->on:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    iput-object v5, v4, Lcom/neverland/prefs/TBookCSS$TOneStyles;->italic:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    :ensure_done
+    return-void
+.end method
+
+.method private readObject(Ljava/io/ObjectInputStream;)V
+    .locals 0
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
+    invoke-direct {p0}, Lcom/neverland/prefs/TBookCSS;->ensureStrongEmStyles()V
+    return-void
 .end method

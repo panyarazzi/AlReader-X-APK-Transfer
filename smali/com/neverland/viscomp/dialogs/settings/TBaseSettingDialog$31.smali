@@ -100,6 +100,10 @@
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result p1
+    invoke-direct {p0, p1, p2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$31;->setStrongEmStyleValue(II)Z
+    move-result v6
+    if-nez v6, :goto_2
+
 
     if-eqz p1, :cond_15
 
@@ -3687,6 +3691,159 @@
     .end packed-switch
 .end method
 
+
+.method private setStrongEmStyleValue(II)Z
+    .locals 5
+    const/16 v0, 0x1f7
+    if-lt p1, v0, :strong_em_not_handled
+    const/16 v1, 0x215
+    if-ge p1, v1, :strong_em_not_handled
+    const/16 v0, 0x1f7
+    sub-int/2addr p1, v0
+    const/16 v0, 0xf
+    div-int v1, p1, v0
+    rem-int v2, p1, v0
+    add-int/lit8 v1, v1, 0xc
+    sget-object v0, Lcom/neverland/mainApp;->pref:Lcom/neverland/prefs/TPref;
+    iget-object v0, v0, Lcom/neverland/prefs/TPref;->bookCSS:Lcom/neverland/prefs/TBookCSS;
+    iget-object v0, v0, Lcom/neverland/prefs/TBookCSS;->arrStyles:[Lcom/neverland/prefs/TBookCSS$TOneStyles;
+    aget-object v3, v0, v1
+    packed-switch v2, :strong_em_set_data
+    goto :strong_em_not_handled
+
+    :strong_em_set_0
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_Font;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_Font;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->font:Lcom/neverland/prefs/TBookCSS$Style_Font;
+    goto :strong_em_changed
+
+    :strong_em_set_1
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_Size;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_Size;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->size:Lcom/neverland/prefs/TBookCSS$Style_Size;
+    goto :strong_em_changed
+
+    :strong_em_set_2
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_Just;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_Just;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->just:Lcom/neverland/prefs/TBookCSS$Style_Just;
+    goto :strong_em_changed
+
+    :strong_em_set_3
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_Just;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_Just;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->justlast:Lcom/neverland/prefs/TBookCSS$Style_Just;
+    goto :strong_em_changed
+
+    :strong_em_set_4
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->bold:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    goto :strong_em_changed
+
+    :strong_em_set_5
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->italic:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    goto :strong_em_changed
+
+    :strong_em_set_6
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->razr:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    goto :strong_em_changed
+
+    :strong_em_set_7
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->shadow:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    goto :strong_em_changed
+
+    :strong_em_set_8
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->hyph:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    goto :strong_em_changed
+
+    :strong_em_set_9
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_MarginV;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_MarginV;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->top:Lcom/neverland/prefs/TBookCSS$Style_MarginV;
+    goto :strong_em_changed
+
+    :strong_em_set_10
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_MarginH;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_MarginH;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->left:Lcom/neverland/prefs/TBookCSS$Style_MarginH;
+    goto :strong_em_changed
+
+    :strong_em_set_11
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_MarginH;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_MarginH;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->right:Lcom/neverland/prefs/TBookCSS$Style_MarginH;
+    goto :strong_em_changed
+
+    :strong_em_set_12
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_MarginV;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_MarginV;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->bottom:Lcom/neverland/prefs/TBookCSS$Style_MarginV;
+    goto :strong_em_changed
+
+    :strong_em_set_13
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_Indent;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_Indent;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->indent:Lcom/neverland/prefs/TBookCSS$Style_Indent;
+    goto :strong_em_changed
+
+    :strong_em_set_14
+    invoke-static {p2}, Lcom/neverland/prefs/TBookCSS$Style_Color;->fromInt(I)Lcom/neverland/prefs/TBookCSS$Style_Color;
+    move-result-object v4
+    if-eqz v4, :strong_em_not_handled
+    iput-object v4, v3, Lcom/neverland/prefs/TBookCSS$TOneStyles;->color:Lcom/neverland/prefs/TBookCSS$Style_Color;
+    goto :strong_em_changed
+
+    :strong_em_changed
+    iget-object v0, p0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$31;->this$0:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog;
+    sget-object v1, Lcom/neverland/viscomp/dialogs/TBaseDialog$SETTINGS_RESULT;->reloadcss:Lcom/neverland/viscomp/dialogs/TBaseDialog$SETTINGS_RESULT;
+    iput-object v1, v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog;->resultAfterClose:Lcom/neverland/viscomp/dialogs/TBaseDialog$SETTINGS_RESULT;
+    const/4 v0, 0x1
+    return v0
+    :strong_em_not_handled
+    const/4 v0, 0x0
+    return v0
+    :strong_em_set_data
+    .packed-switch 0x0
+        :strong_em_set_0
+        :strong_em_set_1
+        :strong_em_set_2
+        :strong_em_set_3
+        :strong_em_set_4
+        :strong_em_set_5
+        :strong_em_set_6
+        :strong_em_set_7
+        :strong_em_set_8
+        :strong_em_set_9
+        :strong_em_set_10
+        :strong_em_set_11
+        :strong_em_set_12
+        :strong_em_set_13
+        :strong_em_set_14
+    .end packed-switch
+.end method
 .method public onNothingSelected(Landroid/widget/AdapterView;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;

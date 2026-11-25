@@ -5919,3 +5919,51 @@
 
     return p1
 .end method
+
+.method public applyStrongEmOverride(IJLcom/neverland/engbook/util/AlStyleStack;)Z
+    .locals 8
+    const v0, -0x352a8969
+    if-eq p1, v0, :tag_selector
+    const/16 v0, 0xca8
+    if-eq p1, v0, :tag_selector
+    const/16 v0, 0x70
+    if-ne p1, v0, :no_match
+    const-wide v0, 0xcad57697
+    cmp-long v2, p2, v0
+    if-eqz v2, :class_selector
+    const-wide/16 v0, 0xca8
+    cmp-long v2, p2, v0
+    if-nez v2, :no_match
+    :class_selector
+    const/16 v6, 0xb
+    goto :apply_selector
+    :tag_selector
+    const/4 v6, 0x1
+    :apply_selector
+    iget-object v0, p0, Lcom/neverland/engbook/allstyles/AlCSSStyles;->allSets:Ljava/util/ArrayList;
+    const/4 v1, 0x0
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result-object v0
+    check-cast v0, Lcom/neverland/engbook/allstyles/AlSetCSS;
+    move v1, p1
+    move-wide v2, p2
+    iget-object v4, p0, Lcom/neverland/engbook/allstyles/AlCSSStyles;->a:Lcom/neverland/engbook/allstyles/AlOneCSSPair;
+    move-object v5, p4
+    invoke-virtual {v4}, Lcom/neverland/engbook/allstyles/AlOneCSSPair;->clear()V
+    const/4 v7, 0x1
+    if-ne v6, v7, :apply_weight_11
+    invoke-virtual/range {v0 .. v5}, Lcom/neverland/engbook/allstyles/AlSetCSS;->apply_WEIGHT_1(IJLcom/neverland/engbook/allstyles/AlOneCSSPair;Lcom/neverland/engbook/util/AlStyleStack;)I
+    move-result v6
+    goto :finish_selector
+    :apply_weight_11
+    invoke-virtual/range {v0 .. v5}, Lcom/neverland/engbook/allstyles/AlSetCSS;->apply_WEIGHT_11(IJLcom/neverland/engbook/allstyles/AlOneCSSPair;Lcom/neverland/engbook/util/AlStyleStack;)I
+    move-result v6
+    :finish_selector
+    if-eqz v6, :no_match
+    invoke-static {v4, p4}, Lcom/neverland/engbook/allstyles/AlSetCSS;->applyValue(Lcom/neverland/engbook/allstyles/AlOneCSSPair;Lcom/neverland/engbook/util/AlStyleStack;)Z
+    move-result v0
+    return v0
+    :no_match
+    const/4 v0, 0x0
+    return v0
+.end method

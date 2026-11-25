@@ -12060,6 +12060,8 @@
     .line 106
     .line 107
     :cond_3
+    invoke-direct {p0}, Lcom/neverland/engbook/level2/AlAXML;->applyStrongEmOverride()V
+
     iget-object v1, p0, Lcom/neverland/engbook/level2/AlAXML;->B:Lcom/neverland/engbook/level2/AlXMLTag;
 
     .line 108
@@ -16267,4 +16269,30 @@
 
     .line 56
     return v0
+.end method
+
+.method private applyStrongEmOverride()V
+    .locals 10
+    iget-object v0, p0, Lcom/neverland/engbook/level2/AlAXML;->B:Lcom/neverland/engbook/level2/AlXMLTag;
+    iget v1, v0, Lcom/neverland/engbook/level2/AlXMLTag;->tag:I
+    iget-object v2, v0, Lcom/neverland/engbook/level2/AlXMLTag;->cls:Lcom/neverland/engbook/util/AlOneXMLAttrClass;
+    iget v3, v2, Lcom/neverland/engbook/util/AlOneXMLAttrClass;->count:I
+    const/4 v4, 0x0
+    if-lez v3, :no_classes
+    :class_loop
+    if-ge v4, v3, :override_done
+    iget-object v5, v2, Lcom/neverland/engbook/util/AlOneXMLAttrClass;->hash:[J
+    aget-wide v6, v5, v4
+    iget-object v8, p0, Lcom/neverland/engbook/level2/AlAXML;->E:Lcom/neverland/engbook/allstyles/AlCSSStyles;
+    iget-object v9, p0, Lcom/neverland/engbook/level2/AlFormat;->styleStack:Lcom/neverland/engbook/util/AlStyleStack;
+    invoke-virtual {v8, v1, v6, v7, v9}, Lcom/neverland/engbook/allstyles/AlCSSStyles;->applyStrongEmOverride(IJLcom/neverland/engbook/util/AlStyleStack;)Z
+    add-int/lit8 v4, v4, 0x1
+    goto :class_loop
+    :no_classes
+    const-wide/16 v6, 0x0
+    iget-object v8, p0, Lcom/neverland/engbook/level2/AlAXML;->E:Lcom/neverland/engbook/allstyles/AlCSSStyles;
+    iget-object v9, p0, Lcom/neverland/engbook/level2/AlFormat;->styleStack:Lcom/neverland/engbook/util/AlStyleStack;
+    invoke-virtual {v8, v1, v6, v7, v9}, Lcom/neverland/engbook/allstyles/AlCSSStyles;->applyStrongEmOverride(IJLcom/neverland/engbook/util/AlStyleStack;)Z
+    :override_done
+    return-void
 .end method

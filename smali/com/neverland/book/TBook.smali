@@ -4347,7 +4347,7 @@
 .end method
 
 .method public getPreparedCSS()Ljava/util/ArrayList;
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -4483,6 +4483,20 @@
 
     .line 65
     .line 66
+    const-string v4, "\\r\\nstrong {@@strong}\\r\\np.strong {@@strong}\\r\\nem {@@em}\\r\\np.em {@@em}"
+
+    if-eqz v3, :strong_em_default_only
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :strong_em_css_ready
+
+    :strong_em_default_only
+    move-object v3, v4
+
+    :strong_em_css_ready
     invoke-virtual {v2, v3}, Lcom/neverland/prefs/TBookCSS;->setRealStyleCSS(Ljava/lang/String;)Ljava/lang/String;
 
     .line 67

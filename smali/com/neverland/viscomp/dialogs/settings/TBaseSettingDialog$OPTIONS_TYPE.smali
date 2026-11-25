@@ -1032,12 +1032,43 @@
 .field public static final enum books_epub_publisher_mode:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
 
 
+.field public static final enum list_style_font_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_size_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_just_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_justlast_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_bold_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_italic_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_razr_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_shadow_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_hyph_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_top_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_left_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_right_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_bottom_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_indent_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_color_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_font_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_size_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_just_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_justlast_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_bold_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_italic_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_razr_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_shadow_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_hyph_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_top_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_left_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_right_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_bottom_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_indent_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+.field public static final enum list_style_color_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
 # direct methods
 .method private static synthetic $values()[Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
     .locals 3
 
     .line 1
-    const/16 v0, 0x1f7
+    const/16 v0, 0x215
 
     .line 2
     .line 3
@@ -7067,6 +7098,125 @@
 
     .line 3008
     .line 3009
+    const/16 v2, 0x1f7
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_font_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x1f8
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_size_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x1f9
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_just_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x1fa
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_justlast_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x1fb
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bold_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x1fc
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_italic_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x1fd
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_razr_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x1fe
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_shadow_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x1ff
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_hyph_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x200
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_top_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x201
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_left_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x202
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_right_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x203
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bottom_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x204
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_indent_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x205
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_color_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x206
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_font_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x207
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_size_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x208
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_just_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x209
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_justlast_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x20a
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bold_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x20b
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_italic_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x20c
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_razr_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x20d
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_shadow_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x20e
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_hyph_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x20f
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_top_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x210
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_left_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x211
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_right_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x212
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bottom_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x213
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_indent_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
+
+    const/16 v2, 0x214
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_color_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    aput-object v1, v0, v2
     return-object v0
 .end method
 
@@ -12607,7 +12757,186 @@
     sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->books_epub_publisher_mode:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
 
     .line 504
-    invoke-static {}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->$values()[Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+        new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_font_strong"
+    const/16 v2, 0x1f7
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_font_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_size_strong"
+    const/16 v2, 0x1f8
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_size_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_just_strong"
+    const/16 v2, 0x1f9
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_just_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_justlast_strong"
+    const/16 v2, 0x1fa
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_justlast_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_bold_strong"
+    const/16 v2, 0x1fb
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bold_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_italic_strong"
+    const/16 v2, 0x1fc
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_italic_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_razr_strong"
+    const/16 v2, 0x1fd
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_razr_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_shadow_strong"
+    const/16 v2, 0x1fe
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_shadow_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_hyph_strong"
+    const/16 v2, 0x1ff
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_hyph_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_top_strong"
+    const/16 v2, 0x200
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_top_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_left_strong"
+    const/16 v2, 0x201
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_left_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_right_strong"
+    const/16 v2, 0x202
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_right_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_bottom_strong"
+    const/16 v2, 0x203
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bottom_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_indent_strong"
+    const/16 v2, 0x204
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_indent_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_color_strong"
+    const/16 v2, 0x205
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_color_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_font_em"
+    const/16 v2, 0x206
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_font_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_size_em"
+    const/16 v2, 0x207
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_size_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_just_em"
+    const/16 v2, 0x208
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_just_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_justlast_em"
+    const/16 v2, 0x209
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_justlast_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_bold_em"
+    const/16 v2, 0x20a
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bold_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_italic_em"
+    const/16 v2, 0x20b
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_italic_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_razr_em"
+    const/16 v2, 0x20c
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_razr_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_shadow_em"
+    const/16 v2, 0x20d
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_shadow_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_hyph_em"
+    const/16 v2, 0x20e
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_hyph_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_top_em"
+    const/16 v2, 0x20f
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_top_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_left_em"
+    const/16 v2, 0x210
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_left_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_right_em"
+    const/16 v2, 0x211
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_right_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_bottom_em"
+    const/16 v2, 0x212
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bottom_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_indent_em"
+    const/16 v2, 0x213
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_indent_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    new-instance v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    const-string v1, "list_style_color_em"
+    const/16 v2, 0x214
+    invoke-direct {v0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_color_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+invoke-static {}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->$values()[Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
 
     move-result-object v0
 

@@ -7007,7 +7007,7 @@
     const/4 v2, 0x0
 
     :goto_1c
-    const/16 v3, 0xc
+    const/16 v3, 0xe
 
     if-ge v2, v3, :cond_86
 
@@ -25795,7 +25795,7 @@
     .line 2323
     .line 2324
     :goto_17
-    const/16 v3, 0xc
+    const/16 v3, 0xe
 
     .line 2325
     .line 2326

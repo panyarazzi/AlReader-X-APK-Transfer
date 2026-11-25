@@ -712,6 +712,21 @@
     .line 3
     .line 4
     move-result p1
+    const/16 v0, 0x1f7
+    if-lt p1, v0, :strong_em_existing
+    const/16 v0, 0x215
+    if-ge p1, v0, :strong_em_existing
+    const/16 v0, 0x1f7
+    sub-int/2addr p1, v0
+    const/16 v0, 0xf
+    div-int v1, p1, v0
+    rem-int v2, p1, v0
+    add-int/lit8 v1, v1, 0xc
+    invoke-direct {p0, v1, v2}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog;->getStrongEmStyleValue(II)I
+    move-result v5
+    return v5
+    :strong_em_existing
+
 
     .line 5
     const/4 v0, 0x3
@@ -3018,6 +3033,94 @@
     .line 41
     .line 42
     move-result v4
+    const/16 v5, 0x1f7
+    if-lt v4, v5, :strong_em_spinner_done
+    const/16 v6, 0x215
+    if-ge v4, v6, :strong_em_spinner_done
+    sub-int/2addr v4, v5
+    const/16 v6, 0xf
+    rem-int v5, v4, v6
+    packed-switch v5, :strong_em_spinner_map
+    goto :strong_em_spinner_done
+:strong_em_spinner_0
+    const/16 v4, 0x158
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_1
+    const/16 v4, 0x163
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_2
+    const/16 v4, 0x16d
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_3
+    const/16 v4, 0x176
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_4
+    const/16 v4, 0x17f
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_5
+    const/16 v4, 0x189
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_6
+    const/16 v4, 0x193
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_7
+    const/16 v4, 0x19c
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_8
+    const/16 v4, 0x1a6
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_9
+    const/16 v4, 0x1b0
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_10
+    const/16 v4, 0x1c2
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_11
+    const/16 v4, 0x1cc
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_12
+    const/16 v4, 0x1b9
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_13
+    const/16 v4, 0x1d6
+    goto :strong_em_spinner_done
+
+:strong_em_spinner_14
+    const/16 v4, 0x1e5
+    goto :strong_em_spinner_done
+    :strong_em_spinner_map
+    .packed-switch 0x0
+        :strong_em_spinner_0
+        :strong_em_spinner_1
+        :strong_em_spinner_2
+        :strong_em_spinner_3
+        :strong_em_spinner_4
+        :strong_em_spinner_5
+        :strong_em_spinner_6
+        :strong_em_spinner_7
+        :strong_em_spinner_8
+        :strong_em_spinner_9
+        :strong_em_spinner_10
+        :strong_em_spinner_11
+        :strong_em_spinner_12
+        :strong_em_spinner_13
+        :strong_em_spinner_14
+    .end packed-switch
+    :strong_em_spinner_done
+
 
     .line 43
     if-eqz v4, :cond_b
@@ -22679,4 +22782,124 @@
     .line 18
     .line 19
     return-void
+.end method
+
+.method private getStrongEmStyleValue(II)I
+    .locals 2
+    sget-object v0, Lcom/neverland/mainApp;->pref:Lcom/neverland/prefs/TPref;
+    iget-object v0, v0, Lcom/neverland/prefs/TPref;->bookCSS:Lcom/neverland/prefs/TBookCSS;
+    iget-object v0, v0, Lcom/neverland/prefs/TBookCSS;->arrStyles:[Lcom/neverland/prefs/TBookCSS$TOneStyles;
+    aget-object v0, v0, p1
+    packed-switch p2, :strong_em_get_data
+    const/4 v1, 0x0
+    return v1
+
+    :strong_em_get_0
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->font:Lcom/neverland/prefs/TBookCSS$Style_Font;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_Font;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_1
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->size:Lcom/neverland/prefs/TBookCSS$Style_Size;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_Size;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_2
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->just:Lcom/neverland/prefs/TBookCSS$Style_Just;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_Just;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_3
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->justlast:Lcom/neverland/prefs/TBookCSS$Style_Just;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_Just;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_4
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->bold:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_5
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->italic:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_6
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->razr:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_7
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->shadow:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_8
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->hyph:Lcom/neverland/prefs/TBookCSS$Style_OnOff;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_OnOff;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_9
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->top:Lcom/neverland/prefs/TBookCSS$Style_MarginV;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_MarginV;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_10
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->left:Lcom/neverland/prefs/TBookCSS$Style_MarginH;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_MarginH;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_11
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->right:Lcom/neverland/prefs/TBookCSS$Style_MarginH;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_MarginH;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_12
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->bottom:Lcom/neverland/prefs/TBookCSS$Style_MarginV;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_MarginV;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_13
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->indent:Lcom/neverland/prefs/TBookCSS$Style_Indent;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_Indent;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_14
+    iget-object v1, v0, Lcom/neverland/prefs/TBookCSS$TOneStyles;->color:Lcom/neverland/prefs/TBookCSS$Style_Color;
+    invoke-virtual {v1}, Lcom/neverland/prefs/TBookCSS$Style_Color;->getValue()I
+    move-result v1
+    return v1
+
+    :strong_em_get_data
+    .packed-switch 0x0
+        :strong_em_get_0
+        :strong_em_get_1
+        :strong_em_get_2
+        :strong_em_get_3
+        :strong_em_get_4
+        :strong_em_get_5
+        :strong_em_get_6
+        :strong_em_get_7
+        :strong_em_get_8
+        :strong_em_get_9
+        :strong_em_get_10
+        :strong_em_get_11
+        :strong_em_get_12
+        :strong_em_get_13
+        :strong_em_get_14
+    .end packed-switch
 .end method

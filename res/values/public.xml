@@ -6743,4 +6743,6 @@
     <public type="xml" name="provider_paths" id="0x7f150002" />
     <public type="xml" name="spinner_item" id="0x7f150003" />
     <public type="string" name="books_epub_publisher_mode" id="0x7f1204b9" />
+    <public type="string" name="setting_styles_strong" id="0x7f1204ba" />
+    <public type="string" name="setting_styles_em" id="0x7f1204bb" />
 </resources>

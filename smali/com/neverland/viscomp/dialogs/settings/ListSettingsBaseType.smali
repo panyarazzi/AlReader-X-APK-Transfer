@@ -9381,6 +9381,444 @@
     :cond_41
     sget-object v1, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
 
+    const v2, 0x7f1204ba
+
+    const/4 v3, 0x0
+
+    invoke-static {v2, v4, v3, v0}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 680
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, -0x1
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    .line 681
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_font_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f120444
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 682
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_size_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v7, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 683
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_just_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v8, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 684
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_justlast_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v9, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 685
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bold_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v11, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 686
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_italic_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v12, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 687
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_razr_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v13, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 688
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_shadow_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v14, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 689
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_hyph_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f120445
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 690
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_top_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f12044f
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 691
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_left_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f12044a
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 692
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_right_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f12044c
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 693
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bottom_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f120442
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 694
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_indent_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f120446
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 695
+    sget-object v2, Lcom/neverland/utils/TCustomDevice$IS_DEVICE;->color_device:Lcom/neverland/utils/TCustomDevice$IS_DEVICE;
+
+    invoke-virtual {v5, v2}, Lcom/neverland/utils/TCustomDevice;->isDevice(Lcom/neverland/utils/TCustomDevice$IS_DEVICE;)Z
+
+    move-result v3
+
+    if-eqz v3, :strong_em_strong_next
+
+    .line 696
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v4, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_color_strong:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v5, 0x7f120443
+
+    invoke-static {v5, v6, v4, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 697
+    :strong_em_strong_next
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    const v2, 0x7f1204bb
+
+    const/4 v3, 0x0
+
+    invoke-static {v2, v4, v3, v0}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 680
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, -0x1
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    .line 681
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_font_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f120444
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 682
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_size_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v7, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 683
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_just_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v8, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 684
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_justlast_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v9, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 685
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bold_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v11, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 686
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_italic_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v12, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 687
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_razr_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v13, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 688
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_shadow_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    invoke-static {v14, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 689
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_hyph_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f120445
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 690
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_top_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f12044f
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 691
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_left_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f12044a
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 692
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_right_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f12044c
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 693
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_bottom_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f120442
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 694
+    sget-object v2, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_indent_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v4, 0x7f120446
+
+    invoke-static {v4, v6, v3, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 695
+    sget-object v2, Lcom/neverland/utils/TCustomDevice$IS_DEVICE;->color_device:Lcom/neverland/utils/TCustomDevice$IS_DEVICE;
+
+    invoke-virtual {v5, v2}, Lcom/neverland/utils/TCustomDevice;->isDevice(Lcom/neverland/utils/TCustomDevice$IS_DEVICE;)Z
+
+    move-result v3
+
+    if-eqz v3, :strong_em_em_next
+
+    .line 696
+    sget-object v3, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
+    sget-object v4, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;->list_style_color_em:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+
+    const v5, 0x7f120443
+
+    invoke-static {v5, v6, v4, v1}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 697
+    :strong_em_em_next
+    sget-object v1, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->settingsList:Ljava/util/ArrayList;
+
     sget-object v3, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;->tDir:Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;
 
     const v4, 0x7f120438
