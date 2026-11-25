@@ -96,6 +96,39 @@ jobs:
             dist/AlReaderX-PublisherMode-1.33-test.apk | head -n 1 | tee dist/package-id.txt
           grep -Fq "name='com.panyarazzi.alreaderx.publisher'" dist/package-id.txt
 
+      - name: Prepare emulator smoke test script
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .github/scripts
+          cat > .github/scripts/publisher-emulator-smoke-test.sh <<'SMOKE'
+          #!/usr/bin/env bash
+          set -euo pipefail
+          APK="dist/AlReaderX-PublisherMode-1.33-test.apk"
+          APP_ID="com.panyarazzi.alreaderx.publisher"
+          test -s "$APK"
+          adb install -r "$APK"
+          adb shell am force-stop "$APP_ID"
+          adb logcat -c
+          adb shell am start -W -n "$APP_ID/com.neverland.viscomp.TMainActivity"
+          sleep 20
+          if ! adb shell pidof "$APP_ID" >/dev/null; then
+            echo "Publisher process exited after launch."
+            adb logcat -d -v brief
+            exit 1
+          fi
+          adb shell dumpsys activity activities | tee dist/emulator-activities.txt
+          grep -F "$APP_ID/" dist/emulator-activities.txt
+          adb logcat -d -v brief -s AndroidRuntime:E | tee dist/emulator-runtime-errors.txt
+          if grep -E "FATAL EXCEPTION|Process: $APP_ID|VerifyError|NoClassDefFoundError|Resources\\$NotFoundException|InflateException" dist/emulator-runtime-errors.txt; then
+            echo "Fatal Android runtime error detected."
+            exit 1
+          fi
+          adb exec-out screencap -p > dist/emulator-launch.png
+          test -s dist/emulator-launch.png
+          SMOKE
+          chmod +x .github/scripts/publisher-emulator-smoke-test.sh
+
       - name: Install and launch APK on Android 11 emulator
         uses: reactivecircus/android-emulator-runner@v2
         env:
@@ -107,27 +140,7 @@ jobs:
           profile: pixel_2
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot -no-snapshot-save -camera-back none
           emulator-boot-timeout: 600
-          script: |
-            set -euo pipefail
-            adb install -r "dist/AlReaderX-PublisherMode-1.33-test.apk"
-            adb shell am force-stop "com.panyarazzi.alreaderx.publisher"
-            adb logcat -c
-            adb shell am start -W -n "com.panyarazzi.alreaderx.publisher/com.neverland.viscomp.TMainActivity"
-            sleep 20
-            if ! adb shell pidof "com.panyarazzi.alreaderx.publisher" >/dev/null; then
-              echo "Publisher process exited after launch."
-              adb logcat -d -v brief
-              exit 1
-            fi
-            adb shell dumpsys activity activities | tee dist/emulator-activities.txt
-            grep -F "com.panyarazzi.alreaderx.publisher/" dist/emulator-activities.txt
-            adb logcat -d -v brief -s AndroidRuntime:E | tee dist/emulator-runtime-errors.txt
-            if grep -E "FATAL EXCEPTION|Process: com.panyarazzi.alreaderx.publisher|VerifyError|NoClassDefFoundError|Resources\\$NotFoundException|InflateException" dist/emulator-runtime-errors.txt; then
-              echo "Fatal Android runtime error detected."
-              exit 1
-            fi
-            adb exec-out screencap -p > dist/emulator-launch.png
-            test -s dist/emulator-launch.png
+          script: bash .github/scripts/publisher-emulator-smoke-test.sh
 
       - name: Upload signed test APK
         if: success()
