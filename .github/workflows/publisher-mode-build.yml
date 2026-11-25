@@ -176,7 +176,7 @@ jobs:
           echo "no" | "$AVDMANAGER" create avd \
             --name "$AVD_NAME" \
             --path "$ANDROID_AVD_HOME/$AVD_NAME.avd" \
-            --package 'system-images;android-30;google_apis;x86_64' \
+            --package 'system-images;android-30;default;x86_64' \
             --device 'pixel_2' --force
 
           test -s "$ANDROID_AVD_HOME/$AVD_NAME.ini"
