@@ -3035,11 +3035,11 @@
     move-result v4
     const/16 v5, 0x1f7
     if-lt v4, v5, :strong_em_spinner_done
-    const/16 v6, 0x215
-    if-ge v4, v6, :strong_em_spinner_done
+    const/16 v13, 0x215
+    if-ge v4, v13, :strong_em_spinner_done
     sub-int/2addr v4, v5
-    const/16 v6, 0xf
-    rem-int v5, v4, v6
+    const/16 v13, 0xf
+    rem-int v5, v4, v13
     packed-switch v5, :strong_em_spinner_map
     goto :strong_em_spinner_done
 :strong_em_spinner_0
