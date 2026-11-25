@@ -22,7 +22,7 @@ permissions:
 jobs:
   rebuild:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
     steps:
       - name: Checkout private 1.33 workspace
         uses: actions/checkout@v4
@@ -130,17 +130,58 @@ jobs:
           chmod +x .github/scripts/publisher-emulator-smoke-test.sh
 
       - name: Install and launch APK on Android 11 emulator
-        uses: reactivecircus/android-emulator-runner@v2
+        shell: bash
         env:
           ANDROID_I_WANT_MY_TCG: 'yes'
-        with:
-          api-level: 30
-          target: google_apis
-          arch: x86_64
-          profile: pixel_2
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot -no-snapshot-save -camera-back none
-          emulator-boot-timeout: 600
-          script: bash .github/scripts/publisher-emulator-smoke-test.sh
+        run: |
+          set -euo pipefail
+          AVD_NAME='publisher_api30'
+          SERIAL='emulator-5554'
+          EMULATOR="$ANDROID_HOME/emulator/emulator"
+          AVDMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager"
+
+          echo "no" | "$AVDMANAGER" create avd \
+            --name "$AVD_NAME" \
+            --package 'system-images;android-30;google_apis;x86_64' \
+            --device 'pixel_2' --force
+
+          "$EMULATOR" -avd "$AVD_NAME" \
+            -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim \
+            -no-snapshot -no-snapshot-save -camera-back none -accel off \
+            > dist/emulator-boot.log 2>&1 &
+          EMULATOR_PID=$!
+          cleanup() {
+            adb -s "$SERIAL" emu kill >/dev/null 2>&1 || true
+            kill "$EMULATOR_PID" >/dev/null 2>&1 || true
+          }
+          trap cleanup EXIT
+
+          adb start-server
+          deadline=$((SECONDS + 720))
+          booted=false
+          while (( SECONDS < deadline )); do
+            state="$(adb -s "$SERIAL" get-state 2>/dev/null || true)"
+            if [[ "$state" == 'device' ]]; then
+              value="$(adb -s "$SERIAL" shell getprop sys.boot_completed 2>/dev/null | tr -d '\\r' || true)"
+              if [[ "$value" == '1' ]]; then
+                booted=true
+                break
+              fi
+            else
+              adb reconnect offline >/dev/null 2>&1 || true
+            fi
+            sleep 3
+          done
+
+          if [[ "$booted" != true ]]; then
+            echo "Android emulator did not become fully booted."
+            tail -n 250 dist/emulator-boot.log || true
+            adb devices -l || true
+            exit 1
+          fi
+
+          echo "Emulator is online and fully booted; starting smoke test."
+          bash .github/scripts/publisher-emulator-smoke-test.sh
 
       - name: Upload signed test APK
         if: success()
