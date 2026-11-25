@@ -151,7 +151,7 @@ jobs:
           adb shell dumpsys activity activities | tee dist/emulator-activities.txt
           grep -F "$APP_ID/" dist/emulator-activities.txt
           adb logcat -d -v brief -s AndroidRuntime:E | tee dist/emulator-runtime-errors.txt
-          if grep -E "FATAL EXCEPTION|Process: $APP_ID|VerifyError|NoClassDefFoundError|Resources\\$NotFoundException|InflateException" dist/emulator-runtime-errors.txt; then
+          if grep -E "FATAL EXCEPTION|Process: $APP_ID|VerifyError|NoClassDefFoundError|Resources\\\$NotFoundException|InflateException" dist/emulator-runtime-errors.txt; then
             echo "Fatal Android runtime error detected."
             exit 1
           fi
