@@ -107,7 +107,38 @@ jobs:
           APK="dist/AlReaderX-PublisherMode-1.33-test.apk"
           APP_ID="com.panyarazzi.alreaderx.publisher"
           test -s "$APK"
-          adb install --no-incremental -r "$APK"
+          collect_install_diagnostics() {
+            local label="$1"
+            echo "--- Install diagnostics: $label ---"
+            adb devices -l > "dist/adb-devices-$label.txt" 2>&1 || true
+            adb -s emulator-5554 shell service check package > "dist/package-service-$label.txt" 2>&1 || true
+            adb -s emulator-5554 shell getprop > "dist/getprop-$label.txt" 2>&1 || true
+            adb -s emulator-5554 shell dumpsys activity processes > "dist/activity-processes-$label.txt" 2>&1 || true
+            adb -s emulator-5554 logcat -b all -d -t 5000 -v threadtime > "dist/logcat-$label.txt" 2>&1 || true
+            tail -n 500 dist/emulator-boot.log > "dist/emulator-boot-tail-$label.txt" 2>&1 || true
+          }
+          installed=false
+          for attempt in 1 2 3; do
+            echo "APK install attempt $attempt/3"
+            if adb -s emulator-5554 install --no-incremental -r "$APK"; then
+              installed=true
+              break
+            fi
+            collect_install_diagnostics "attempt-$attempt"
+            if (( attempt < 3 )); then
+              echo "Install failed; reconnecting ADB and rechecking Package Manager before retry."
+              adb kill-server || true
+              sleep 3
+              adb start-server || true
+              adb wait-for-device || true
+              sleep 10
+            fi
+          done
+          if [[ "$installed" != true ]]; then
+            collect_install_diagnostics "final-failure"
+            echo "APK installation failed after three attempts; see uploaded emulator diagnostics."
+            exit 1
+          fi
           adb shell am force-stop "$APP_ID"
           adb logcat -c
           adb shell am start -W -n "$APP_ID/com.neverland.viscomp.TMainActivity"
@@ -223,6 +254,21 @@ jobs:
 
           echo "Package Manager is ready; starting APK smoke test."
           bash .github/scripts/publisher-emulator-smoke-test.sh
+
+      - name: Upload emulator diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: AlReaderX-PublisherMode-emulator-diagnostics
+          path: |
+            dist/adb-devices-*.txt
+            dist/package-service-*.txt
+            dist/getprop-*.txt
+            dist/activity-processes-*.txt
+            dist/logcat-*.txt
+            dist/emulator-boot*.log
+          if-no-files-found: ignore
+          retention-days: 7
 
       - name: Upload signed test APK
         if: success()
