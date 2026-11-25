@@ -8741,7 +8741,7 @@
 
     .line 2808
     .line 2809
-    invoke-direct {v0, v6, v1}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$31;-><init>(Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog;Landroid/widget/BaseAdapter;)V
+    invoke-direct {v0, v15, v1}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$31;-><init>(Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog;Landroid/widget/BaseAdapter;)V
 
     .line 2810
     .line 2811
