@@ -2549,13 +2549,14 @@
 
     .line 657
     .line 658
-    iget-object v1, p0, Lcom/neverland/prefs/TBookCSS;->arrStyles:[Lcom/neverland/prefs/TBookCSS$TOneStyles;
+    move-object/from16 v4, p0
+    iget-object v1, v4, Lcom/neverland/prefs/TBookCSS;->arrStyles:[Lcom/neverland/prefs/TBookCSS$TOneStyles;
     const/16 v2, 0xc
     const/4 v3, 0x0
     aput-object v3, v1, v2
     const/16 v2, 0xd
     aput-object v3, v1, v2
-    invoke-direct {p0}, Lcom/neverland/prefs/TBookCSS;->ensureStrongEmStyles()V
+    invoke-direct {v4}, Lcom/neverland/prefs/TBookCSS;->ensureStrongEmStyles()V
 
     return-void
 .end method
