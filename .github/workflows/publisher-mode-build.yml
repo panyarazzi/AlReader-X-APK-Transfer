@@ -107,7 +107,7 @@ jobs:
           APK="dist/AlReaderX-PublisherMode-1.33-test.apk"
           APP_ID="com.panyarazzi.alreaderx.publisher"
           test -s "$APK"
-          adb install -r "$APK"
+          adb install --no-incremental -r "$APK"
           adb shell am force-stop "$APP_ID"
           adb logcat -c
           adb shell am start -W -n "$APP_ID/com.neverland.viscomp.TMainActivity"
@@ -187,7 +187,41 @@ jobs:
             exit 1
           fi
 
-          echo "Emulator is online and fully booted; starting smoke test."
+          echo "Android boot completed; waiting for Package Manager service."
+          package_ready=false
+          package_deadline=$((SECONDS + 360))
+          while (( SECONDS < package_deadline )); do
+            state="$(adb -s "$SERIAL" get-state 2>/dev/null || true)"
+            if [[ "$state" == 'device' ]]; then
+              service_status="$(adb -s "$SERIAL" shell service check package 2>/dev/null | tr -d '\\r' || true)"
+              if [[ "$service_status" == *'found'* ]]; then
+                if adb -s "$SERIAL" shell cmd package list packages >/dev/null 2>&1; then
+                  package_ready=true
+                  break
+                fi
+              fi
+            fi
+            sleep 5
+          done
+
+          if [[ "$package_ready" != true ]]; then
+            echo "Android Package Manager did not become ready after boot."
+            echo "--- ADB devices ---"
+            adb devices -l || true
+            echo "--- Package service ---"
+            adb -s "$SERIAL" shell service check package || true
+            echo "--- System services ---"
+            adb -s "$SERIAL" shell service list || true
+            echo "--- Boot properties ---"
+            adb -s "$SERIAL" shell getprop | grep -E 'boot_completed|init.svc.system_server|init.svc.bootanim' || true
+            echo "--- Recent Android logs ---"
+            adb -s "$SERIAL" logcat -b all -d -t 1200 -v brief || true
+            echo "--- Emulator boot log ---"
+            tail -n 250 dist/emulator-boot.log || true
+            exit 1
+          fi
+
+          echo "Package Manager is ready; starting APK smoke test."
           bash .github/scripts/publisher-emulator-smoke-test.sh
 
       - name: Upload signed test APK
