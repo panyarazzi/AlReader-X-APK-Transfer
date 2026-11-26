@@ -211,7 +211,7 @@ jobs:
               for node in root.iter("node"):
                   rid = (node.attrib.get("resource-id") or "").strip()
                   if rid.endswith(":id/buttonOptions") or rid.endswith("/id/buttonOptions"):
-                      nums = [int(x) for x in re.findall(r"-?\\d+", node.attrib.get("bounds", ""))]
+                      nums = [int(x) for x in re.findall(r"-?\d+", node.attrib.get("bounds", ""))]
                       if len(nums) == 4:
                           return ((nums[0]+nums[2])//2, (nums[1]+nums[3])//2, rid)
               return None
@@ -228,7 +228,7 @@ jobs:
           x, y, rid = options
           print(f"Opening AlReader Options button at ({x},{y}); resource-id={rid!r}")
           with open("dist/settings-tap.txt", "w") as f:
-              f.write(f"{x} {y}\\n")
+              f.write(f"{x} {y}\n")
           PY
           read -r SETTINGS_X SETTINGS_Y < dist/settings-tap.txt
           adb shell input tap "$SETTINGS_X" "$SETTINGS_Y"
