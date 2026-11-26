@@ -2945,6 +2945,90 @@
     return-void
 .end method
 
+.method private static mapStrongEmSpinnerOrdinal(I)I
+    .locals 2
+
+    move v0, p0
+    const/16 v1, 0x1f7
+    if-lt p0, v1, :map_strong_em_return
+    const/16 v1, 0x215
+    if-ge p0, v1, :map_strong_em_return
+    const/16 v1, 0x1f7
+    sub-int v0, p0, v1
+    const/16 v1, 0xf
+    rem-int/2addr v0, v1
+    packed-switch v0, :map_strong_em_switch
+    goto :map_strong_em_return
+
+:map_strong_em_0
+    const/16 v0, 0x158
+    return v0
+:map_strong_em_1
+    const/16 v0, 0x163
+    return v0
+:map_strong_em_2
+    const/16 v0, 0x16d
+    return v0
+:map_strong_em_3
+    const/16 v0, 0x176
+    return v0
+:map_strong_em_4
+    const/16 v0, 0x17f
+    return v0
+:map_strong_em_5
+    const/16 v0, 0x189
+    return v0
+:map_strong_em_6
+    const/16 v0, 0x193
+    return v0
+:map_strong_em_7
+    const/16 v0, 0x19c
+    return v0
+:map_strong_em_8
+    const/16 v0, 0x1a6
+    return v0
+:map_strong_em_9
+    const/16 v0, 0x1b0
+    return v0
+:map_strong_em_10
+    const/16 v0, 0x1c2
+    return v0
+:map_strong_em_11
+    const/16 v0, 0x1cc
+    return v0
+:map_strong_em_12
+    const/16 v0, 0x1b9
+    return v0
+:map_strong_em_13
+    const/16 v0, 0x1d6
+    return v0
+:map_strong_em_14
+    const/16 v0, 0x1e5
+    return v0
+
+:map_strong_em_return
+    return v0
+
+    :map_strong_em_switch
+    .packed-switch 0x0
+        :map_strong_em_0
+        :map_strong_em_1
+        :map_strong_em_2
+        :map_strong_em_3
+        :map_strong_em_4
+        :map_strong_em_5
+        :map_strong_em_6
+        :map_strong_em_7
+        :map_strong_em_8
+        :map_strong_em_9
+        :map_strong_em_10
+        :map_strong_em_11
+        :map_strong_em_12
+        :map_strong_em_13
+        :map_strong_em_14
+    .end packed-switch
+.end method
+
 .method initSpinnerForListAdapter(Landroid/widget/Spinner;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Landroid/widget/BaseAdapter;)V
     .locals 18
 
@@ -3033,94 +3117,8 @@
     .line 41
     .line 42
     move-result v4
-    const/16 v5, 0x1f7
-    if-lt v4, v5, :strong_em_spinner_done
-    const/16 v13, 0x215
-    if-ge v4, v13, :strong_em_spinner_done
-    sub-int/2addr v4, v5
-    const/16 v13, 0xf
-    rem-int v5, v4, v13
-    packed-switch v5, :strong_em_spinner_map
-    goto :strong_em_spinner_done
-:strong_em_spinner_0
-    const/16 v4, 0x158
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_1
-    const/16 v4, 0x163
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_2
-    const/16 v4, 0x16d
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_3
-    const/16 v4, 0x176
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_4
-    const/16 v4, 0x17f
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_5
-    const/16 v4, 0x189
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_6
-    const/16 v4, 0x193
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_7
-    const/16 v4, 0x19c
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_8
-    const/16 v4, 0x1a6
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_9
-    const/16 v4, 0x1b0
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_10
-    const/16 v4, 0x1c2
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_11
-    const/16 v4, 0x1cc
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_12
-    const/16 v4, 0x1b9
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_13
-    const/16 v4, 0x1d6
-    goto :strong_em_spinner_done
-
-:strong_em_spinner_14
-    const/16 v4, 0x1e5
-    goto :strong_em_spinner_done
-    :strong_em_spinner_map
-    .packed-switch 0x0
-        :strong_em_spinner_0
-        :strong_em_spinner_1
-        :strong_em_spinner_2
-        :strong_em_spinner_3
-        :strong_em_spinner_4
-        :strong_em_spinner_5
-        :strong_em_spinner_6
-        :strong_em_spinner_7
-        :strong_em_spinner_8
-        :strong_em_spinner_9
-        :strong_em_spinner_10
-        :strong_em_spinner_11
-        :strong_em_spinner_12
-        :strong_em_spinner_13
-        :strong_em_spinner_14
-    .end packed-switch
-    :strong_em_spinner_done
-
+    invoke-static {v4}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog;->mapStrongEmSpinnerOrdinal(I)I
+    move-result v4
 
     .line 43
     if-eqz v4, :cond_b
@@ -8713,10 +8711,7 @@
     .line 2794
     .line 2795
     .line 2796
-    # Preserve the dialog receiver in a register whose type is explicit at this point.
-    move-object/from16 v15, p0
-
-    iget v0, v15, Lcom/neverland/viscomp/dialogs/TBaseDialog;->menuTextColor:I
+    iget v0, v6, Lcom/neverland/viscomp/dialogs/TBaseDialog;->menuTextColor:I
 
     .line 2797
     .line 2798
@@ -8741,7 +8736,7 @@
 
     .line 2808
     .line 2809
-    invoke-direct {v0, v15, v1}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$31;-><init>(Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog;Landroid/widget/BaseAdapter;)V
+    invoke-direct {v0, v6, v1}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$31;-><init>(Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog;Landroid/widget/BaseAdapter;)V
 
     .line 2810
     .line 2811
