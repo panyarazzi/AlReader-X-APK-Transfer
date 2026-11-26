@@ -9799,7 +9799,7 @@
     .line 695
     sget-object v2, Lcom/neverland/utils/TCustomDevice$IS_DEVICE;->color_device:Lcom/neverland/utils/TCustomDevice$IS_DEVICE;
 
-    invoke-virtual {v5, v2}, Lcom/neverland/utils/TCustomDevice;->isDevice(Lcom/neverland/utils/TCustomDevice$IS_DEVICE;)Z
+    invoke-virtual {v15, v2}, Lcom/neverland/utils/TCustomDevice;->isDevice(Lcom/neverland/utils/TCustomDevice$IS_DEVICE;)Z
 
     move-result v3
 
