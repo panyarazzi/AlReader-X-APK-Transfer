@@ -233,12 +233,17 @@ jobs:
           read -r SETTINGS_X SETTINGS_Y < dist/settings-tap.txt
           adb shell input tap "$SETTINGS_X" "$SETTINGS_Y"
           sleep 8
-          adb shell uiautomator dump /sdcard/publisher-options.xml >/dev/null
-          adb shell cat /sdcard/publisher-options.xml > dist/emulator-ui-options.xml
+          # Capture the log AFTER the Options tap. The previous run only saved
+          # pre-tap logcat, so it could not reveal a crash triggered by Settings.
+          adb shell logcat -b all -d -v threadtime > dist/logcat-after-settings-tap.txt 2>&1 || true
+          adb shell pidof "$APP_ID" > dist/publisher-pid-after-settings-tap.txt 2>&1 || true
+          adb shell dumpsys activity activities > dist/emulator-activities-after-settings-tap.txt 2>&1 || true
+          adb shell uiautomator dump /sdcard/publisher-options.xml >/dev/null 2>&1 || true
+          adb shell cat /sdcard/publisher-options.xml > dist/emulator-ui-options.xml 2>&1 || true
 
           # The Settings dialog must remain open without a verifier/runtime crash.
-          adb shell uiautomator dump /sdcard/publisher-settings.xml >/dev/null
-          adb shell cat /sdcard/publisher-settings.xml > dist/emulator-ui-settings.xml
+          adb shell uiautomator dump /sdcard/publisher-settings.xml >/dev/null 2>&1 || true
+          adb shell cat /sdcard/publisher-settings.xml > dist/emulator-ui-settings.xml 2>&1 || true
           if ! adb shell pidof "$APP_ID" >/dev/null; then
             echo "Publisher process exited after opening Settings."
             adb logcat -d -v brief
@@ -391,6 +396,9 @@ jobs:
             dist/activity-service-*.txt
             dist/package-service-before-launch.txt
             dist/publisher-pid-after-launch.txt
+            dist/logcat-after-settings-tap.txt
+            dist/publisher-pid-after-settings-tap.txt
+            dist/emulator-activities-after-settings-tap.txt
           if-no-files-found: ignore
           retention-days: 7
 
