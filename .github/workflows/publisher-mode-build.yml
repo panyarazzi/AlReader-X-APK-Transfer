@@ -275,7 +275,7 @@ jobs:
               root = ET.parse("dist/emulator-ui-before-styles.xml").getroot()
               for node in root.iter("node"):
                   if (node.attrib.get("text") or "").strip().casefold() == label.casefold():
-                      nums = [int(x) for x in re.findall(r"-?\\d+", node.attrib.get("bounds", ""))]
+                      nums = [int(x) for x in re.findall(r"-?\d+", node.attrib.get("bounds", ""))]
                       if len(nums) == 4 and nums[2] > nums[0] and nums[3] > nums[1]:
                           return ((nums[0]+nums[2])//2, (nums[1]+nums[3])//2)
               return None
