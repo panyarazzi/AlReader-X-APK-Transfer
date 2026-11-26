@@ -146,7 +146,7 @@ jobs:
           # that the manifest activity component is registered exactly as expected.
           LAUNCHER="$(adb shell cmd package resolve-activity --brief \
             -a android.intent.action.MAIN \
-            -c android.intent.category.LAUNCHER "$APP_ID" 2>&1 | tr -d '\\r' | tail -n 1)"
+            -c android.intent.category.LAUNCHER -p "$APP_ID" 2>&1 | tr -d '\\r' | tail -n 1)"
           echo "Resolved launcher: $LAUNCHER"
           if [[ "$LAUNCHER" != "$APP_ID/"* ]]; then
             echo "Could not resolve a launcher activity for $APP_ID."
@@ -154,7 +154,7 @@ jobs:
             adb shell dumpsys package "$APP_ID" || true
             adb shell cmd package query-activities --brief \
               -a android.intent.action.MAIN \
-              -c android.intent.category.LAUNCHER "$APP_ID" || true
+              -c android.intent.category.LAUNCHER -p "$APP_ID" || true
             exit 1
           fi
           adb shell am start -W -n "$LAUNCHER"
