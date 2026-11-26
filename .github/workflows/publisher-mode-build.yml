@@ -286,7 +286,7 @@ jobs:
           "$EMULATOR" -avd "$AVD_NAME" \
             -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim \
             -no-snapshot -no-snapshot-save -camera-back none -accel off \
-            -memory 2048 -cores 2 \
+            -memory 3072 -cores 4 \
             > dist/emulator-boot.log 2>&1 &
           EMULATOR_PID=$!
           cleanup() {
