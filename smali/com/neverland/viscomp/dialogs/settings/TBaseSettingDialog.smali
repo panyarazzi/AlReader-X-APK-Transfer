@@ -3032,6 +3032,8 @@
 .method initSpinnerForListAdapter(Landroid/widget/Spinner;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Landroid/widget/BaseAdapter;)V
     .locals 18
 
+    move-object/from16 v6, p0
+
     .line 1
 
     .line 2
@@ -3105,7 +3107,7 @@
     const/4 v5, 0x1
 
     .line 36
-    invoke-virtual {p0, v4, v5}, Lcom/neverland/viscomp/dialogs/TBaseDialog;->log(Ljava/lang/String;Z)V
+    invoke-virtual {v6, v4, v5}, Lcom/neverland/viscomp/dialogs/TBaseDialog;->log(Ljava/lang/String;Z)V
 
     .line 37
     .line 38
@@ -8710,7 +8712,7 @@
     .line 2794
     .line 2795
     .line 2796
-    iget v0, p0, Lcom/neverland/viscomp/dialogs/TBaseDialog;->menuTextColor:I
+    iget v0, v6, Lcom/neverland/viscomp/dialogs/TBaseDialog;->menuTextColor:I
 
     .line 2797
     .line 2798
@@ -8735,7 +8737,7 @@
 
     .line 2808
     .line 2809
-    invoke-direct {v0, p0, v1}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$31;-><init>(Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog;Landroid/widget/BaseAdapter;)V
+    invoke-direct {v0, v6, v1}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$31;-><init>(Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog;Landroid/widget/BaseAdapter;)V
 
     .line 2810
     .line 2811
