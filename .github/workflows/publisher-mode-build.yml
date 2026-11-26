@@ -323,6 +323,17 @@ jobs:
                           return ((nums[0]+nums[2])//2, (nums[1]+nums[3])//2)
               return None
 
+          def find_position(root, predicate):
+              for node in root.iter("node"):
+                  if predicate(node):
+                      nums = [int(x) for x in re.findall(r"-?\\d+", node.attrib.get("bounds", ""))]
+                      if len(nums) == 4 and nums[2] > nums[0] and nums[3] > nums[1]:
+                          return ((nums[0]+nums[2])//2, (nums[1]+nums[3])//2)
+              return None
+
+          def has_text(root, value):
+              return any((n.attrib.get("text") or "").strip().casefold() == value.casefold() for n in root.iter("node"))
+
           for label in ("Strong", "Em"):
               position = None
               for attempt in range(14):
@@ -337,15 +348,43 @@ jobs:
                   root = dump_ui()
                   labels = sorted({(n.attrib.get("text") or "").strip() for n in root.iter("node") if (n.attrib.get("text") or "").strip()})
                   raise SystemExit(f"{label} section not found after scrolling. Visible labels: {labels}")
-              print(f"Expanding {label} section at {position}")
+
+              print(f"Opening {label} section at {position}")
               subprocess.run(["adb", "shell", "input", "tap", str(position[0]), str(position[1])], check=True)
               time.sleep(3)
-              root = dump_ui()
-              if not find_label(root, label):
-                  raise SystemExit(f"{label} section disappeared immediately after tap")
+              expanded_path = f"dist/emulator-ui-{label.lower()}-expanded.xml"
+              root = dump_ui(expanded_path)
+
+              # Selecting a directory row opens a child page. Its title becomes
+              # "Styles/Strong" or "Styles/Em"; the original row label is no
+              # longer present. Validate the child page and its actual controls.
+              expected_title = f"Styles/{label}"
+              if not has_text(root, expected_title):
+                  visible = sorted({(n.attrib.get("text") or "").strip() for n in root.iter("node") if (n.attrib.get("text") or "").strip()})
+                  raise SystemExit(f"{label} child page did not open. Expected {expected_title!r}; visible labels: {visible}")
+
+              required_controls = ("Font", "Size", "Bold", "Italic")
+              missing = [name for name in required_controls if not has_text(root, name)]
+              if missing:
+                  visible = sorted({(n.attrib.get("text") or "").strip() for n in root.iter("node") if (n.attrib.get("text") or "").strip()})
+                  raise SystemExit(f"{label} page is open but controls are missing: {missing}. Visible labels: {visible}")
+
               with open(f"dist/{label.lower()}-section-expanded.txt", "w") as output:
-                  output.write(f"Expanded {label} section at {position}\\n")
-          print("Strong and Em sections were both found and expanded without terminating the app.")
+                  output.write(f"Opened {expected_title}; verified controls: {', '.join(required_controls)}\\n")
+
+              if label == "Strong":
+                  # Return to the Styles list before locating Em. The directory
+                  # row opens a separate child page rather than inline expansion.
+                  back = find_position(root, lambda n: n.attrib.get("class") == "android.widget.Button")
+                  if not back:
+                      raise SystemExit("Back button not found on Styles/Strong child page")
+                  subprocess.run(["adb", "shell", "input", "tap", str(back[0]), str(back[1])], check=True)
+                  time.sleep(3)
+                  root = dump_ui()
+                  if not has_text(root, "Styles"):
+                      raise SystemExit("Could not return from Styles/Strong to the Styles list")
+
+          print("Strong and Em child pages opened; Font, Size, Bold and Italic controls were verified on both pages.")
           PY
           adb shell logcat -b all -d -v threadtime > dist/logcat-after-styles-tap.txt 2>&1 || true
           adb shell pidof "$APP_ID" > dist/publisher-pid-after-styles-tap.txt 2>&1 || true
