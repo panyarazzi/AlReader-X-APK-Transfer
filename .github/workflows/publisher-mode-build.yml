@@ -142,22 +142,18 @@ jobs:
           adb shell am force-stop "$APP_ID"
           adb logcat -c
 
-          # Resolve the launcher from the installed package instead of assuming
-          # that the manifest activity component is registered exactly as expected.
-          LAUNCHER="$(adb shell cmd package resolve-activity --brief \
-            -a android.intent.action.MAIN \
-            -c android.intent.category.LAUNCHER -p "$APP_ID" 2>&1 | tr -d '\\r' | tail -n 1)"
-          echo "Resolved launcher: $LAUNCHER"
-          if [[ "$LAUNCHER" != "$APP_ID/"* ]]; then
-            echo "Could not resolve a launcher activity for $APP_ID."
-            adb shell pm path "$APP_ID" || true
+          # Use Android's package-scoped launcher intent. resolve-activity
+          # output differs across API 30 package-manager builds and can yield
+          # malformed component strings; monkey delegates resolution to Android.
+          adb shell monkey -p "$APP_ID" -c android.intent.category.LAUNCHER 1
+          sleep 5
+          adb shell dumpsys activity activities | tee dist/emulator-activities.txt
+          if ! grep -F "$APP_ID/" dist/emulator-activities.txt; then
+            echo "Publisher launcher activity did not become active."
             adb shell dumpsys package "$APP_ID" || true
-            adb shell cmd package query-activities --brief \
-              -a android.intent.action.MAIN \
-              -c android.intent.category.LAUNCHER -p "$APP_ID" || true
+            adb logcat -d -v brief -s AndroidRuntime:E
             exit 1
           fi
-          adb shell am start -W -n "$LAUNCHER"
           sleep 20
           if ! adb shell pidof "$APP_ID" >/dev/null; then
             echo "Publisher process exited after launch."
