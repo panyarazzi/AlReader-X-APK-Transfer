@@ -142,18 +142,21 @@ jobs:
           adb shell am force-stop "$APP_ID"
           adb logcat -c
 
-          # Use Android's package-scoped launcher intent. resolve-activity
-          # output differs across API 30 package-manager builds and can yield
-          # malformed component strings; monkey delegates resolution to Android.
-          adb shell monkey -p "$APP_ID" -c android.intent.category.LAUNCHER 1
-          sleep 5
+          # Grant the emulator-only storage app-op before the first launch.
+          # Doing this after launch previously coincided with system_server
+          # disappearing on the software-emulated API 30 image.
+          adb shell appops set "$APP_ID" MANAGE_EXTERNAL_STORAGE allow
+          adb shell service check activity | tee dist/activity-service-before-launch.txt
+          adb shell service check package | tee dist/package-service-before-launch.txt
 
-          # Avoid the first-run all-files-access detour obscuring the Settings
-          # dialog test. Grant the emulator-only app-op, then restart cleanly.
-          adb shell appops set "$APP_ID" MANAGE_EXTERNAL_STORAGE allow || true
-          adb shell am force-stop "$APP_ID"
+          # Use Android's package-scoped launcher intent. resolve-activity
+          # output differs across API 30 package-manager builds; monkey lets
+          # Android resolve the installed launcher activity.
           adb shell monkey -p "$APP_ID" -c android.intent.category.LAUNCHER 1
           sleep 8
+          adb shell service check activity | tee dist/activity-service-after-launch.txt
+          adb shell service check package | tee dist/package-service-after-launch.txt
+          adb shell pidof "$APP_ID" | tee dist/publisher-pid-after-launch.txt
 
           # Locate the Settings control from the actual accessibility tree;
           # do not rely on device-specific screen coordinates.
@@ -250,6 +253,7 @@ jobs:
           "$EMULATOR" -avd "$AVD_NAME" \
             -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim \
             -no-snapshot -no-snapshot-save -camera-back none -accel off \
+            -memory 2048 -cores 2 \
             > dist/emulator-boot.log 2>&1 &
           EMULATOR_PID=$!
           cleanup() {
@@ -331,6 +335,12 @@ jobs:
             dist/activity-processes-*.txt
             dist/logcat-*.txt
             dist/emulator-boot*.log
+            dist/emulator-ui-*.xml
+            dist/settings-tap.txt
+            dist/emulator-runtime-errors.txt
+            dist/activity-service-*.txt
+            dist/package-service-before-launch.txt
+            dist/publisher-pid-after-launch.txt
           if-no-files-found: ignore
           retention-days: 7
 
