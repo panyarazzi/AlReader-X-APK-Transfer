@@ -293,7 +293,7 @@ jobs:
               raise SystemExit("Styles category was not found in the Settings accessibility tree")
           print(f"Opening Styles category at {styles}")
           with open("dist/styles-tap.txt", "w") as f:
-              f.write(f"{styles[0]} {styles[1]}\\n")
+              f.write(f"{styles[0]} {styles[1]}\n")
           PY
           read -r STYLES_X STYLES_Y < dist/styles-tap.txt
           adb shell input tap "$STYLES_X" "$STYLES_Y"
@@ -460,6 +460,11 @@ jobs:
             dist/logcat-after-settings-tap.txt
             dist/publisher-pid-after-settings-tap.txt
             dist/emulator-activities-after-settings-tap.txt
+            dist/styles-tap.txt
+            dist/logcat-after-styles-tap.txt
+            dist/publisher-pid-after-styles-tap.txt
+            dist/emulator-ui-before-styles.xml
+            dist/emulator-ui-style-controls.xml
           if-no-files-found: ignore
           retention-days: 7
 
