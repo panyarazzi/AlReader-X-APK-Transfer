@@ -257,6 +257,67 @@ jobs:
             exit 1
           fi
 
+          # Open the Styles category as a second-stage smoke test. The previous
+          # smoke test stopped at the root Settings dialog and missed crashes
+          # caused while ListSettingsAdapter builds the style controls.
+          python3 - <<'PY'
+          import re
+          import subprocess
+          import time
+          import xml.etree.ElementTree as ET
+
+          def dump_styles_ui():
+              subprocess.run(["adb", "shell", "uiautomator", "dump", "/sdcard/publisher-styles.xml"], check=True, stdout=subprocess.DEVNULL)
+              with open("dist/emulator-ui-before-styles.xml", "w") as output:
+                  subprocess.run(["adb", "shell", "cat", "/sdcard/publisher-styles.xml"], check=True, stdout=output)
+
+          def find_text(label):
+              root = ET.parse("dist/emulator-ui-before-styles.xml").getroot()
+              for node in root.iter("node"):
+                  if (node.attrib.get("text") or "").strip().casefold() == label.casefold():
+                      nums = [int(x) for x in re.findall(r"-?\\d+", node.attrib.get("bounds", ""))]
+                      if len(nums) == 4 and nums[2] > nums[0] and nums[3] > nums[1]:
+                          return ((nums[0]+nums[2])//2, (nums[1]+nums[3])//2)
+              return None
+
+          styles = None
+          for attempt in range(4):
+              dump_styles_ui()
+              styles = find_text("Styles")
+              if styles:
+                  break
+              print(f"Styles row not visible; scrolling Settings list (attempt {attempt + 1}).")
+              subprocess.run(["adb", "shell", "input", "swipe", "600", "1500", "600", "800", "450"], check=True)
+              time.sleep(2)
+          if not styles:
+              raise SystemExit("Styles category was not found in the Settings accessibility tree")
+          print(f"Opening Styles category at {styles}")
+          with open("dist/styles-tap.txt", "w") as f:
+              f.write(f"{styles[0]} {styles[1]}\\n")
+          PY
+          read -r STYLES_X STYLES_Y < dist/styles-tap.txt
+          adb shell input tap "$STYLES_X" "$STYLES_Y"
+          sleep 8
+          adb shell logcat -b all -d -v threadtime > dist/logcat-after-styles-tap.txt 2>&1 || true
+          adb shell pidof "$APP_ID" > dist/publisher-pid-after-styles-tap.txt 2>&1 || true
+          adb shell uiautomator dump /sdcard/publisher-style-controls.xml >/dev/null 2>&1 || true
+          adb shell cat /sdcard/publisher-style-controls.xml > dist/emulator-ui-style-controls.xml 2>&1 || true
+          if ! adb shell pidof "$APP_ID" >/dev/null; then
+            echo "Publisher process exited after opening Styles."
+            adb logcat -d -v brief -s AndroidRuntime:E
+            exit 1
+          fi
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          root = ET.parse("dist/emulator-ui-style-controls.xml").getroot()
+          labels = {(node.attrib.get("text") or "").strip().casefold() for node in root.iter("node")}
+          missing = [label for label in ("strong", "em") if label not in labels]
+          if missing:
+              print("Visible style labels:", sorted(label for label in labels if label))
+              raise SystemExit("Strong/Em style controls not found: " + ", ".join(missing))
+          print("Strong and Em style controls detected in the Styles accessibility tree.")
+          PY
+
           adb shell dumpsys activity activities | tee dist/emulator-activities.txt
           if ! grep -F "$APP_ID/" dist/emulator-activities.txt; then
             echo "Publisher launcher activity did not become active."
