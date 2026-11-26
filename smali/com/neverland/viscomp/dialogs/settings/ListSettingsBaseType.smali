@@ -9388,7 +9388,9 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v2, v6, v3, v0}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+    sget-object v4, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;->tDir:Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;
+
+    invoke-static {v2, v4, v3, v0}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
 
     move-result-object v2
 
@@ -9607,7 +9609,9 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v2, v6, v3, v0}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
+    sget-object v4, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;->tDir:Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;
+
+    invoke-static {v2, v4, v3, v0}, Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;->addValue(ILcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType$OPTIONS_SHORT;Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;)Lcom/neverland/viscomp/dialogs/settings/ListSettingsBaseType;
 
     move-result-object v2
 
