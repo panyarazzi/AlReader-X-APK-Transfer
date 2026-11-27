@@ -95,12 +95,13 @@
     if-nez v3, :thai_boundary_no
     invoke-static {v1}, Ljava/lang/Character;->isDigit(C)Z
     move-result v3
-    if-eqz v3, :thai_check_mai_yamok
+    if-eqz v3, :thai_check_sara_am
     invoke-static {v2}, Ljava/lang/Character;->isDigit(C)Z
     move-result v3
-    if-eqz v3, :thai_check_mai_yamok
+    if-eqz v3, :thai_check_sara_am
     goto :thai_boundary_no
-    :thai_check_mai_yamok
+
+    :thai_check_sara_am
     const/16 v3, 0xe33
     if-ne v2, v3, :thai_check_mai_yamok
     goto :thai_boundary_no
