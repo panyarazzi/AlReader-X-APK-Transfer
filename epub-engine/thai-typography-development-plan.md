@@ -195,3 +195,41 @@ The implementation must therefore:
 - Complete the hyph[] marker audit before selecting a marker for Thai boundaries. In particular, the addWordToItem0(...) branches use more than one marker path, and addSpace2I(...) inserts a synthetic U+0020 into the internal item buffer. Thai boundaries must not acquire visible inter-word spaces as a side effect.
 - Confirm the 384-character tmp_word safety-flush behavior with a long Thai run.
 - Only after these checks should the first Smali integration be written. No application code or APK was changed by the host probe.
+
+## Phase B/C follow-up — boundary safety and native Justify audit
+
+### 1. Thai boundary guard hardening
+
+Commit `93008d19` extends `ThaiWordBreaks.isThaiBoundary(...)` with two protections:
+
+- Dependent vowels U+0E30, U+0E32, U+0E33, and U+0E45 cannot begin a new line independently of the preceding Thai base.
+- Consecutive Unicode decimal digits are kept together, including Thai digits and mixed Thai/ASCII digit runs.
+
+The existing checks remain in place for Thai combining marks, decomposed sara am (U+0E4D + U+0E32), leading-vowel/consonant attachment, U+200B, and opening/closing punctuation. This is a conservative guard layered over dictionary boundaries; it does not create boundaries by itself.
+
+### 2. Native Justify path — verified static behavior
+
+The current integration uses the existing `hyph[]` boundary marker (0x42). In `addWord2I(...)`, a Thai boundary is represented inside the temporary `AlOneItem` buffer by a synthetic U+0020 whose width is initialized to zero and whose source position is -1. No character is inserted into the EPUB source buffer.
+
+In `prepareColumn(...)`, the native justified-line path:
+- counts U+0020 opportunities and eligible CJK characters;
+- computes remaining line width from `allWidth - textWidth`;
+- distributes that width across the counted U+0020 opportunities and CJK characters;
+- leaves the original per-character measured advances in `AlOneWord.width1[]` untouched.
+
+Therefore the synthetic Thai opportunities participate in the existing space-distribution algorithm without treating each Thai glyph as an independent expansion point. The final character is excluded from the opportunity scan, so a trailing synthetic space is not used to stretch the end of a line.
+
+The implementation does not modify `AlCalc.getTextWidths(...)`, `AlFonts.modifyPaint(...)`, `font_widths[]`, or the CJK expansion rule.
+
+### Validation still required
+
+Static source tracing confirms the intended data path, but it does not prove runtime rendering. Before treating this phase as complete, build and inspect on Android 11/API 30:
+
+- Thai paragraphs in left alignment and Justify;
+- normal, expanded, and reduced font widths;
+- lines ending at a Thai dictionary boundary versus lines ending at an explicit space;
+- mixed Thai/Latin/numbers and Thai digit sequences;
+- punctuation, combining marks, dependent vowels, sara am, and leading vowels;
+- source-position selection/copy around internal zero-width opportunities.
+
+No device result is claimed by this static audit.
