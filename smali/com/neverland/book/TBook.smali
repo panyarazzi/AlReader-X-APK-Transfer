@@ -4483,7 +4483,7 @@
 
     .line 65
     .line 66
-    const-string v4, "\r\np.strong {@@strong}\r\np.em {@@em}\r\n\r\nem, i {@@code}"
+    const-string v4, "\r\np.strong {@@strong}\r\np.em {@@em}\r\n\r\nem, i {@@code}\r\n\r\n/* AlReader X: prevent EPUB first-line indent from shifting centered blocks */\r\nbody .center, body .center-line { text-indent: 0 !important; }"
 
     if-eqz v3, :strong_em_default_only
 
@@ -11773,7 +11773,7 @@
     .line 9
     iget-object v4, v0, Lcom/neverland/engbook/forpublic/AlEngineOptions;->defaultEPUB0:Ljava/lang/String;
 
-    const-string v6, "\r\np.strong {@@strong}\r\np.em {@@em}\r\n\r\nem, i {@@code}"
+    const-string v6, "\r\np.strong {@@strong}\r\np.em {@@em}\r\n\r\nem, i {@@code}\r\n\r\n/* AlReader X: prevent EPUB first-line indent from shifting centered blocks */\r\nbody .center, body .center-line { text-indent: 0 !important; }"
 
     if-eqz v4, :strong_em_update_default_only
 
