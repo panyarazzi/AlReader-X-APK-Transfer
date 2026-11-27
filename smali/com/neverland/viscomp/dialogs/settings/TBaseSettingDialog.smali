@@ -13065,7 +13065,19 @@
     .line 12
     move-result v1
 
-    .line 13
+    # Restore the saved Strong/Em selection before attaching the spinner listener.
+    const/16 v2, 0x1f7
+    if-lt v1, v2, :strong_em_spinner_init_fallback
+    const/16 v2, 0x215
+    if-ge v1, v2, :strong_em_spinner_init_fallback
+    iget-object v1, v0, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$ListArrayAdapter;->typeList:Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;
+    invoke-virtual {p0, v1}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog;->getCurrentInteger(Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$OPTIONS_TYPE;)I
+    move-result v1
+    invoke-virtual {v0, v1}, Lcom/neverland/viscomp/dialogs/settings/TBaseSettingDialog$ListArrayAdapter;->getPositionByInt(I)I
+    move-result v0
+    goto/16 :goto_80
+
+    :strong_em_spinner_init_fallback
     const/4 v2, 0x0
 
     .line 14
