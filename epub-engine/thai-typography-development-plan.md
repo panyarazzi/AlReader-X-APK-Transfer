@@ -159,3 +159,39 @@ Do not modify `AlCalc.getTextWidths`, `AlFonts.modifyPaint`, or the Justify widt
 The body ingestion, source-position preservation, line-overflow boundary map, CJK-only fallback, Justify distribution, and drawing-width consumption are now mapped. Phase A is substantially complete; the only remaining Phase A gate is proving every font-width setting change invalidates the measurement cache.
 
 Next: Phase B should prototype `java.text.BreakIterator.getWordInstance(new Locale("th"))` together with `getCharacterInstance(...)` as a filter for grapheme-safe boundaries. Verify the exact boundaries on the controlled corpus on Android 11 before changing Smali. If the prototype passes, integrate only the legal Thai boundaries into the existing `AlHyph` / `hyph[]` contract first. Design Thai Justify separately so it distributes only at dictionary word boundaries and never inside a Thai orthographic cluster. No APK build or runtime success is claimed by this static audit.
+
+## Phase B follow-up — host BreakIterator prototype (preliminary)
+
+A temporary JDK 21 probe used java.text.BreakIterator.getWordInstance(new Locale("th")) and getCharacterInstance(...) against the controlled corpus. This was a host-JVM experiment only; it is not Android runtime evidence.
+
+### Word iterator result
+
+The Thai word iterator returned the expected dictionary boundaries for all five primary samples:
+
+| Input | JDK 21 word-boundary output |
+|---|---|
+| ภาษาไทยอ่านสนุก | ภาษา / ไทย / อ่าน / สนุก |
+| การจัดหน้าหนังสืออิเล็กทรอนิกส์ | การ / จัด / หน้า / หนังสือ / อิเล็กทรอนิกส์ |
+| ฉันรักภาษาไทยและการอ่าน | ฉัน / รัก / ภาษา / ไทย / และ / การ / อ่าน |
+| วันนี้อากาศดีมาก | วันนี้ / อากาศ / ดี / มาก |
+| ระบบตัดคำภาษาไทย | ระบบ / ตัด / คำ / ภาษา / ไทย |
+
+The same probe kept the tested words intact for ก่, เก่, น้ำ, กำลัง, เก้าอี้, เก่ง, and ที่นี่, and segmented the mixed-script samples into Thai/Latin/digit/punctuation tokens. This supports java.text.BreakIterator as a prototype candidate, not yet as an approved implementation.
+
+### Important grapheme finding
+
+Do not use BreakIterator.getCharacterInstance(...) as the sole Thai orthographic-safety filter. In the JDK 21 probe, its character boundaries could fall between a Thai leading vowel and consonant, and the น้ำ sample showed a boundary before its tone mark. The word iterator did not produce those internal boundaries in the tested corpus.
+
+The implementation must therefore:
+- use Thai word-instance boundaries as the dictionary segmentation source;
+- apply an explicit Thai orthographic guard for combining marks, sara am (including decomposed sara am), and leading-vowel/consonant attachment;
+- only create break opportunities adjacent to Thai text, leaving Latin and digit runs unchanged;
+- separately handle punctuation attachment so a closing mark is not stranded at the start of a line;
+- retain explicit U+200B and existing soft-hyphen behavior.
+
+### Remaining Phase B checks
+
+- Verify java.text.BreakIterator word behavior on Android 11/API 30; the JDK 21 probe does not establish Android ICU behavior.
+- Complete the hyph[] marker audit before selecting a marker for Thai boundaries. In particular, the addWordToItem0(...) branches use more than one marker path, and addSpace2I(...) inserts a synthetic U+0020 into the internal item buffer. Thai boundaries must not acquire visible inter-word spaces as a side effect.
+- Confirm the 384-character tmp_word safety-flush behavior with a long Thai run.
+- Only after these checks should the first Smali integration be written. No application code or APK was changed by the host probe.
