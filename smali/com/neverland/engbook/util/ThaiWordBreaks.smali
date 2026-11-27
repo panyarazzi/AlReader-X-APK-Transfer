@@ -90,6 +90,17 @@
     invoke-static {v2}, Lcom/neverland/engbook/util/ThaiWordBreaks;->isThaiMark(C)Z
     move-result v3
     if-nez v3, :thai_boundary_no
+    invoke-static {v2}, Lcom/neverland/engbook/util/ThaiWordBreaks;->isThaiDependentVowel(C)Z
+    move-result v3
+    if-nez v3, :thai_boundary_no
+    invoke-static {v1}, Ljava/lang/Character;->isDigit(C)Z
+    move-result v3
+    if-eqz v3, :thai_check_mai_yamok
+    invoke-static {v2}, Ljava/lang/Character;->isDigit(C)Z
+    move-result v3
+    if-eqz v3, :thai_check_mai_yamok
+    goto :thai_boundary_no
+    :thai_check_mai_yamok
     const/16 v3, 0xe33
     if-ne v2, v3, :thai_check_mai_yamok
     goto :thai_boundary_no
@@ -162,6 +173,23 @@
     return v0
     :thai_consonant_no
     const/4 v0, 0x0
+    return v0
+.end method
+
+.method private static isThaiDependentVowel(C)Z
+    .locals 1
+    const/16 v0, 0xe30
+    if-eq p0, v0, :thai_dependent_yes
+    const/16 v0, 0xe32
+    if-eq p0, v0, :thai_dependent_yes
+    const/16 v0, 0xe33
+    if-eq p0, v0, :thai_dependent_yes
+    const/16 v0, 0xe45
+    if-eq p0, v0, :thai_dependent_yes
+    const/4 v0, 0x0
+    return v0
+    :thai_dependent_yes
+    const/4 v0, 0x1
     return v0
 .end method
 
