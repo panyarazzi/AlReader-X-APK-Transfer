@@ -122,3 +122,40 @@ The user-required range Text through Custom 2 therefore covers slots 0–5. The 
 ### Current engineering decision
 
 Do not modify `AlCalc.getTextWidths`, `AlFonts.modifyPaint`, or the Justify width-distribution logic as part of the first Thai patch. The first implementation should add legal Thai break boundaries to the existing word/line pipeline while consuming the exact widths already produced by the active Paint. Width-cache invalidation and the full Justify algorithm remain explicit review gates.
+
+
+## Phase A follow-up — native token, overflow, and drawing path (verified)
+
+### Body-text ingestion and source positions
+
+- `AlBookEng.recalcColumn(...)` (`smali/com/neverland/engbook/bookobj/AlBookEng.smali`, lines 42606–43597) is the body-text ingestion path. It reads `AlFormat.getTextBuffer(...)` into `PairTextStyle.txt[]` / `stl[]`, then appends each accepted UTF-16 character to `tmp_word.text[]` while copying its style and source position into `style[]` and `pos[]`.
+- `tmp_word.hyph[]` is initialized with the existing default marker and is later rewritten by the hyphenation/line-break path. The original text is not rewritten to add spaces or visible separators.
+- The body buffer is flushed to `addWord(...)` at ordinary spaces, explicit structural/style boundaries, and the end of the format buffer. A bounded-buffer safety path also flushes a run when the 384-character word buffer approaches capacity; this path sets `need_flags` bit `0x2` and includes existing CJK-special handling.
+- Notes use a separate `addCellToPage(...)` path and `note_word` buffer. Thai changes should target the body path first and leave note layout unchanged unless a separate test demonstrates a need.
+
+### Existing line-break decision path
+
+- `addWord(...)` (`AlBookEng.smali`, lines 4335–5660) manages the pending/complete portion of `AlOneWord`, preserves each character's text/style/source-position/width/metrics arrays when carrying a remainder, and delegates placement to `addWordToItem0(...)`.
+- `addWordToItem0(...)` (lines 5974–8752) sums `width1[]` and compares the candidate run with the available `AlOneItem.allWidth`. When a run cannot fit, it asks `AlHyph.getHyph(...)` for legal break markers in `hyph[]` and chooses a fitting boundary. This is the most promising existing integration point for Thai dictionary boundaries because it already consumes a boundary map without changing the source text.
+- `calculateWordLength(...)` (lines 14153–16337) handles Arabic-run adjustments and style-dependent metrics, then obtains per-character widths from `AlCalc.getTextWidths(...)`. It is not a Thai tokenizer and should not be repurposed as one.
+- `AlHyph.getHyph(...)` (`smali/com/neverland/engbook/util/AlHyph.smali`, lines 543–1747) contains alphabetic-language hyphenation and explicit CJK/full-width handling. Its CJK branch uses the `AlUnicode.isChineze(...)` predicate and punctuation restrictions; no Thai dictionary branch or Thai word-boundary data was found.
+- `AlUnicode.isChineze(C)` (lines 16853–16892) recognizes CJK/full-width ranges beginning at U+3000 and does not include Thai U+0E00–U+0E7F. The inspected Unicode helper has no Thai-specific predicate.
+
+### Width and drawing contract
+
+- `AlOneWord` allocates 386-element text/style/position/width/vertical-metric arrays and a 388-element `hyph[]` array. Any segmentation helper must respect the active `count` and buffer bounds, including the bounded-buffer flush path.
+- `AlBookEng.prepareColumn(...)` (lines 39663–42604) applies paragraph justification after items are assembled. For ordinary justified lines it counts U+0020 spaces and CJK characters; if spaces exist, it distributes remaining width among spaces and eligible CJK characters. If there are no spaces, its fallback only distributes across CJK characters when the CJK count exceeds half of the line. Thai characters are not recognized as CJK, so an unspaced Thai line currently has no equivalent Thai-word justification opportunities.
+- The drawing loop calls `AlCalc.drawText(...)` for text runs and advances the horizontal cursor using `AlOneItem.width[]` (for example, the draw loop around lines 23446–23469). Therefore, changes to justification widths affect glyph placement; they must not be mistaken for changes to the measured `width1[]` values or the original source text.
+- This confirms the wrap and Justify paths are separate decisions: legal Thai line-break boundaries can be added in the existing `hyph[]` contract, but Thai Justify opportunities need a separately designed, grapheme-safe representation. Do not simply treat every Thai character as a CJK expansion point.
+
+### Android compatibility and cache gate
+
+- The packaged `apktool.yml` declares `minSdkVersion: 21`. `java.text.BreakIterator` is available at that API level, while `android.icu.text.BreakIterator` is API 24+. The Java API is therefore the compatibility candidate for a locale-Thai dictionary-break prototype; actual Thai dictionary and grapheme-boundary behavior still requires runtime verification on the Android 11 test device and a min-SDK compatibility decision.
+- `AlCalc.getTextWidths(...)` caches per-character advances under a style-derived key; the selected `font_widths[]` percentage is applied to `fontPaint` by `AlFonts.modifyPaint(...)` through `Paint.setTextScaleX(...)`, and is not visibly a separate cache-key component.
+- `AlBookEng.resetCalcAndFonts()` clears both the font cache and the `AlCalc` width cache. The inspected engine profile-update path calls it before clearing page positions, but the complete settings/UI path for every `font_widths[]` mutation is not yet proven. This remains a mandatory review gate; do not change width measurement or scaling.
+
+### Phase A result and next step
+
+The body ingestion, source-position preservation, line-overflow boundary map, CJK-only fallback, Justify distribution, and drawing-width consumption are now mapped. Phase A is substantially complete; the only remaining Phase A gate is proving every font-width setting change invalidates the measurement cache.
+
+Next: Phase B should prototype `java.text.BreakIterator.getWordInstance(new Locale("th"))` together with `getCharacterInstance(...)` as a filter for grapheme-safe boundaries. Verify the exact boundaries on the controlled corpus on Android 11 before changing Smali. If the prototype passes, integrate only the legal Thai boundaries into the existing `AlHyph` / `hyph[]` contract first. Design Thai Justify separately so it distributes only at dictionary word boundaries and never inside a Thai orthographic cluster. No APK build or runtime success is claimed by this static audit.
