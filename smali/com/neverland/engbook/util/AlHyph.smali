@@ -1728,7 +1728,7 @@
 
     .line 535
     .line 536
-    invoke-static {p1, p2, p3}, Lcom/neverland/engbook/util/ThaiWordBreaks;->apply([C[BI)V
+    invoke-static/range {p1 .. p3}, Lcom/neverland/engbook/util/ThaiWordBreaks;->apply([C[BI)V
     return-void
 
     .line 537
