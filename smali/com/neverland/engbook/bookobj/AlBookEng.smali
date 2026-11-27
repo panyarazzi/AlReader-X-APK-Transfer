@@ -4128,6 +4128,28 @@
 .method private static addSpace2I(Lcom/neverland/engbook/util/AlOneItem;Lcom/neverland/engbook/util/AlOneWord;I)V
     .locals 10
 
+    iget v0, p1, Lcom/neverland/engbook/util/AlOneWord;->complete:I
+    if-lez v0, :thai_space_keep_width
+    iget v1, p1, Lcom/neverland/engbook/util/AlOneWord;->count:I
+    if-lt v0, v1, :thai_space_check_marker
+    goto :thai_space_keep_width
+
+    :thai_space_check_marker
+    iget-object v1, p1, Lcom/neverland/engbook/util/AlOneWord;->hyph:[B
+    add-int/lit8 v2, v0, -0x1
+    aget-byte v1, v1, v2
+    const/16 v2, 0x42
+    if-ne v1, v2, :thai_space_keep_width
+    iget-object v1, p1, Lcom/neverland/engbook/util/AlOneWord;->text:[C
+    invoke-static {v1, v0}, Lcom/neverland/engbook/util/ThaiWordBreaks;->isThaiBoundary([CI)Z
+    move-result v1
+    if-eqz v1, :thai_space_keep_width
+    iget v1, p0, Lcom/neverland/engbook/util/AlOneItem;->textWidth:I
+    sub-int/2addr v1, p2
+    iput v1, p0, Lcom/neverland/engbook/util/AlOneItem;->textWidth:I
+    const/4 p2, 0x0
+
+    :thai_space_keep_width
     .line 1
     iget-object v0, p0, Lcom/neverland/engbook/util/AlOneItem;->text:[C
 
@@ -5959,6 +5981,20 @@
     .line 142
     .line 143
     :cond_7
+    add-int/lit8 v2, v1, 0x1
+    if-ge v2, p2, :thai_word_space_skip
+    iget-object v3, p1, Lcom/neverland/engbook/util/AlOneWord;->hyph:[B
+    aget-byte v3, v3, v1
+    const/16 v4, 0x42
+    if-ne v3, v4, :thai_word_space_skip
+    iget-object v3, p1, Lcom/neverland/engbook/util/AlOneWord;->text:[C
+    invoke-static {v3, v2}, Lcom/neverland/engbook/util/ThaiWordBreaks;->isThaiBoundary([CI)Z
+    move-result v3
+    if-eqz v3, :thai_word_space_skip
+    const/4 v3, 0x0
+    invoke-static {p0, p1, v3}, Lcom/neverland/engbook/bookobj/AlBookEng;->addSpace2I(Lcom/neverland/engbook/util/AlOneItem;Lcom/neverland/engbook/util/AlOneWord;I)V
+    iget v9, p0, Lcom/neverland/engbook/util/AlOneItem;->count:I
+    :thai_word_space_skip
     add-int/lit8 v1, v1, 0x1
 
     .line 144
@@ -5980,6 +6016,11 @@
     .line 2
     .line 3
     move-object/from16 v10, p1
+
+    iget-object v0, v10, Lcom/neverland/engbook/util/AlOneWord;->text:[C
+    iget-object v1, v10, Lcom/neverland/engbook/util/AlOneWord;->hyph:[B
+    iget v2, v10, Lcom/neverland/engbook/util/AlOneWord;->count:I
+    invoke-static {v0, v1, v2}, Lcom/neverland/engbook/util/ThaiWordBreaks;->apply([C[BI)V
 
     .line 4
     .line 5

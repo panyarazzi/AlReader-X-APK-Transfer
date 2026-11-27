@@ -1728,6 +1728,7 @@
 
     .line 535
     .line 536
+    invoke-static {p1, p2, p3}, Lcom/neverland/engbook/util/ThaiWordBreaks;->apply([C[BI)V
     return-void
 
     .line 537
@@ -2167,6 +2168,7 @@
 
     .line 194
     .line 195
+    invoke-static {p1, p2, p3}, Lcom/neverland/engbook/util/ThaiWordBreaks;->apply([C[BI)V
     return-void
 .end method
 
