@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feature/publisher-mode-rebased-1.33
+      - feature/thai-typography
     paths:
       - 'smali/**'
       - 'smali_classes*/**'

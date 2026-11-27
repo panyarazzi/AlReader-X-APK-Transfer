@@ -1748,7 +1748,9 @@
 .end method
 
 .method public getHyph4Soft([C[BILcom/neverland/engbook/forpublic/AlIntHolder;)V
-    .locals 9
+    .locals 10
+
+    move-object/from16 v9, p1
 
     .line 1
     iget-object v0, p0, Lcom/neverland/engbook/util/AlHyph;->e:[C
@@ -2168,7 +2170,7 @@
 
     .line 194
     .line 195
-    invoke-static {p1, p2, p3}, Lcom/neverland/engbook/util/ThaiWordBreaks;->apply([C[BI)V
+    invoke-static {v9, p2, p3}, Lcom/neverland/engbook/util/ThaiWordBreaks;->apply([C[BI)V
     return-void
 .end method
 
