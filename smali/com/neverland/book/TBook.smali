@@ -4483,7 +4483,7 @@
 
     .line 65
     .line 66
-    const-string v4, "\r\np.strong {@@strong}\r\np.em {@@em}\r\nstrong, b {@@annotation}\r\nem, i {@@code}"
+    const-string v4, "\r\np.strong {@@strong}\r\np.em {@@em}\r\n\r\nem, i {@@code}"
 
     if-eqz v3, :strong_em_default_only
 
@@ -11773,7 +11773,7 @@
     .line 9
     iget-object v4, v0, Lcom/neverland/engbook/forpublic/AlEngineOptions;->defaultEPUB0:Ljava/lang/String;
 
-    const-string v6, "\r\np.strong {@@strong}\r\np.em {@@em}\r\nstrong, b {@@annotation}\r\nem, i {@@code}\r\n/* AlReader X: keep divider blocks centered regardless of global paragraph alignment */\r\nbody div.center, body div.center-line { display: block !important; width: 100% !important; text-align: center !important; text-align-last: center !important; text-indent: 0 !important; margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; padding-right: 0 !important; }\r\nbody div.center > strong, body div.center-line > strong { display: inline !important; text-align: center !important; text-indent: 0 !important; }"
+    const-string v6, "\r\np.strong {@@strong}\r\np.em {@@em}\r\n\r\nem, i {@@code}"
 
     if-eqz v4, :strong_em_update_default_only
 
