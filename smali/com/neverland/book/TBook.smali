@@ -4483,7 +4483,7 @@
 
     .line 65
     .line 66
-    const-string v4, "\\r\\nstrong {@@strong}\\r\\np.strong {@@strong}\\r\\nem {@@em}\\r\\np.em {@@em}"
+    const-string v4, "\r\np.strong {@@strong}\r\np.em {@@em}\r\nstrong, b {@@annotation}\r\nem, i {@@code}"
 
     if-eqz v3, :strong_em_default_only
 
@@ -11773,6 +11773,20 @@
     .line 9
     iget-object v4, v0, Lcom/neverland/engbook/forpublic/AlEngineOptions;->defaultEPUB0:Ljava/lang/String;
 
+    const-string v6, "\r\np.strong {@@strong}\r\np.em {@@em}\r\nstrong, b {@@annotation}\r\nem, i {@@code}"
+
+    if-eqz v4, :strong_em_update_default_only
+
+    invoke-virtual {v4, v6}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto :strong_em_update_css_ready
+
+    :strong_em_update_default_only
+    move-object v4, v6
+
+    :strong_em_update_css_ready
     .line 10
     .line 11
     iget-object v5, v0, Lcom/neverland/engbook/forpublic/AlEngineOptions;->defaultMOBI0:Ljava/lang/String;
