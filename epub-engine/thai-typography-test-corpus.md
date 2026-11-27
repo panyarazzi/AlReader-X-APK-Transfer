@@ -1,6 +1,6 @@
 # Thai Typography — Controlled Test Corpus
 
-This fixture is for the `feature/thai-typography` branch only. It is a test specification, not a claim that Thai segmentation is implemented.
+This fixture is for the `feature/thai-typography` branch only. It is a test specification; the current implementation still requires Android runtime and device validation.
 
 ## 1. Dictionary word-boundary samples
 
@@ -28,7 +28,7 @@ The line breaker must never choose a break inside any displayed Thai orthographi
 | กำลัง | Keep each vowel/mark attached to its base |
 | เก้าอี้ | Do not strand leading vowels or tone marks at a line edge |
 | เก่ง | Keep leading vowel and consonant cluster intact |
-| ที่นี่ | Keep tone marks with their consonants |
+| ที่นี่ | Keep tone marks with their consonants |\n| เกาะ | Do not break before dependent vowel U+0E30 |\n| ภาษา | Do not break before dependent vowel U+0E32 |\n| กำลัง | Keep composed sara am U+0E33 attached |\n| เก่า | Do not break after a leading vowel before its consonant |\n| เก้า | Keep dependent vowel and tone mark with the syllable |
 
 The test must include both precomposed and canonically equivalent decomposed sequences where EPUB source text supplies them. The implementation must not normalize or rewrite the book text as a side effect.
 
@@ -39,7 +39,7 @@ The test must include both precomposed and canonically equivalent decomposed seq
 | อ่าน EPUB 3 เล่มบน Android 11 | Keep Latin words, digits, and spaces intact; segment Thai runs |
 | ภาษาไทย + English + 2026 | Preserve punctuation and mixed-script order |
 | ISBN 978-616-... สำหรับหนังสือ | Preserve Latin/digit/hyphen sequences |
-| รุ่น X2 ใช้กับ e-ink | Do not apply Thai dictionary rules to the Latin/digit run |
+| รุ่น X2 ใช้กับ e-ink | Do not apply Thai dictionary rules to the Latin/digit run |\n| เลขไทย ๑๒๓๔๕๖ | Keep consecutive Thai digits together |\n| ปี 2026 และ ๒๕๖๙ | Preserve ASCII and Thai digit sequences without splitting inside either run |
 
 ## 4. Explicit break and punctuation samples
 
@@ -64,7 +64,7 @@ For every combination verify:
 1. No line begins with a detached Thai combining mark or dependent vowel.
 2. No line ends with a detached Thai combining mark or dependent vowel.
 3. Every line's measured width respects the active scaled Paint metrics.
-4. Justify does not invent spacing opportunities inside a Thai grapheme cluster.
+4. Justify expands only synthetic zero-width spaces inserted at legal Thai dictionary boundaries; it never inserts opportunities inside a Thai grapheme cluster.\n5. Synthetic opportunities have no EPUB source position and do not appear as visible spaces in left-aligned text.\n6. A line ending at a Thai boundary does not receive trailing expansion from a synthetic space.
 5. Reduced/expanded font width changes line wrapping naturally without changing word-boundary legality.
 6. Left alignment and Justify both retain the same source text and source-position mapping.
 7. English, digits, CJK, Arabic, EPUB CSS, and explicit breaks retain baseline behavior.
