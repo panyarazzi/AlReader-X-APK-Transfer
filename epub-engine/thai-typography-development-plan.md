@@ -84,3 +84,41 @@ Improve Thai word segmentation, line wrapping, and paragraph justification in Al
 ## Current status
 
 Branch created and initial source audit recorded. No application code has been modified yet. No Thai support, APK build, or device test is claimed at this stage. Next work is the Phase A call-graph and font-slot trace.
+
+
+## Phase A follow-up — font slots and cache path (verified)
+
+### Font-width slot mapping
+
+`AlStyles` defines eight font-family slots, and `AlProfileOptions` allocates eight entries for `font_widths[]`:
+
+| Slot | Engine constant | Meaning |
+|---:|---|---|
+| 0 | `SL_FONT_TEXT` | Text |
+| 1 | `SL_FONT_CODE` | Code |
+| 2 | `SL_FONT_FANT` | Fantasy font slot |
+| 3 | `SL_FONT_FLET` | First-letter font slot |
+| 4 | `SL_FONT_CUSTOM1` | Custom 1 |
+| 5 | `SL_FONT_CUSTOM2` | Custom 2 |
+| 6 | `SL_FONT_CUSTOM3` | Custom 3 |
+| 7 | `SL_FONT_CUSTOM4` | Custom 4 |
+
+The user-required range Text through Custom 2 therefore covers slots 0–5. The actual labels shown in each settings screen still need a final UI-resource cross-check, but the engine enum-to-slot mapping is confirmed.
+
+### Width measurement and dependent metrics
+
+- `AlFonts.modifyPaint(...)` applies `font_widths[slot] / 100` directly to `AlCalc.fontPaint` using `Paint.setTextScaleX`; 100% explicitly resets to 1.0.
+- The same method updates `AlPaintFont.space_width_current`, `hyph_width_current`, and `em_width_current`. The layout engine consumes these values in addition to `width1[]`; a Thai integration must leave those calculations intact.
+- `AlCalc.getTextWidths(...)` has cached width paths. The main per-character cache is keyed by a style-derived integer and does not visibly include the width percentage as a separate key.
+- `AlCalc.clearMainWidth1()` resets the per-character cache and the style cache map. In the inspected call graph, `AlBookEng.resetCalcAndFonts()` invokes both `AlFonts.clearFontCache()` and `AlCalc.clearMainWidth1()`.
+- Still to verify: every UI/profile change that modifies `font_widths[]` reaches `resetCalcAndFonts()` before cached widths are reused. This is a required precondition before any width-sensitive code change.
+
+### Justify path evidence
+
+- `AlBookEng.initOneItem(...)` initializes `AlOneItem.justify` from paragraph style flags.
+- `AlBookEng.prepareColumn(...)` reads the justify state and the existing `preferences.justify` / `useChinezeSpecial` settings, and adjusts per-character `width[]` / line width state for its special layout cases.
+- This confirms that line preparation is more than a simple text alignment flag. The full branch-by-branch width distribution and its interaction with ordinary spaces, CJK punctuation, and the renderer still need to be mapped before modifying it.
+
+### Current engineering decision
+
+Do not modify `AlCalc.getTextWidths`, `AlFonts.modifyPaint`, or the Justify width-distribution logic as part of the first Thai patch. The first implementation should add legal Thai break boundaries to the existing word/line pipeline while consuming the exact widths already produced by the active Paint. Width-cache invalidation and the full Justify algorithm remain explicit review gates.
