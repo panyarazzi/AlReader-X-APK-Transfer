@@ -444,7 +444,7 @@ jobs:
           "$EMULATOR" -avd "$AVD_NAME" \
             -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim \
             -no-snapshot -no-snapshot-save -camera-back none -accel off \
-            -memory 3072 -cores 4 \
+            -memory 2048 -cores 2 \
             > dist/emulator-boot.log 2>&1 &
           EMULATOR_PID=$!
           cleanup() {
@@ -511,7 +511,31 @@ jobs:
             exit 1
           fi
 
-          echo "Package Manager is ready; running Android API 30 Thai BreakIterator probe."
+          collect_thai_probe_diagnostics() {
+            local label="$1"
+            echo "Collecting Thai probe diagnostics: $label"
+            {
+              date -u
+              echo "--- Host memory ---"
+              free -h
+              cat /proc/meminfo
+              echo "--- Host top RSS processes ---"
+              ps -eo pid,ppid,rss,vsz,stat,comm --sort=-rss | head -n 35
+              echo "--- Host kernel OOM messages (if permitted) ---"
+              dmesg 2>&1 | tail -n 160 || true
+            } > "dist/ci-memory-$label.txt" 2>&1 || true
+            adb -s "$SERIAL" shell 'echo "--- Guest memory ---"; cat /proc/meminfo; echo "--- Guest processes ---"; ps -A -o PID,PPID,RSS,NAME; echo "--- Guest memory summary ---"; dumpsys meminfo' \
+              > "dist/android-memory-$label.txt" 2>&1 || true
+            adb -s "$SERIAL" logcat -b all -d -t 8000 -v threadtime \
+              > "dist/android-logcat-$label.txt" 2>&1 || true
+            adb -s "$SERIAL" shell dmesg \
+              > "dist/android-dmesg-$label.txt" 2>&1 || true
+            tail -n 300 dist/emulator-boot.log \
+              > "dist/emulator-boot-tail-$label.txt" 2>&1 || true
+          }
+
+          echo "Package Manager is ready; recording baseline before Android API 30 Thai BreakIterator probe."
+          collect_thai_probe_diagnostics "pre-probe"
           mkdir -p dist/thai-probe-classes dist/thai-probe-dex
           javac --release 8 -d dist/thai-probe-classes \
             epub-engine/AndroidThaiBreakIteratorProbe.java
@@ -520,9 +544,20 @@ jobs:
             dist/thai-probe-classes/AndroidThaiBreakIteratorProbe.class
           adb -s "$SERIAL" push dist/thai-probe-dex/classes.dex \
             /data/local/tmp/AndroidThaiBreakIteratorProbe.dex
+
+          echo "Running Android API 30 Thai BreakIterator probe; diagnostics will be collected even if app_process is killed."
+          set +e
           adb -s "$SERIAL" shell \
             'CLASSPATH=/data/local/tmp/AndroidThaiBreakIteratorProbe.dex app_process /system/bin AndroidThaiBreakIteratorProbe' \
             2>&1 | tee dist/android-thai-breakiterator-probe.txt
+          PROBE_STATUS=${PIPESTATUS[0]}
+          set -e
+          collect_thai_probe_diagnostics "post-probe"
+
+          if [[ "$PROBE_STATUS" -ne 0 ]]; then
+            echo "Android Thai BreakIterator probe process failed with exit code $PROBE_STATUS."
+            exit "$PROBE_STATUS"
+          fi
           grep -Fq 'ANDROID_THAI_BREAKITERATOR_FAILURES=0' \
             dist/android-thai-breakiterator-probe.txt
 
@@ -541,6 +576,12 @@ jobs:
             dist/activity-processes-*.txt
             dist/logcat-*.txt
             dist/emulator-boot*.log
+            dist/emulator-boot-tail-*.txt
+            dist/android-thai-breakiterator-probe.txt
+            dist/ci-memory-*.txt
+            dist/android-memory-*.txt
+            dist/android-logcat-*.txt
+            dist/android-dmesg-*.txt
             dist/emulator-ui-*.xml
             dist/settings-tap.txt
             dist/emulator-runtime-errors.txt
