@@ -511,7 +511,22 @@ jobs:
             exit 1
           fi
 
-          echo "Package Manager is ready; starting APK smoke test."
+          echo "Package Manager is ready; running Android API 30 Thai BreakIterator probe."
+          mkdir -p dist/thai-probe-classes dist/thai-probe-dex
+          javac --release 8 -d dist/thai-probe-classes \
+            epub-engine/AndroidThaiBreakIteratorProbe.java
+          "$ANDROID_HOME/build-tools/35.0.0/d8" --min-api 21 \
+            --output dist/thai-probe-dex \
+            dist/thai-probe-classes/AndroidThaiBreakIteratorProbe.class
+          adb -s "$SERIAL" push dist/thai-probe-dex/classes.dex \
+            /data/local/tmp/AndroidThaiBreakIteratorProbe.dex
+          adb -s "$SERIAL" shell \
+            'CLASSPATH=/data/local/tmp/AndroidThaiBreakIteratorProbe.dex app_process /system/bin AndroidThaiBreakIteratorProbe' \
+            2>&1 | tee dist/android-thai-breakiterator-probe.txt
+          grep -Fq 'ANDROID_THAI_BREAKITERATOR_FAILURES=0' \
+            dist/android-thai-breakiterator-probe.txt
+
+          echo "Android Thai segmentation probe passed; starting APK smoke test."
           bash .github/scripts/publisher-emulator-smoke-test.sh
 
       - name: Upload emulator diagnostics
