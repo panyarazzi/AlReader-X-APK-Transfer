@@ -539,9 +539,16 @@ jobs:
           mkdir -p dist/thai-probe-classes dist/thai-probe-dex
           javac --release 8 -d dist/thai-probe-classes \
             epub-engine/AndroidThaiBreakIteratorProbe.java
+          mapfile -t THAI_PROBE_CLASSES < <(find dist/thai-probe-classes -type f -name '*.class' -print | sort)
+          if [[ "${#THAI_PROBE_CLASSES[@]}" -eq 0 ]]; then
+            echo "No compiled Thai probe class files were found."
+            exit 1
+          fi
+          echo "Packaging ${#THAI_PROBE_CLASSES[@]} compiled Thai probe class files into DEX."
+          printf '%s\n' "${THAI_PROBE_CLASSES[@]}"
           "$ANDROID_HOME/build-tools/35.0.0/d8" --min-api 21 \
             --output dist/thai-probe-dex \
-            dist/thai-probe-classes/AndroidThaiBreakIteratorProbe.class
+            "${THAI_PROBE_CLASSES[@]}"
           adb -s "$SERIAL" push dist/thai-probe-dex/classes.dex \
             /data/local/tmp/AndroidThaiBreakIteratorProbe.dex
 
