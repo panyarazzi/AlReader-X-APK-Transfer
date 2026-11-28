@@ -8,6 +8,30 @@
     .locals 8
 
     if-lez p2, :apply_done
+
+    # First disable the legacy per-character Thai break opportunities.
+    # Only dictionary-approved boundaries are re-enabled below.
+    const/4 v0, 0x1
+
+    :apply_lock_scan
+    if-ge v0, p2, :apply_lock_done
+    add-int/lit8 v1, v0, -0x1
+    aget-char v2, p0, v1
+    aget-char v3, p0, v0
+    invoke-static {v2}, Lcom/neverland/engbook/util/ThaiWordBreaks;->isThai(C)Z
+    move-result v4
+    if-eqz v4, :apply_lock_next
+    invoke-static {v3}, Lcom/neverland/engbook/util/ThaiWordBreaks;->isThai(C)Z
+    move-result v4
+    if-eqz v4, :apply_lock_next
+    const/16 v4, 0x38
+    aput-byte v4, p1, v1
+
+    :apply_lock_next
+    add-int/lit8 v0, v0, 0x1
+    goto :apply_lock_scan
+
+    :apply_lock_done
     const/4 v0, 0x0
 
     :apply_scan
@@ -47,9 +71,6 @@
     move-result v2
     if-eqz v2, :apply_next
     add-int/lit8 v2, v1, -0x1
-    aget-byte v3, p1, v2
-    const/16 v4, 0x30
-    if-ne v3, v4, :apply_next
     const/16 v3, 0x42
     aput-byte v3, p1, v2
     goto :apply_next
@@ -75,7 +96,7 @@
     move-result v3
     invoke-static {v2}, Lcom/neverland/engbook/util/ThaiWordBreaks;->isThai(C)Z
     move-result v4
-    or-int/2addr v3, v4
+    and-int/2addr v3, v4
     if-eqz v3, :thai_boundary_no
 
     const/16 v3, 0x200b
