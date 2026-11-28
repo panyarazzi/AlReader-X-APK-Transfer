@@ -81,9 +81,9 @@ Improve Thai word segmentation, line wrapping, and paragraph justification in Al
 - Verify no regression in English/CJK/Arabic, CSS, font controls, page anchors, and battery behavior.
 - Device-test on the Android e-ink reader before considering merge-back.
 
-## Current status
+## Initial audit status (historical)
 
-Branch created and initial source audit recorded. No application code has been modified yet. No Thai support, APK build, or device test is claimed at this stage. Next work is the Phase A call-graph and font-slot trace.
+At the initial audit stage, the branch had only the source investigation recorded; the implementation and runtime validation described in the later sections supersede this baseline.
 
 
 ## Phase A follow-up — font slots and cache path (verified)
@@ -233,3 +233,29 @@ Static source tracing confirms the intended data path, but it does not prove run
 - source-position selection/copy around internal zero-width opportunities.
 
 No device result is claimed by this static audit.
+
+
+## Phase C implementation update — Build #91
+
+### Implemented on `feature/thai-typography`
+
+- Commit: `67de8b4f9971df3baa00c35b2b9f64baa612b6d2`
+- Workflow run: [Build #91](https://github.com/panyarazzi/AlReader-X-APK-Transfer/actions/runs/46091036124)
+- Result: Rebuild, signing, and Android 11 emulator install/launch smoke test all completed successfully.
+- `ThaiWordBreaks.apply(...)` first changes adjacent Thai-to-Thai legacy per-character opportunities to marker `0x38`, then re-enables only BreakIterator Thai word boundaries as `0x42`.
+- `isThaiBoundary(...)` requires Thai characters on both sides and rejects boundaries before Thai marks/dependent vowels, within consecutive digits, before sara am / mai yamok / paiyannoi, across decomposed sara am, and between a leading vowel and its following consonant.
+- The existing `AlHyph.getHyph(...)` flow calls the Thai helper after its existing hyphenation and CJK marker processing.
+
+### Native item-buffer integration — static audit
+
+- `addWord2I(...)` copies the original character, style, source position, and measured width unchanged.
+- At a marker `0x42` that also passes `isThaiBoundary(...)`, it calls `addSpace2I(..., 0)` to create a zero-width internal space opportunity.
+- `addSpace2I(...)` assigns the synthetic space source position `-1`; the source EPUB text is not modified.
+- This confirms the intended representation is an internal layout opportunity, not a visible inserted character. It is still a static source finding, not proof of the rendered result or of Justify quality.
+
+### Validation status and next gate
+
+- Build #91 proves the decoded APK rebuilds, signs, installs, and launches on the Android 11 emulator. It does not validate Thai dictionary output or visual line layout.
+- Physical-device validation on Meebook G7S remains outstanding, especially the reported words `ภารกิจ`, `เขา`, `ถูกอัพเดท`, and the long paragraph, in Left and Justify modes.
+- Do not change native Justify distribution or glyph metrics until those screenshots/results establish whether the remaining defect is segmentation, opportunity insertion, or width distribution.
+- After device feedback, verify mixed Thai/Latin/digit boundaries, punctuation, explicit U+200B, soft hyphens, source-position selection/copy, and the 80/100/120% width cases.
